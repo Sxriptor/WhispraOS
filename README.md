@@ -51,6 +51,17 @@ Please note:
 - Whispra, Inc. **cannot provide support, hosting, managed services, or operational assistance** for deployments in locations where such support is restricted or prohibited.
 - Any self-hosted or third-party deployment is **independently operated** and not affiliated with or endorsed by Whispra, Inc.
 
+### 🏷️ Branding & Naming Requirements
+
+This is the **official open-source version** of Whispra. If you fork, modify, or redistribute this project, please adhere to the following:
+
+- **Do not use the "Whispra" name** for your fork or derivative work. You may use names like "WhispraOS", "MyTranslator (based on Whispra)", or any other distinct name.
+- **Do not use the Whispra logo** or any official Whispra branding assets.
+- **Do not claim your fork was developed by Whispra, Inc.** or imply official endorsement.
+- **You must provide attribution** to the original Whispra project (e.g., "Based on Whispra" or "Powered by Whispra open-source").
+
+We encourage the community to build upon this project, but please respect these guidelines to avoid confusion between official and community versions.
+
 
 ## 📑 Table of Contents
 
