@@ -168,57 +168,6 @@ Whispra is a comprehensive desktop application built with Electron that enables 
   - DeepInfra API key (optional, for alternative providers)
   - ElevenLabs API key (for text-to-speech)
 
-### Installation Steps
-
-1. **Clone the repository**
-
-```bash
-git clone https://github.com/Sxriptor/WhispraOS.git
-cd WhispraOS
-```
-
-2. **Install dependencies**
-
-```bash
-npm install
-```
-
-3. **Build the application**
-
-```bash
-# Build main application
-npm run build
-
-# Build WASAPI addon (Windows)
-npm run build:addon
-
-# Copy addon binaries
-npm run copy-addon
-```
-
-4. **Launch the application**
-
-```bash
-npm start
-```
-
-### Development Setup
-
-For development with hot reload:
-
-```bash
-# Development mode with watch
-npm run dev
-
-# Simple development build
-npm run dev:simple
-
-# Build and watch mode
-npm run build:watch
-```
-
----
-
 ## 🎬 Quick Start
 
 ### 1. Configure API Keys
@@ -487,43 +436,6 @@ src/
 ├── soundboard-overlay.html # Soundboard overlay
 └── screen-translation-overlay.html # Screen translation overlay
 ```
-
-### Build Commands
-
-```bash
-# Development with hot reload
-npm run dev
-
-# Simple development build and run
-npm run dev:simple
-
-# Production build
-npm run build
-
-# Build WASAPI addon (Windows)
-npm run build:addon
-
-# Copy addon binaries
-npm run copy-addon
-
-# Watch mode for development
-npm run build:watch
-
-# Clean build artifacts
-npm run clean
-
-# Run tests
-npm test
-npm run test:watch
-npm run test:coverage
-
-# Build distribution packages
-npm run dist              # Build all platforms
-npm run dist:win          # Windows only
-npm run dist:win-portable # Windows portable
-npm run dist:win-installer # Windows installer
-```
-
 ### Testing
 
 The project includes Jest test suites:
