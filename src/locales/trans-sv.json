@@ -1,0 +1,88 @@
+{
+  "tab": {
+    "translation": "Översättning",
+    "bidirectional": "Bidirectional",
+    "soundboard": "Ljudtavla",
+    "settings": "Inställningar"
+  },
+  "controls": {
+    "microphone": "Mikrofon",
+    "targetLanguage": "Målspråk",
+    "voice": "Röst",
+    "output": "Utgång",
+    "pushToTalk": "Push-to-Talk",
+    "startTranslation": "Starta översättning",
+    "stopTranslation": "Stoppa översättning",
+    "addCustomVoice": "Lägg till anpassad röst",
+    "accent": "Accent",
+    "noAccent": "Ingen accent",
+    "accentOn": "Accent: PÅ",
+    "accentOff": "Accent: AV"
+  },
+  "placeholders": {
+    "selectMicrophone": "Välj mikrofon...",
+    "loadingVoices": "Laddar röster...",
+    "selectVoice": "Välj röst...",
+    "enterCustomAccent": "Ange anpassad accent...",
+    "selectPreset": "Välj förinställning..."
+  },
+  "descriptions": {
+    "microphoneHelp": "Denna mikrofon används för översättning och passthrough",
+    "outputMode": "Utgång till Virtuell Enhet",
+    "holdKeyToRecord": "Håll ned tangenten för att spela in",
+    "toggleBidiMode": "Håll ned tangenten för att växla bidirectional-läge",
+    "autoDetectLanguage": "Automatisk språkdetektering"
+  },
+  "bidirectional": {
+    "outputDevice": "Utgångsenhet",
+    "systemInput": "Systemingång",
+    "incomingVoice": "Inkommande röst",
+    "screenCapture": "Skärm/Fönsterfångst",
+    "startBidirectional": "Starta Bidirectional",
+    "stopBidirectional": "Stoppa Bidirectional",
+    "loadingDevices": "Laddar utgångsenheter...",
+    "selectOutputDevice": "Välj utgångsenhet...",
+    "displayAudio": "Visa/Systemljud (Standard)",
+    "loadingVoices": "Laddar röster...",
+    "selectIncomingVoice": "Välj inkommande röst...",
+    "selectScreenOrWindow": "Välj skärm eller fönster...",
+    "refreshSources": "Uppdatera källor",
+    "captureHelp": "Tillgängliga skärmar och fönster med PID:er kommer att detekteras automatiskt"
+  },
+  "soundboard": {
+    "controls": "Ljudtavla Kontroller",
+    "addSound": "Lägg till ljud",
+    "stopAll": "Stoppa allt",
+    "volumeControls": "Volymkontroller",
+    "vbAudio": "VB Audio:",
+    "headphones": "Hörlurar:",
+    "soundPads": "Ljudkuddar",
+    "noSounds": "Inga ljud har lagts till ännu. Klicka på \"Lägg till ljud\" för att komma igång!",
+    "hotkeysEnabled": "Aktivera genvägar för ljudtavlan"
+  },
+  "settings": {
+    "overlayHotkey": "Överläggs växlingstangent",
+    "pttHotkey": "Push-to-Talk-tangent",
+    "bidiHotkey": "Bidirectional växlingstangent",
+    "clickThrough": "Klicka igenom",
+    "alwaysOnTop": "Alltid överst",
+    "overlayOpacity": "Överläggs opacitet",
+    "clickThroughDesc": "Aktivera klicka igenom i Minimal-läge",
+    "alwaysOnTopDesc": "Håll överläggningen ovanför andra fönster"
+  },
+  "status": {
+    "ready": "Redo att spela in...",
+    "recording": "Spelar in...",
+    "processing": "Bearbetar...",
+    "stopped": "Stoppad",
+    "idle": "Inaktiv",
+    "active": "Aktiv",
+    "error": "Fel"
+  },
+  "keys": {
+    "space": "MELLANRUM",
+    "ctrl": "Ctrl",
+    "alt": "Alt",
+    "shift": "Skift"
+  }
+}

@@ -1,0 +1,218 @@
+{
+  "name": "whispra",
+  "version": "2.2.0",
+  "description": "Whispra - The AI Translation App",
+  "main": "dist/main.js",
+  "build": {
+    "appId": "xyz.whispra.app",
+    "productName": "Whispra",
+    "directories": {
+      "output": "dist-electron"
+    },
+    "files": [
+      "dist/**/*",
+      "assets/**/*",
+      "!dist/renderer/renderer/**/*"
+    ],
+    "asar": true,
+    "asarUnpack": [
+      "**/*.node",
+      "**/*.py",
+      "python/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "logos/electron",
+        "to": "logos/electron"
+      },
+      {
+        "from": "python",
+        "to": "python"
+      },
+      {
+        "from": "resources/engines/grammar",
+        "to": "engines/grammar"
+      }
+    ],
+    "win": {
+      "icon": "logos/electron/Whispra.ico",
+      "extraResources": [
+        {
+          "from": "dist/wasapi_loopback.node",
+          "to": "wasapi_loopback.node"
+        }
+      ],
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "requestedExecutionLevel": "requireAdministrator"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "allowElevation": true,
+      "perMachine": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Whispra",
+      "installerIcon": "logos/electron/Whispra.ico",
+      "uninstallerIcon": "logos/electron/Whispra.ico",
+      "installerHeaderIcon": "logos/electron/Whispra.ico",
+      "installerSidebar": "logos/electron/installer-sidebar.bmp",
+      "deleteAppDataOnUninstall": false,
+      "artifactName": "whispra-setup.${ext}"
+    },
+    "portable": {
+      "artifactName": "whispra.${ext}"
+    },
+    "publish": {
+      "provider": "github",
+      "owner": "Sxriptor",
+      "repo": "Whispra-Download"
+    },
+    "mac": {
+      "icon": "logos/electron/icon.icns",
+      "target": "dmg",
+      "category": "public.app-category.utilities",
+      "extraResources": [
+        {
+          "from": "dist/coreaudio_loopback.node",
+          "to": "coreaudio_loopback.node"
+        }
+      ],
+      "extendInfo": {
+        "CFBundleIconName": "Whispra",
+        "CFBundleName": "Whispra",
+        "CFBundleDisplayName": "Whispra",
+        "CFBundleIdentifier": "xyz.whispra.app",
+        "CFBundleVersion": "1.7.6",
+        "CFBundleShortVersionString": "1.7.6",
+        "LSMinimumSystemVersion": "10.13.0"
+      }
+    },
+    "dmg": {
+      "artifactName": "whispra.${ext}",
+      "icon": "logos/electron/icon.icns",
+      "iconSize": 128,
+      "contents": [
+        {
+          "x": 380,
+          "y": 280,
+          "type": "link",
+          "path": "/Applications"
+        },
+        {
+          "x": 110,
+          "y": 280,
+          "type": "file"
+        }
+      ],
+      "window": {
+        "width": 540,
+        "height": 380
+      }
+    },
+    "linux": {
+      "icon": "logos/electron/Whispra.ico",
+      "target": "AppImage"
+    }
+  },
+  "scripts": {
+    "postinstall": "node postinstall.js",
+    "setup:java-runtime": "node scripts/setup-java-runtime.js",
+    "setup:languagetool": "node scripts/setup-languagetool.js",
+    "generate:locales": "node scripts/generate-locales.js",
+    "generate:all-locales": "node scripts/generate-all-locales.js",
+    "generate:i18n": "node scripts/generate-i18n.js",
+    "setup:ffmpeg-mac": "node scripts/setup-ffmpeg-mac.js",
+    "install:pyav-mac": "bash scripts/install-pyav-mac.sh",
+    "start": "electron dist/main.js",
+    "dev": "nodemon",
+    "dev:simple": "npm run build && npm run build:addon && npm run copy-addon && electron dist/main.js --dev",
+    "build": "npm run clean && npm run build:main && npm run build:renderer && npm run copy-renderer && npm run copy-renderer-utils && npm run copy-renderer-modules && npm run copy-services && npm run copy-paddle-python && npm run copy-paddle && npm run copy-html && npm run copy-overlay && npm run copy-ui && npm run copy-components && npm run copy-ui-services && npm run copy-utils && npm run copy-diagnostic",
+    "build:main": "tsc -p tsconfig.main.json",
+    "build:renderer": "tsc -p tsconfig.renderer.json",
+    "copy-renderer": "node build-copy-helper.js copy-renderer",
+    "copy-renderer-utils": "node build-copy-helper.js copy-renderer-utils",
+    "copy-renderer-modules": "node build-copy-helper.js copy-renderer-modules",
+    "copy-services": "node build-copy-helper.js copy-services",
+    "copy-paddle": "node build-copy-helper.js copy-paddle",
+    "copy-paddle-python": "node build-copy-helper.js copy-paddle-python",
+    "copy-ui": "node build-copy-helper.js copy-ui",
+    "copy-components": "node build-copy-helper.js copy-components",
+    "copy-ui-services": "node build-copy-helper.js copy-ui-services",
+    "copy-utils": "node build-copy-helper.js copy-utils",
+    "build:watch": "concurrently \"npm run build:main -- --watch\" \"npm run build:renderer -- --watch\"",
+    "copy-html": "node build-copy-helper.js copy-html",
+    "copy-overlay": "node build-copy-helper.js copy-overlay",
+    "copy-assets": "node -e \"const fs = require('fs'); const path = require('path'); const distAssets = path.join('dist', 'assets'); if (!fs.existsSync('dist')) fs.mkdirSync('dist'); if (!fs.existsSync(distAssets)) fs.mkdirSync(distAssets); ['logos/electron', 'logos/web'].forEach(src => { if (fs.existsSync(src)) { fs.readdirSync(src).forEach(file => { if (file.endsWith('.ico') || file.endsWith('.png') || file.endsWith('.icns')) { fs.copyFileSync(path.join(src, file), path.join(distAssets, file)); console.log('Copied:', file); } }); } });\"",
+    "copy-package": "node -e \"const fs = require('fs'); if (fs.existsSync('package.json')) fs.copyFileSync('package.json', 'dist/package.json');\"",
+    "copy-diagnostic": "node -e \"const fs = require('fs'); if (fs.existsSync('debug-windows11-audio-devices.js')) fs.copyFileSync('debug-windows11-audio-devices.js', 'dist/debug-windows11-audio-devices.js'); else console.log('Diagnostic file not found, skipping...');\"",
+    "copy-html:watch": "nodemon --watch src/index.html --watch src/signin.html --watch src/device-check-overlay.html --watch src/vb-audio-setup-overlay.html --watch src/python-check-overlay.html --watch src/paddlepaddle-overlay.html --watch src/gpu-paddle-overlay.html --exec \"npm run copy-html\"",
+    "electron:wait": "wait-on dist/main.js && electron dist/main.js",
+    "clean": "rimraf dist",
+    "postbuild": "npm run copy-assets",
+    "build:prod": "npm run build",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "build:addon": "cd native-wasapi-loopback && node-gyp rebuild --target=28.0.0 --arch=x64 --dist-url=https://electronjs.org/headers --runtime=electron",
+    "copy-addon": "node -e \"const fs = require('fs'); const src = 'native-wasapi-loopback/build/Release/wasapi_loopback.node'; if (fs.existsSync(src)) fs.copyFileSync(src, 'dist/wasapi_loopback.node');\"",
+    "build:complete": "node build-script.js",
+    "dist": "npm run build:complete && electron-builder",
+    "dist:win": "npm run build:complete && electron-builder --win",
+    "dist:win-portable": "npm run build:complete && electron-builder --win portable",
+    "dist:win-installer": "npm run build:complete && electron-builder --win nsis",
+    "dist:mac": "npm run build:complete && electron-builder --mac",
+    "pack": "npm run build:complete && electron-builder --dir"
+  },
+  "keywords": [
+    "electron",
+    "voice-translation",
+    "real-time",
+    "speech-to-text",
+    "text-to-speech"
+  ],
+  "author": "Voice Translator Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^29.0.0",
+    "@types/node": "^20.0.0",
+    "concurrently": "^9.2.0",
+    "electron": "^28.0.0",
+    "electron-builder": "^26.0.12",
+    "jest": "^29.0.0",
+    "nodemon": "^3.1.10",
+    "rimraf": "^5.0.0",
+    "shx": "^0.4.0",
+    "ts-jest": "^29.0.0",
+    "typescript": "^5.0.0",
+    "wait-on": "^8.0.4"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.58.0",
+    "@types/ws": "^8.18.1",
+    "axios": "^1.5.0",
+    "dotenv": "^17.2.1",
+    "electron-updater": "^6.6.2",
+    "extract-zip": "^2.0.1",
+    "keytar": "^7.9.0",
+    "lucide": "^0.548.0",
+    "node-addon-api": "^8.5.0",
+    "node-global-key-listener": "^0.3.0",
+    "openai": "^4.0.0",
+    "tesseract.js": "^6.0.1",
+    "ws": "^8.18.3"
+  }
+}

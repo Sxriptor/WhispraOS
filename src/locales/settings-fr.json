@@ -1,0 +1,47 @@
+{
+  "modal": {
+    "title": "Configuration API sécurisée",
+    "close": "Fermer"
+  },
+  "instructions": {
+    "title": "Instructions de configuration de la clé API",
+    "openaiTitle": "Clé API OpenAI",
+    "openaiPermissions": "Permissions de lecture : Modèles, Capacités",
+    "openaiUsage": "Utilisé pour la traduction de la parole en texte et du texte en parole",
+    "openaiLink": "platform.openai.com/api-keys",
+    "elevenlabsTitle": "Clé API ElevenLabs",
+    "elevenlabsRestrict": "Restreindre la clé : Activé",
+    "elevenlabsNoAccess": "Tout le reste : Pas d'accès",
+    "elevenlabsTts": "Texte à parole : Accès",
+    "elevenlabsSts": "Parole à parole : Accès",
+    "elevenlabsAgents": "Agents ElevenLabs : Écriture",
+    "elevenlabsVoices": "Voix : Écriture",
+    "elevenlabsVoiceGen": "Génération de voix : Accès",
+    "elevenlabsUser": "Utilisateur : Lecture",
+    "elevenlabsLink": "elevenlabs.io/app/profile"
+  },
+  "fields": {
+    "openaiLabel": "Clé API OpenAI :",
+    "openaiPlaceholder": "Entrez votre clé API OpenAI",
+    "openaiStored": "Clé stockée en toute sécurité",
+    "openaiHelp": "Entrez votre clé API OpenAI (sk-...)",
+    "elevenlabsLabel": "Clé API ElevenLabs :",
+    "elevenlabsPlaceholder": "Entrez votre clé API ElevenLabs",
+    "elevenlabsStored": "Clé stockée en toute sécurité",
+    "elevenlabsHelp": "Entrez votre clé API ElevenLabs (32 caractères)"
+  },
+  "buttons": {
+    "showKey": "Afficher la clé",
+    "removeKey": "Supprimer la clé",
+    "clearAll": "Effacer toutes les clés",
+    "cancel": "Annuler",
+    "save": "Sauvegarder"
+  },
+  "status": {
+    "keyStored": "✓ Clé stockée en toute sécurité"
+  },
+  "links": {
+    "openai": "Générer une clé à : platform.openai.com/api-keys",
+    "elevenlabs": "Générer une clé à : elevenlabs.io/app/profile"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "app": {
+    "name": "Whispra",
+    "loading": "Загрузка...",
+    "ready": "Готов",
+    "idle": "Ожидание",
+    "processing": "Обработка",
+    "error": "Ошибка"
+  },
+  "navigation": {
+    "translate": "Перевод",
+    "bidirectional": "Двунаправленный",
+    "screenTranslation": "Перевод Экрана",
+    "soundBoard": "Звуковая Панель",
+    "voiceFilter": "Фильтр Голоса",
+    "settings": "Настройки",
+    "logs": "Журналы"
+  },
+  "common": {
+    "start": "Начать",
+    "stop": "Остановить",
+    "cancel": "Отмена",
+    "save": "Сохранить",
+    "close": "Закрыть",
+    "back": "Назад",
+    "next": "Далее",
+    "continue": "Продолжить",
+    "retry": "Повторить",
+    "yes": "Да",
+    "no": "Нет",
+    "ok": "OK"
+  },
+  "header": {
+    "profile": "Профиль",
+    "signOut": "Выйти",
+    "language": "Язык"
+  },
+  "footer": {
+    "connectionStatus": "Статус Соединения",
+    "processingStatus": "Статус Обработки",
+    "feedback": "Сообщить об Ошибке / Предложить Функцию",
+    "debugConsole": "Показать Консоль Отладки"
+  },
+  "errors": {
+    "networkError": "Ошибка сетевого соединения",
+    "permissionDenied": "Доступ запрещен",
+    "deviceNotFound": "Устройство не найдено",
+    "serviceUnavailable": "Сервис недоступен",
+    "unknownError": "Произошла неизвестная ошибка"
+  },
+  "tooltips": {
+    "sidebarToggle": "Переключить боковую панель",
+    "profile": "Меню профиля",
+    "language": "Выбрать язык"
+  },
+  "languageChange": {
+    "title": "Изменить язык приложения?",
+    "message": "Хотите, чтобы текст Whispra также был на этом языке?",
+    "yes": "Да",
+    "no": "Нет"
+  }
+}

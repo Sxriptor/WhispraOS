@@ -1,0 +1,62 @@
+{
+  "app": {
+    "name": "Whispra",
+    "loading": "Chargement...",
+    "ready": "Prêt",
+    "idle": "Inactif",
+    "processing": "Traitement",
+    "error": "Erreur"
+  },
+  "navigation": {
+    "translate": "Traduire",
+    "bidirectional": "Bidirectionnel",
+    "screenTranslation": "Traduction d'écran",
+    "soundBoard": "Table de mixage",
+    "voiceFilter": "Filtre vocal",
+    "settings": "Paramètres",
+    "logs": "Journaux"
+  },
+  "common": {
+    "start": "Démarrer",
+    "stop": "Arrêter",
+    "cancel": "Annuler",
+    "save": "Sauvegarder",
+    "close": "Fermer",
+    "back": "Retour",
+    "next": "Suivant",
+    "continue": "Continuer",
+    "retry": "Réessayer",
+    "yes": "Oui",
+    "no": "Non",
+    "ok": "OK"
+  },
+  "header": {
+    "profile": "Profil",
+    "signOut": "Se déconnecter",
+    "language": "Langue"
+  },
+  "footer": {
+    "connectionStatus": "État de la connexion",
+    "processingStatus": "État du traitement",
+    "feedback": "Signaler un bug / Suggérer une fonctionnalité",
+    "debugConsole": "Afficher la console de débogage"
+  },
+  "errors": {
+    "networkError": "Erreur de connexion réseau",
+    "permissionDenied": "Permission refusée",
+    "deviceNotFound": "Appareil non trouvé",
+    "serviceUnavailable": "Service indisponible",
+    "unknownError": "Une erreur inconnue est survenue"
+  },
+  "tooltips": {
+    "sidebarToggle": "Basculer la barre latérale",
+    "profile": "Menu de profil",
+    "language": "Sélectionner la langue"
+  },
+  "languageChange": {
+    "title": "Changer la langue de l'application ?",
+    "message": "Voulez-vous également que le texte de Whispra soit dans cette langue ?",
+    "yes": "Oui",
+    "no": "Non"
+  }
+}

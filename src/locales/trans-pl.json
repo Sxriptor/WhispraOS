@@ -1,0 +1,88 @@
+{
+  "tab": {
+    "translation": "Tłumaczenie",
+    "bidirectional": "Bidirectional",
+    "soundboard": "Panel dźwiękowy",
+    "settings": "Ustawienia"
+  },
+  "controls": {
+    "microphone": "Mikrofon",
+    "targetLanguage": "Język docelowy",
+    "voice": "Głos",
+    "output": "Wyjście",
+    "pushToTalk": "Push-to-Talk",
+    "startTranslation": "Rozpocznij tłumaczenie",
+    "stopTranslation": "Zatrzymaj tłumaczenie",
+    "addCustomVoice": "Dodaj niestandardowy głos",
+    "accent": "Akcent",
+    "noAccent": "Brak akcentu",
+    "accentOn": "Akcent: WŁ.",
+    "accentOff": "Akcent: WYŁ."
+  },
+  "placeholders": {
+    "selectMicrophone": "Wybierz mikrofon...",
+    "loadingVoices": "Ładowanie głosów...",
+    "selectVoice": "Wybierz głos...",
+    "enterCustomAccent": "Wprowadź niestandardowy akcent...",
+    "selectPreset": "Wybierz preset..."
+  },
+  "descriptions": {
+    "microphoneHelp": "Ten mikrofon jest używany do tłumaczenia i przekazywania dźwięku",
+    "outputMode": "Wyjście do wirtualnego urządzenia",
+    "holdKeyToRecord": "Przytrzymaj klawisz, aby nagrać",
+    "toggleBidiMode": "Przytrzymaj klawisz, aby przełączyć tryb bidirectional",
+    "autoDetectLanguage": "Automatyczne wykrywanie języka"
+  },
+  "bidirectional": {
+    "outputDevice": "Urządzenie wyjściowe",
+    "systemInput": "Wejście systemowe",
+    "incomingVoice": "Przychodzący głos",
+    "screenCapture": "Przechwytywanie ekranu/okna",
+    "startBidirectional": "Rozpocznij bidirectional",
+    "stopBidirectional": "Zatrzymaj bidirectional",
+    "loadingDevices": "Ładowanie urządzeń wyjściowych...",
+    "selectOutputDevice": "Wybierz urządzenie wyjściowe...",
+    "displayAudio": "Dźwięk wyświetlacza/systemu (Domyślnie)",
+    "loadingVoices": "Ładowanie głosów...",
+    "selectIncomingVoice": "Wybierz przychodzący głos...",
+    "selectScreenOrWindow": "Wybierz ekran lub okno...",
+    "refreshSources": "Odśwież źródła",
+    "captureHelp": "Dostępne ekrany i okna z PID będą wykrywane automatycznie"
+  },
+  "soundboard": {
+    "controls": "Kontrola panelu dźwiękowego",
+    "addSound": "Dodaj dźwięk",
+    "stopAll": "Zatrzymaj wszystko",
+    "volumeControls": "Kontrola głośności",
+    "vbAudio": "VB Audio:",
+    "headphones": "Słuchawki:",
+    "soundPads": "Podkłady dźwiękowe",
+    "noSounds": "Nie dodano jeszcze żadnych dźwięków. Kliknij \"Dodaj dźwięk\", aby zacząć!",
+    "hotkeysEnabled": "Włącz skróty klawiszowe panelu dźwiękowego"
+  },
+  "settings": {
+    "overlayHotkey": "Skrót klawiszowy do przełączania nakładki",
+    "pttHotkey": "Skrót klawiszowy Push-to-Talk",
+    "bidiHotkey": "Skrót klawiszowy do przełączania bidirectional",
+    "clickThrough": "Przechodzenie przez kliknięcie",
+    "alwaysOnTop": "Zawsze na wierzchu",
+    "overlayOpacity": "Przezroczystość nakładki",
+    "clickThroughDesc": "Włącz przechodzenie przez kliknięcie w trybie minimalnym",
+    "alwaysOnTopDesc": "Utrzymuj nakładkę nad innymi oknami"
+  },
+  "status": {
+    "ready": "Gotowy do nagrywania...",
+    "recording": "Nagrywanie...",
+    "processing": "Przetwarzanie...",
+    "stopped": "Zatrzymano",
+    "idle": "Bezczynny",
+    "active": "Aktywny",
+    "error": "Błąd"
+  },
+  "keys": {
+    "space": "SPACJA",
+    "ctrl": "Ctrl",
+    "alt": "Alt",
+    "shift": "Shift"
+  }
+}

@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPU Acceleration - Whispra</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .overlay-container {
+            background: rgba(10, 10, 10, 0.95);
+            border: 1px solid #262626;
+            border-radius: 16px;
+            padding: 2rem;
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9);
+            text-align: center;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            overflow-y: auto;
+        }
+
+        .logo {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+        }
+
+        .title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: #c7c7c7;
+            margin-bottom: 2rem;
+            line-height: 1.4;
+        }
+
+        .info-section {
+            background: #111111;
+            border: 1px solid #262626;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .info-section h3 {
+            color: #ffffff;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-list li {
+            color: #c7c7c7;
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+            position: relative;
+            line-height: 1.4;
+        }
+
+        .info-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        .cuda-info {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        .cuda-info strong {
+            color: #667eea;
+        }
+
+        .warning-section {
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            color: #f59e0b;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: start;
+            gap: 0.75rem;
+        }
+
+        .warning-icon {
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.875rem 1.75rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            min-width: 140px;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: #262626;
+            color: #ffffff;
+            border: 1px solid #404040;
+        }
+
+        .btn-secondary:hover {
+            background: #333333;
+            border-color: #525252;
+            transform: translateY(-1px);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn:disabled:hover {
+            transform: none;
+            box-shadow: none;
+        }
+
+        .loading-spinner {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-top: 2px solid #ffffff;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .progress-section {
+            margin-top: 1.5rem;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background: #262626;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 0.75rem;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .progress-text {
+            font-size: 0.9rem;
+            color: #c7c7c7;
+            text-align: center;
+        }
+
+        .success-message {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            color: #10b981;
+            font-size: 0.95rem;
+        }
+
+        .error-message {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            color: #ef4444;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 640px) {
+            .overlay-container {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay-container">
+        <div class="logo">🚀</div>
+        <h1 class="title">Run Paddle Faster</h1>
+        <p class="subtitle">Accelerate OCR processing with GPU support</p>
+
+        <div id="error-message" class="error-message" style="display: none;"></div>
+        <div id="success-message" class="success-message" style="display: none;"></div>
+
+        <div class="info-section">
+            <h3>🎮 GPU Acceleration</h3>
+            <ul class="info-list">
+                <li>Up to 10x faster OCR processing</li>
+                <li>Smoother real-time screen translation</li>
+                <li>Reduced CPU usage and system load</li>
+                <li>Better performance for multiple languages</li>
+            </ul>
+            <div id="cuda-info-box" class="cuda-info">
+                <strong>Detecting CUDA version...</strong>
+            </div>
+        </div>
+
+        <div class="warning-section">
+            <span class="warning-icon">⚠️</span>
+            <div>
+                <strong>Large Download:</strong> The GPU version is approximately 2-3 GB.
+                This may take several minutes depending on your internet speed.
+            </div>
+        </div>
+
+        <div id="progress-section" class="progress-section" style="display: none;">
+            <div class="progress-bar">
+                <div id="progress-fill" class="progress-fill"></div>
+            </div>
+            <p id="progress-text" class="progress-text">Preparing installation...</p>
+        </div>
+
+        <div class="button-group">
+            <button id="install-btn" class="btn btn-primary">
+                ⚡ Install GPU Version
+            </button>
+            <button id="cancel-btn" class="btn btn-secondary">
+                Cancel
+            </button>
+        </div>
+    </div>
+
+    <script>
+        let cudaVersion = null;
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            console.log('🎮 GPU Paddle overlay initialized');
+
+            // Detect CUDA version
+            await detectCUDA();
+
+            // Set up event listeners
+            setupEventListeners();
+        });
+
+        function setupEventListeners() {
+            document.getElementById('install-btn').addEventListener('click', installGPUPaddle);
+            document.getElementById('cancel-btn').addEventListener('click', closeOverlay);
+        }
+
+        async function detectCUDA() {
+            const cudaInfoBox = document.getElementById('cuda-info-box');
+
+            try {
+                const result = await window.electronAPI.gpuPaddle.detectCUDA();
+
+                if (result.success && result.hasCUDA) {
+                    cudaVersion = result.cudaVersion;
+                    cudaInfoBox.innerHTML = `
+                        <strong>CUDA ${result.cudaVersion} Detected</strong><br>
+                        <span style="color: #c7c7c7; font-size: 0.9rem;">
+                            GPU acceleration is available on your system
+                        </span>
+                    `;
+                } else {
+                    cudaInfoBox.innerHTML = `
+                        <strong style="color: #ef4444;">No CUDA Detected</strong><br>
+                        <span style="color: #c7c7c7; font-size: 0.9rem;">
+                            ${result.error || 'GPU acceleration may not be available'}
+                        </span>
+                    `;
+
+                    // Disable install button if no CUDA
+                    const installBtn = document.getElementById('install-btn');
+                    installBtn.disabled = true;
+                    installBtn.innerHTML = '❌ CUDA Not Available';
+                }
+            } catch (error) {
+                console.error('Error detecting CUDA:', error);
+                cudaInfoBox.innerHTML = `
+                    <strong style="color: #ef4444;">Detection Failed</strong><br>
+                    <span style="color: #c7c7c7; font-size: 0.9rem;">
+                        Unable to detect CUDA version
+                    </span>
+                `;
+            }
+        }
+
+        async function installGPUPaddle() {
+            const installBtn = document.getElementById('install-btn');
+            const progressSection = document.getElementById('progress-section');
+            const progressFill = document.getElementById('progress-fill');
+            const progressText = document.getElementById('progress-text');
+
+            if (!cudaVersion) {
+                showError('Cannot install: CUDA version not detected');
+                return;
+            }
+
+            try {
+                // Disable button and show progress
+                installBtn.disabled = true;
+                installBtn.innerHTML = '<div class="loading-spinner"></div> Installing...';
+                progressSection.style.display = 'block';
+
+                // Simulate progress
+                let progress = 0;
+                const progressInterval = setInterval(() => {
+                    progress += Math.random() * 2;
+                    if (progress > 95) progress = 95;
+                    progressFill.style.width = progress + '%';
+
+                    if (progress < 20) {
+                        progressText.textContent = 'Preparing installation...';
+                    } else if (progress < 40) {
+                        progressText.textContent = 'Downloading GPU PaddlePaddle...';
+                    } else if (progress < 70) {
+                        progressText.textContent = 'Installing CUDA dependencies...';
+                    } else if (progress < 90) {
+                        progressText.textContent = 'Configuring GPU support...';
+                    } else {
+                        progressText.textContent = 'Finalizing installation...';
+                    }
+                }, 1000);
+
+                console.log(`🎮 Installing GPU PaddlePaddle for CUDA ${cudaVersion}...`);
+                const result = await window.electronAPI.gpuPaddle.install(cudaVersion);
+
+                clearInterval(progressInterval);
+                progressFill.style.width = '100%';
+
+                if (result.success) {
+                    progressText.textContent = 'Installation complete!';
+                    showSuccess('GPU PaddlePaddle installed successfully! OCR will now run faster.');
+
+                    // Change button to close
+                    installBtn.innerHTML = '✓ Done';
+                    setTimeout(() => {
+                        closeOverlay();
+                    }, 2000);
+                } else {
+                    throw new Error(result.error || 'Installation failed');
+                }
+
+            } catch (error) {
+                console.error('Error installing GPU PaddlePaddle:', error);
+                showError(`Installation failed: ${error.message}`);
+
+                // Restore button
+                installBtn.disabled = false;
+                installBtn.innerHTML = '⚡ Install GPU Version';
+                progressSection.style.display = 'none';
+            }
+        }
+
+        async function closeOverlay() {
+            try {
+                await window.electronAPI.gpuPaddle.close();
+            } catch (error) {
+                console.error('Error closing overlay:', error);
+            }
+        }
+
+        function showError(message) {
+            hideMessages();
+            const errorElement = document.getElementById('error-message');
+            errorElement.textContent = message;
+            errorElement.style.display = 'block';
+        }
+
+        function showSuccess(message) {
+            hideMessages();
+            const successElement = document.getElementById('success-message');
+            successElement.textContent = message;
+            successElement.style.display = 'block';
+        }
+
+        function hideMessages() {
+            document.getElementById('error-message').style.display = 'none';
+            document.getElementById('success-message').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

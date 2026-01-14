@@ -1,0 +1,47 @@
+{
+  "modal": {
+    "title": "Sikker API-konfigurasjon",
+    "close": "Lukk"
+  },
+  "instructions": {
+    "title": "Instruksjoner for API-nøkkeloppsett",
+    "openaiTitle": "OpenAI API-nøkkel",
+    "openaiPermissions": "Lesetillatelser: Modeller, Muligheter",
+    "openaiUsage": "Brukt for tale-til-tekst og tekst-til-tale oversettelse",
+    "openaiLink": "platform.openai.com/api-keys",
+    "elevenlabsTitle": "ElevenLabs API-nøkkel",
+    "elevenlabsRestrict": "Begrens nøkkel: Aktivert",
+    "elevenlabsNoAccess": "Alt annet: Ingen tilgang",
+    "elevenlabsTts": "Tekst til tale: Tilgang",
+    "elevenlabsSts": "Tale til tale: Tilgang",
+    "elevenlabsAgents": "ElevenLabs-agenter: Skrive",
+    "elevenlabsVoices": "Stemmer: Skrive",
+    "elevenlabsVoiceGen": "Stemmegenerering: Tilgang",
+    "elevenlabsUser": "Bruker: Les",
+    "elevenlabsLink": "elevenlabs.io/app/profile"
+  },
+  "fields": {
+    "openaiLabel": "OpenAI API-nøkkel:",
+    "openaiPlaceholder": "Skriv inn din OpenAI API-nøkkel",
+    "openaiStored": "Nøkkel lagret sikkert",
+    "openaiHelp": "Skriv inn din OpenAI API-nøkkel (sk-...)",
+    "elevenlabsLabel": "ElevenLabs API-nøkkel:",
+    "elevenlabsPlaceholder": "Skriv inn din ElevenLabs API-nøkkel",
+    "elevenlabsStored": "Nøkkel lagret sikkert",
+    "elevenlabsHelp": "Skriv inn din ElevenLabs API-nøkkel (32 tegn)"
+  },
+  "buttons": {
+    "showKey": "Vis nøkkel",
+    "removeKey": "Fjern nøkkel",
+    "clearAll": "Fjern alle nøkler",
+    "cancel": "Avbryt",
+    "save": "Lagre"
+  },
+  "status": {
+    "keyStored": "✓ Nøkkel lagret sikkert"
+  },
+  "links": {
+    "openai": "Generer nøkkel på: platform.openai.com/api-keys",
+    "elevenlabs": "Generer nøkkel på: elevenlabs.io/app/profile"
+  }
+}

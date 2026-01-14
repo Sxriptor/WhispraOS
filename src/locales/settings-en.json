@@ -1,0 +1,47 @@
+{
+  "modal": {
+    "title": "Secure API Configuration",
+    "close": "Close"
+  },
+  "instructions": {
+    "title": "API Key Setup Instructions",
+    "openaiTitle": "OpenAI API Key",
+    "openaiPermissions": "Read permissions: Models, Capabilities",
+    "openaiUsage": "Used for speech-to-text and text-to-speech translation",
+    "openaiLink": "platform.openai.com/api-keys",
+    "elevenlabsTitle": "ElevenLabs API Key",
+    "elevenlabsRestrict": "Restrict key: Enabled",
+    "elevenlabsNoAccess": "Everything else: No access",
+    "elevenlabsTts": "Text to speech: Access",
+    "elevenlabsSts": "Speech to speech: Access",
+    "elevenlabsAgents": "ElevenLabs agents: Write",
+    "elevenlabsVoices": "Voices: Write",
+    "elevenlabsVoiceGen": "Voice generation: Access",
+    "elevenlabsUser": "User: Read",
+    "elevenlabsLink": "elevenlabs.io/app/profile"
+  },
+  "fields": {
+    "openaiLabel": "OpenAI API Key:",
+    "openaiPlaceholder": "Enter your OpenAI API key",
+    "openaiStored": "Key stored securely",
+    "openaiHelp": "Enter your OpenAI API key (sk-...)",
+    "elevenlabsLabel": "ElevenLabs API Key:",
+    "elevenlabsPlaceholder": "Enter your ElevenLabs API key",
+    "elevenlabsStored": "Key stored securely",
+    "elevenlabsHelp": "Enter your ElevenLabs API key (32 chars)"
+  },
+  "buttons": {
+    "showKey": "Show Key",
+    "removeKey": "Remove Key",
+    "clearAll": "Clear All Keys",
+    "cancel": "Cancel",
+    "save": "Save"
+  },
+  "status": {
+    "keyStored": "✓ Key stored securely"
+  },
+  "links": {
+    "openai": "Generate key at: platform.openai.com/api-keys",
+    "elevenlabs": "Generate key at: elevenlabs.io/app/profile"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "panel": {
+    "title": "İki Yönlü Mod"
+  },
+  "controls": {
+    "startBidirectional": "İki Yönlü Başlat",
+    "stopBidirectional": "İki Yönlü Durdur",
+    "keybind": "Kısayol Tuşu",
+    "toggleWith": "Değiştir",
+    "changeKey": "Tuşu Değiştir",
+    "outputDevice": "Çıkış Aygıtı",
+    "systemInput": "Sistem Girişi",
+    "incomingVoice": "Gelen Ses"
+  },
+  "placeholders": {
+    "loadingOutputDevices": "Çıkış aygıtları yükleniyor...",
+    "loadingVoices": "Sesler yükleniyor...",
+    "displaySystemAudio": "Görüntü/Sistem Ses (Varsayılan)"
+  },
+  "status": {
+    "idle": "Boşta",
+    "waiting": "Bekleniyor...",
+    "ready": "Hazır...",
+    "starting": "Başlatılıyor...",
+    "stopping": "Durduruluyor..."
+  },
+  "labels": {
+    "detectedTarget": "Tespit Edildi (Hedef Dil)",
+    "respoken": "Yeniden Konuşuldu",
+    "sourceLanguage": "Kaynak Dil - Dinlediğiniz Dil",
+    "targetLanguage": "Hedef Dil - Çevirilecek"
+  }
+}

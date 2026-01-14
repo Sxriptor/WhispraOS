@@ -1,0 +1,24 @@
+{
+  "panel": {
+    "title": "กระดานเสียง",
+    "description": "เล่นเสียงและคลิปเสียงที่กำหนดเองระหว่างการสนทนา"
+  },
+  "controls": {
+    "outputDevice": "อุปกรณ์ส่งออก",
+    "vbAudioVolume": "ระดับเสียง VB Audio",
+    "headphonesVolume": "ระดับเสียงหูฟัง",
+    "soundPadGrid": "ตารางแพดเสียง",
+    "enableHotkeys": "เปิดใช้งานปุ่มลัดของกระดานเสียง",
+    "addSoundFiles": "เพิ่มไฟล์เสียง",
+    "webOverlay": "เว็บโอเวอร์เลย์",
+    "stopAllSounds": "หยุดเสียงทั้งหมด"
+  },
+  "placeholders": {
+    "selectOutputDevice": "เลือกอุปกรณ์ส่งออก...",
+    "defaultSystemOutput": "การส่งออกระบบเริ่มต้น",
+    "virtualAudioCable": "สายเสียงเสมือน"
+  },
+  "status": {
+    "volume": "%"
+  }
+}

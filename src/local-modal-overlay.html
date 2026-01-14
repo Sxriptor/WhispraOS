@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Models Setup</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: rgba(0, 0, 0, 0.8);
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+            color: #333;
+        }
+
+        .modal-overlay {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            width: 800px;
+            height: 600px;
+            margin: 50px auto;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .modal-header {
+            background: white;
+            padding: 24px 24px 16px 24px;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            flex-shrink: 0;
+            border-radius: 12px 12px 0 0;
+            box-sizing: border-box;
+        }
+
+        .modal-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1f2937;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .close-button {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #6b7280;
+            padding: 8px;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .close-button:hover {
+            background: #f3f4f6;
+            color: #374151;
+        }
+
+        .modal-content {
+            padding: 24px;
+            height: calc(100% - 160px);
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            background: white;
+        }
+
+        .description {
+            color: #6b7280;
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        .model-section {
+            margin-bottom: 32px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .model-header {
+            background: #f9fafb;
+            padding: 16px 20px;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .model-icon {
+            font-size: 20px;
+        }
+
+        .model-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        .model-description {
+            color: #6b7280;
+            font-size: 14px;
+            margin-top: 4px;
+        }
+
+        .model-content {
+            padding: 20px;
+        }
+
+        .model-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .info-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .info-value {
+            color: #1f2937;
+            font-size: 14px;
+        }
+
+        .download-section {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .download-button {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .download-button:hover {
+            background: #2563eb;
+        }
+
+        .download-button:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+        }
+
+        .download-button.downloading {
+            background: #f59e0b;
+        }
+
+        .download-button.success {
+            background: #10b981;
+        }
+
+        .download-button.error {
+            background: #ef4444;
+        }
+
+        .progress-bar {
+            width: 200px;
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 4px;
+            overflow: hidden;
+            display: none;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: #3b82f6;
+            transition: width 0.3s ease;
+            width: 0%;
+        }
+
+        .status-text {
+            font-size: 14px;
+            color: #6b7280;
+            margin-left: 12px;
+        }
+
+        .status-text.success {
+            color: #10b981;
+        }
+
+        .status-text.error {
+            color: #ef4444;
+        }
+
+        .install-note {
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            border-radius: 6px;
+            padding: 12px;
+            margin-top: 16px;
+            font-size: 14px;
+            color: #92400e;
+        }
+
+        .install-note strong {
+            color: #78350f;
+        }
+
+        .actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+            padding: 24px;
+            border-top: 1px solid #e5e7eb;
+            background: white;
+            border-radius: 0 0 12px 12px;
+            height: 80px;
+            flex-shrink: 0;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .btn-secondary {
+            background: #f3f4f6;
+            color: #374151;
+            border: 1px solid #d1d5db;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-secondary:hover {
+            background: #e5e7eb;
+        }
+
+        .btn-primary {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-primary:hover {
+            background: #2563eb;
+        }
+
+        .btn-primary:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+        }
+
+        @media (max-width: 768px) {
+            .modal-overlay {
+                width: 95%;
+                margin: 20px;
+            }
+            
+            .model-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .download-section {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="modal-overlay">
+        <div class="modal-header">
+            <h1 class="modal-title">
+                <span>🤖</span>
+                Local Models Setup
+            </h1>
+            <button class="close-button" id="close-button">&times;</button>
+        </div>
+        
+        <div class="modal-content">
+            <p class="description">
+                Download and install local AI models for offline processing. These models will be saved to your Whispra models directory.
+            </p>
+
+            <!-- Argos Translate Model -->
+            <div class="model-section">
+                <div class="model-header">
+                    <span class="model-icon">🌐</span>
+                    <div>
+                        <div class="model-title">Argos Translate</div>
+                        <div class="model-description">Neural machine translation model for text translation</div>
+                    </div>
+                </div>
+                <div class="model-content">
+                    <div class="model-info">
+                        <div class="info-item">
+                            <div class="info-label">Size</div>
+                            <div class="info-value">~500MB</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Languages</div>
+                            <div class="info-value">English + 20+ languages</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Install Location</div>
+                            <div class="info-value">whispra/models/argo/</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Status</div>
+                            <div class="info-value" id="argos-status">Not installed</div>
+                        </div>
+                    </div>
+                    <div class="download-section">
+                        <button class="download-button" id="download-argos">
+                            <span>📥</span>
+                            Download Argos Translate
+                        </button>
+                        <div class="progress-bar" id="argos-progress">
+                            <div class="progress-fill" id="argos-progress-fill"></div>
+                        </div>
+                        <div class="status-text" id="argos-status-text"></div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Fast Whisper Model -->
+            <div class="model-section">
+                <div class="model-header">
+                    <span class="model-icon">👂</span>
+                    <div>
+                        <div class="model-title">Fast Whisper</div>
+                        <div class="model-description">Optimized speech recognition model for audio transcription</div>
+                    </div>
+                </div>
+                <div class="model-content">
+                    <div class="model-info">
+                        <div class="info-item">
+                            <div class="info-label">Size</div>
+                            <div class="info-value">~150MB</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Languages</div>
+                            <div class="info-value">English + multilingual</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Install Location</div>
+                            <div class="info-value">whispra/models/whisper/</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Status</div>
+                            <div class="info-value" id="whisper-status">Not installed</div>
+                        </div>
+                    </div>
+                    <div class="download-section">
+                        <button class="download-button" id="download-whisper">
+                            <span>📥</span>
+                            Download Fast Whisper
+                        </button>
+                        <div class="progress-bar" id="whisper-progress">
+                            <div class="progress-fill" id="whisper-progress-fill"></div>
+                        </div>
+                        <div class="status-text" id="whisper-status-text"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="actions">
+            <button class="btn-secondary" id="cancel-button">Cancel</button>
+            <button class="btn-primary" id="done-button" disabled>Done</button>
+        </div>
+    </div>
+
+    <script>
+        // Model download URLs and configurations
+        const modelConfigs = {
+            argos: {
+                name: 'Argos Translate',
+                url: 'https://github.com/Sxriptor/Whispra-Download/releases/download/Argos/argos.zip',
+                size: '500MB',
+                installPath: 'whispra/models/argos/',
+                statusElement: 'argos-status',
+                buttonElement: 'download-argos',
+                progressElement: 'argos-progress',
+                progressFillElement: 'argos-progress-fill',
+                statusTextElement: 'argos-status-text'
+            },
+
+            whisper: {
+                name: 'Fast Whisper',
+                url: 'https://github.com/Sxriptor/Whispra-Download/releases/download/Whisper/whisper.zip',
+                size: '150MB',
+                installPath: 'whispra/models/whisper/',
+                statusElement: 'whisper-status',
+                buttonElement: 'download-whisper',
+                progressElement: 'whisper-progress',
+                progressFillElement: 'whisper-progress-fill',
+                statusTextElement: 'whisper-status-text'
+            }
+        };
+
+        // Download state tracking
+        const downloadStates = {
+            argos: { downloaded: false, downloading: false },
+            whisper: { downloaded: false, downloading: false }
+        };
+
+        // Initialize the modal
+        function initializeModal() {
+            // Close button handlers
+            document.getElementById('close-button').addEventListener('click', closeModal);
+            document.getElementById('cancel-button').addEventListener('click', closeModal);
+            document.getElementById('done-button').addEventListener('click', closeModal);
+
+            // Download button handlers
+            document.getElementById('download-argos').addEventListener('click', () => downloadModel('argos'));
+            document.getElementById('download-whisper').addEventListener('click', () => downloadModel('whisper'));
+
+            // Check existing installations
+            checkExistingInstallations();
+        }
+
+        // Check if models are already installed
+        async function checkExistingInstallations() {
+            try {
+                console.log('Checking existing installations...');
+                
+                // Call the main process to check if models exist
+                const response = await window.electronAPI.invoke('local-models:check-installations', {
+                    id: Date.now().toString(),
+                    timestamp: Date.now(),
+                    payload: {}
+                });
+
+                if (response.success) {
+                    const modelStatuses = response.payload;
+                    
+                    // Update status indicators based on actual installation status
+                    updateModelStatus('argos', modelStatuses.argos ? 'Installed' : 'Not installed');
+                    updateModelStatus('whisper', modelStatuses.whisper ? 'Installed' : 'Not installed');
+                    
+                    // Update download buttons based on installation status
+                    updateDownloadButton('argos', modelStatuses.argos ? 'installed' : 'available', modelStatuses.argos ? 'Installed' : 'Download');
+                    updateDownloadButton('whisper', modelStatuses.whisper ? 'installed' : 'available', modelStatuses.whisper ? 'Installed' : 'Download');
+                } else {
+                    console.error('Failed to check installations:', response.error);
+                    // Fallback to not installed
+                    updateModelStatus('argos', 'Not installed');
+                    updateModelStatus('whisper', 'Not installed');
+                }
+            } catch (error) {
+                console.error('Error checking installations:', error);
+                // Fallback to not installed
+                updateModelStatus('argos', 'Not installed');
+                updateModelStatus('whisper', 'Not installed');
+            }
+        }
+
+        // Download a model
+        async function downloadModel(modelKey) {
+            const config = modelConfigs[modelKey];
+            const state = downloadStates[modelKey];
+            const button = document.getElementById(config.buttonElement);
+            
+            // Don't proceed if button is disabled or already downloading/downloaded
+            if (button.disabled || state.downloading || state.downloaded) {
+                return;
+            }
+
+            try {
+                state.downloading = true;
+                updateDownloadButton(modelKey, 'downloading', 'Downloading...');
+                showProgress(modelKey, true);
+                updateStatusText(modelKey, 'Starting download...');
+
+                // Call the main process to download the model
+                const response = await window.electronAPI.invoke('local-models:download', {
+                    id: Date.now().toString(),
+                    timestamp: Date.now(),
+                    payload: { modelKey, config }
+                });
+
+                if (response.success) {
+                    state.downloaded = true;
+                    state.downloading = false;
+                    
+                    updateDownloadButton(modelKey, 'success', 'Downloaded');
+                    updateModelStatus(modelKey, 'Installed');
+                    updateStatusText(modelKey, 'Download completed successfully!', 'success');
+                    
+                    // Check if all models are downloaded
+                    checkAllDownloadsComplete();
+                    
+                    // Refresh the installation check to ensure UI is up to date
+                    await checkExistingInstallations();
+                } else {
+                    throw new Error(response.error || 'Download failed');
+                }
+                
+            } catch (error) {
+                state.downloading = false;
+                updateDownloadButton(modelKey, 'error', 'Retry');
+                updateStatusText(modelKey, 'Download failed. Please try again.', 'error');
+                console.error(`Error downloading ${config.name}:`, error);
+            }
+        }
+
+        // Simulate download progress
+        async function simulateDownload(modelKey, config) {
+            const progressFill = document.getElementById(config.progressFillElement);
+            const statusText = document.getElementById(config.statusTextElement);
+            
+            for (let progress = 0; progress <= 100; progress += 10) {
+                await new Promise(resolve => setTimeout(resolve, 200));
+                progressFill.style.width = `${progress}%`;
+                
+                if (progress < 50) {
+                    statusText.textContent = `Downloading ${config.name}... ${progress}%`;
+                } else if (progress < 90) {
+                    statusText.textContent = `Installing ${config.name}... ${progress}%`;
+                } else {
+                    statusText.textContent = `Finalizing installation... ${progress}%`;
+                }
+            }
+        }
+
+        // Update download button state
+        function updateDownloadButton(modelKey, state, text) {
+            const config = modelConfigs[modelKey];
+            const button = document.getElementById(config.buttonElement);
+            
+            button.className = `download-button ${state}`;
+            button.textContent = text;
+            button.disabled = state === 'downloading' || state === 'installed';
+        }
+
+        // Update model status
+        function updateModelStatus(modelKey, status) {
+            const config = modelConfigs[modelKey];
+            const statusElement = document.getElementById(config.statusElement);
+            statusElement.textContent = status;
+        }
+
+        // Update status text
+        function updateStatusText(modelKey, text, type = '') {
+            const config = modelConfigs[modelKey];
+            const statusText = document.getElementById(config.statusTextElement);
+            statusText.textContent = text;
+            statusText.className = `status-text ${type}`;
+        }
+
+        // Show/hide progress bar
+        function showProgress(modelKey, show) {
+            const config = modelConfigs[modelKey];
+            const progressBar = document.getElementById(config.progressElement);
+            progressBar.style.display = show ? 'block' : 'none';
+        }
+
+        // Check if all downloads are complete
+        function checkAllDownloadsComplete() {
+            const allDownloaded = Object.values(downloadStates).every(state => state.downloaded);
+            const doneButton = document.getElementById('done-button');
+            doneButton.disabled = !allDownloaded;
+        }
+
+        // Close the modal
+        function closeModal() {
+            // Send message to parent window to close the modal
+            if (window.parent) {
+                window.parent.postMessage({ type: 'closeLocalModal' }, '*');
+            }
+        }
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', initializeModal);
+    </script>
+</body>
+</html>

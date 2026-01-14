@@ -1,0 +1,62 @@
+{
+  "app": {
+    "name": "Whispra",
+    "loading": "Loading...",
+    "ready": "Ready",
+    "idle": "Idle",
+    "processing": "Processing",
+    "error": "Error"
+  },
+  "navigation": {
+    "translate": "Translate",
+    "bidirectional": "Bidirectional",
+    "screenTranslation": "Screen Translation",
+    "soundBoard": "Sound Board",
+    "voiceFilter": "Voice Filter",
+    "settings": "Settings",
+    "logs": "Logs"
+  },
+  "common": {
+    "start": "Start",
+    "stop": "Stop",
+    "cancel": "Cancel",
+    "save": "Save",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "continue": "Continue",
+    "retry": "Retry",
+    "yes": "Yes",
+    "no": "No",
+    "ok": "OK"
+  },
+  "header": {
+    "profile": "Profile",
+    "signOut": "Sign Out",
+    "language": "Language"
+  },
+  "footer": {
+    "connectionStatus": "Connection Status",
+    "processingStatus": "Processing Status",
+    "feedback": "Report Bug / Suggest Feature",
+    "debugConsole": "Show Debug Console"
+  },
+  "errors": {
+    "networkError": "Network connection error",
+    "permissionDenied": "Permission denied",
+    "deviceNotFound": "Device not found",
+    "serviceUnavailable": "Service unavailable",
+    "unknownError": "An unknown error occurred"
+  },
+  "tooltips": {
+    "sidebarToggle": "Toggle sidebar",
+    "profile": "Profile menu",
+    "language": "Select language"
+  },
+  "languageChange": {
+    "title": "Change App Language?",
+    "message": "Do you want to make Whispra's text in this language as well?",
+    "yes": "Yes",
+    "no": "No"
+  }
+}

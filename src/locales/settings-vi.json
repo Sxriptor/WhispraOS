@@ -1,0 +1,47 @@
+{
+  "modal": {
+    "title": "Cấu hình API Bảo mật",
+    "close": "Đóng"
+  },
+  "instructions": {
+    "title": "Hướng dẫn thiết lập API Key",
+    "openaiTitle": "OpenAI API Key",
+    "openaiPermissions": "Quyền đọc: Mô hình, Khả năng",
+    "openaiUsage": "Dùng cho dịch chuyển văn bản thành giọng nói và giọng nói thành văn bản",
+    "openaiLink": "platform.openai.com/api-keys",
+    "elevenlabsTitle": "ElevenLabs API Key",
+    "elevenlabsRestrict": "Giới hạn key: Đã bật",
+    "elevenlabsNoAccess": "Mọi thứ khác: Không có quyền truy cập",
+    "elevenlabsTts": "Chuyển văn bản thành giọng nói: Có quyền truy cập",
+    "elevenlabsSts": "Chuyển giọng nói thành giọng nói: Có quyền truy cập",
+    "elevenlabsAgents": "Đại lý ElevenLabs: Ghi",
+    "elevenlabsVoices": "Giọng nói: Ghi",
+    "elevenlabsVoiceGen": "Tạo giọng nói: Có quyền truy cập",
+    "elevenlabsUser": "Người dùng: Đọc",
+    "elevenlabsLink": "elevenlabs.io/app/profile"
+  },
+  "fields": {
+    "openaiLabel": "OpenAI API Key:",
+    "openaiPlaceholder": "Nhập OpenAI API key của bạn",
+    "openaiStored": "Key được lưu trữ an toàn",
+    "openaiHelp": "Nhập OpenAI API key của bạn (sk-...)",
+    "elevenlabsLabel": "ElevenLabs API Key:",
+    "elevenlabsPlaceholder": "Nhập ElevenLabs API key của bạn",
+    "elevenlabsStored": "Key được lưu trữ an toàn",
+    "elevenlabsHelp": "Nhập ElevenLabs API key của bạn (32 ký tự)"
+  },
+  "buttons": {
+    "showKey": "Hiện Key",
+    "removeKey": "Xóa Key",
+    "clearAll": "Xóa Tất cả Keys",
+    "cancel": "Hủy",
+    "save": "Lưu"
+  },
+  "status": {
+    "keyStored": "✓ Key được lưu trữ an toàn"
+  },
+  "links": {
+    "openai": "Tạo key tại: platform.openai.com/api-keys",
+    "elevenlabs": "Tạo key tại: elevenlabs.io/app/profile"
+  }
+}

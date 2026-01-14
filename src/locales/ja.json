@@ -1,0 +1,62 @@
+{
+  "app": {
+    "name": "Whispra",
+    "loading": "読み込み中...",
+    "ready": "準備完了",
+    "idle": "待機中",
+    "processing": "処理中",
+    "error": "エラー"
+  },
+  "navigation": {
+    "translate": "翻訳",
+    "bidirectional": "双方向",
+    "screenTranslation": "画面翻訳",
+    "soundBoard": "サウンドボード",
+    "voiceFilter": "ボイスフィルター",
+    "settings": "設定",
+    "logs": "ログ"
+  },
+  "common": {
+    "start": "開始",
+    "stop": "停止",
+    "cancel": "キャンセル",
+    "save": "保存",
+    "close": "閉じる",
+    "back": "戻る",
+    "next": "次へ",
+    "continue": "続行",
+    "retry": "再試行",
+    "yes": "はい",
+    "no": "いいえ",
+    "ok": "OK"
+  },
+  "header": {
+    "profile": "プロフィール",
+    "signOut": "ログアウト",
+    "language": "言語"
+  },
+  "footer": {
+    "connectionStatus": "接続ステータス",
+    "processingStatus": "処理ステータス",
+    "feedback": "バグ報告 / 機能提案",
+    "debugConsole": "デバッグコンソールを表示"
+  },
+  "errors": {
+    "networkError": "ネットワーク接続エラー",
+    "permissionDenied": "権限が拒否されました",
+    "deviceNotFound": "デバイスが見つかりません",
+    "serviceUnavailable": "サービスが利用できません",
+    "unknownError": "不明なエラーが発生しました"
+  },
+  "tooltips": {
+    "sidebarToggle": "サイドバーを切り替え",
+    "profile": "プロフィールメニュー",
+    "language": "言語を選択"
+  },
+  "languageChange": {
+    "title": "アプリの言語を変更しますか？",
+    "message": "Whispraのテキストもこの言語にしますか？",
+    "yes": "はい",
+    "no": "いいえ"
+  }
+}

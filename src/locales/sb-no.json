@@ -1,0 +1,24 @@
+{
+  "panel": {
+    "title": "Lydtavle",
+    "description": "Spill av tilpassede lyder og lydklipp under samtaler"
+  },
+  "controls": {
+    "outputDevice": "Utgangsenhet",
+    "vbAudioVolume": "VB Audio Volum",
+    "headphonesVolume": "Hodetelefonvolum",
+    "soundPadGrid": "Lydpad Rutenett",
+    "enableHotkeys": "Aktiver Lydtavle Hurtigtaster",
+    "addSoundFiles": "Legg til Lydfiler",
+    "webOverlay": "Web Overlay",
+    "stopAllSounds": "Stopp Alle Lyder"
+  },
+  "placeholders": {
+    "selectOutputDevice": "Velg utgangsenhet...",
+    "defaultSystemOutput": "Standard Systemutgang",
+    "virtualAudioCable": "Virtuell Lydkabel"
+  },
+  "status": {
+    "volume": "%"
+  }
+}

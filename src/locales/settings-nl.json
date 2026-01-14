@@ -1,0 +1,47 @@
+{
+  "modal": {
+    "title": "Veilige API-configuratie",
+    "close": "Sluiten"
+  },
+  "instructions": {
+    "title": "Instructies voor het instellen van de API-sleutel",
+    "openaiTitle": "OpenAI API-sleutel",
+    "openaiPermissions": "Leesrechten: Modellen, Capaciteiten",
+    "openaiUsage": "Gebruikt voor spraak-naar-tekst en tekst-naar-spraak vertaling",
+    "openaiLink": "platform.openai.com/api-keys",
+    "elevenlabsTitle": "ElevenLabs API-sleutel",
+    "elevenlabsRestrict": "Beperk sleutel: Ingeschakeld",
+    "elevenlabsNoAccess": "Alles andere: Geen toegang",
+    "elevenlabsTts": "Tekst naar spraak: Toegang",
+    "elevenlabsSts": "Spraak naar spraak: Toegang",
+    "elevenlabsAgents": "ElevenLabs-agenten: Schrijven",
+    "elevenlabsVoices": "Stemmen: Schrijven",
+    "elevenlabsVoiceGen": "Stemgeneratie: Toegang",
+    "elevenlabsUser": "Gebruiker: Lezen",
+    "elevenlabsLink": "elevenlabs.io/app/profile"
+  },
+  "fields": {
+    "openaiLabel": "OpenAI API-sleutel:",
+    "openaiPlaceholder": "Voer uw OpenAI API-sleutel in",
+    "openaiStored": "Sleutel veilig opgeslagen",
+    "openaiHelp": "Voer uw OpenAI API-sleutel in (sk-...)",
+    "elevenlabsLabel": "ElevenLabs API-sleutel:",
+    "elevenlabsPlaceholder": "Voer uw ElevenLabs API-sleutel in",
+    "elevenlabsStored": "Sleutel veilig opgeslagen",
+    "elevenlabsHelp": "Voer uw ElevenLabs API-sleutel in (32 tekens)"
+  },
+  "buttons": {
+    "showKey": "Toon Sleutel",
+    "removeKey": "Verwijder Sleutel",
+    "clearAll": "Verwijder Alle Sleutels",
+    "cancel": "Annuleren",
+    "save": "Opslaan"
+  },
+  "status": {
+    "keyStored": "✓ Sleutel veilig opgeslagen"
+  },
+  "links": {
+    "openai": "Genereer sleutel op: platform.openai.com/api-keys",
+    "elevenlabs": "Genereer sleutel op: elevenlabs.io/app/profile"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "modal": {
+    "title": "Güvenli API Yapılandırması",
+    "close": "Kapat"
+  },
+  "instructions": {
+    "title": "API Anahtarı Kurulum Talimatları",
+    "openaiTitle": "OpenAI API Anahtarı",
+    "openaiPermissions": "Okuma izinleri: Modeller, Yetenekler",
+    "openaiUsage": "Konuşmadan metne ve metinden konuşmaya çeviri için kullanılır",
+    "openaiLink": "platform.openai.com/api-keys",
+    "elevenlabsTitle": "ElevenLabs API Anahtarı",
+    "elevenlabsRestrict": "Anahtarı kısıtla: Etkin",
+    "elevenlabsNoAccess": "Diğer her şey: Erişim yok",
+    "elevenlabsTts": "Metinden konuşmaya: Erişim",
+    "elevenlabsSts": "Konuşmadan konuşmaya: Erişim",
+    "elevenlabsAgents": "ElevenLabs ajanları: Yazma",
+    "elevenlabsVoices": "Sesler: Yazma",
+    "elevenlabsVoiceGen": "Ses üretimi: Erişim",
+    "elevenlabsUser": "Kullanıcı: Okuma",
+    "elevenlabsLink": "elevenlabs.io/app/profile"
+  },
+  "fields": {
+    "openaiLabel": "OpenAI API Anahtarı:",
+    "openaiPlaceholder": "OpenAI API anahtarınızı girin",
+    "openaiStored": "Anahtar güvenli bir şekilde saklandı",
+    "openaiHelp": "OpenAI API anahtarınızı girin (sk-...)",
+    "elevenlabsLabel": "ElevenLabs API Anahtarı:",
+    "elevenlabsPlaceholder": "ElevenLabs API anahtarınızı girin",
+    "elevenlabsStored": "Anahtar güvenli bir şekilde saklandı",
+    "elevenlabsHelp": "ElevenLabs API anahtarınızı girin (32 karakter)"
+  },
+  "buttons": {
+    "showKey": "Anahtarı Göster",
+    "removeKey": "Anahtarı Kaldır",
+    "clearAll": "Tüm Anahtarları Temizle",
+    "cancel": "İptal",
+    "save": "Kaydet"
+  },
+  "status": {
+    "keyStored": "✓ Anahtar güvenli bir şekilde saklandı"
+  },
+  "links": {
+    "openai": "Anahtarı oluşturun: platform.openai.com/api-keys",
+    "elevenlabs": "Anahtarı oluşturun: elevenlabs.io/app/profile"
+  }
+}

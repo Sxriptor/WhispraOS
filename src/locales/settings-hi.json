@@ -1,0 +1,47 @@
+{
+  "modal": {
+    "title": "सुरक्षित API कॉन्फ़िगरेशन",
+    "close": "बंद करें"
+  },
+  "instructions": {
+    "title": "API कुंजी सेटअप निर्देश",
+    "openaiTitle": "OpenAI API कुंजी",
+    "openaiPermissions": "पढ़ने की अनुमति: मॉडल, क्षमताएँ",
+    "openaiUsage": "स्पीच-टू-टेक्स्ट और टेक्स्ट-टू-स्पीच अनुवाद के लिए उपयोग किया जाता है",
+    "openaiLink": "platform.openai.com/api-keys",
+    "elevenlabsTitle": "ElevenLabs API कुंजी",
+    "elevenlabsRestrict": "कुंजी प्रतिबंधित: सक्षम",
+    "elevenlabsNoAccess": "बाकी सब: कोई पहुंच नहीं",
+    "elevenlabsTts": "टेक्स्ट से स्पीच: पहुंच",
+    "elevenlabsSts": "स्पीच से स्पीच: पहुंच",
+    "elevenlabsAgents": "ElevenLabs एजेंट: लिखें",
+    "elevenlabsVoices": "स्वर: लिखें",
+    "elevenlabsVoiceGen": "स्वर निर्माण: पहुंच",
+    "elevenlabsUser": "उपयोगकर्ता: पढ़ें",
+    "elevenlabsLink": "elevenlabs.io/app/profile"
+  },
+  "fields": {
+    "openaiLabel": "OpenAI API कुंजी:",
+    "openaiPlaceholder": "अपनी OpenAI API कुंजी दर्ज करें",
+    "openaiStored": "कुंजी सुरक्षित रूप से संग्रहीत",
+    "openaiHelp": "अपनी OpenAI API कुंजी दर्ज करें (sk-...)",
+    "elevenlabsLabel": "ElevenLabs API कुंजी:",
+    "elevenlabsPlaceholder": "अपनी ElevenLabs API कुंजी दर्ज करें",
+    "elevenlabsStored": "कुंजी सुरक्षित रूप से संग्रहीत",
+    "elevenlabsHelp": "अपनी ElevenLabs API कुंजी दर्ज करें (32 वर्ण)"
+  },
+  "buttons": {
+    "showKey": "कुंजी दिखाएँ",
+    "removeKey": "कुंजी हटाएँ",
+    "clearAll": "सभी कुंजियाँ साफ़ करें",
+    "cancel": "रद्द करें",
+    "save": "सहेजें"
+  },
+  "status": {
+    "keyStored": "✓ कुंजी सुरक्षित रूप से संग्रहीत"
+  },
+  "links": {
+    "openai": "कुंजी उत्पन्न करें: platform.openai.com/api-keys",
+    "elevenlabs": "कुंजी उत्पन्न करें: elevenlabs.io/app/profile"
+  }
+}

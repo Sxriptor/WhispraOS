@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Check - Whispra</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            margin: 0;
+            padding: 1rem;
+        }
+
+        .overlay-container {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 2rem;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .logo {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 1rem;
+            background: url('assets/favicon-32x32.png') no-repeat center center;
+            background-size: contain;
+            border-radius: 8px;
+        }
+
+        .title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #000;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .status-section {
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .status-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #000;
+        }
+
+        .device-status {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            padding: 0.75rem;
+            background: #fff;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .device-status:last-child {
+            margin-bottom: 0;
+        }
+
+        .status-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .status-icon.success {
+            background: #10b981;
+            color: #fff;
+        }
+
+        .status-icon.error {
+            background: #ef4444;
+            color: #fff;
+        }
+
+        .device-name {
+            flex: 1;
+            font-weight: 500;
+        }
+
+        .device-status-text {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+
+        .instructions {
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .instructions h3 {
+            color: #000;
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .instructions ol {
+            color: #333;
+            padding-left: 1.5rem;
+        }
+
+        .instructions li {
+            margin-bottom: 0.5rem;
+        }
+
+        .instructions strong {
+            color: #000;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: #000;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: #333;
+        }
+
+        .btn-secondary {
+            background: #f5f5f5;
+            color: #000;
+            border: 1px solid #ccc;
+        }
+
+        .btn-secondary:hover {
+            background: #e5e5e5;
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .loading {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #f3f3f3;
+            border-top: 2px solid #000;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .error-message {
+            background: #fff5f5;
+            border: 1px solid #fccaca;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            color: #dc2626;
+            font-size: 0.875rem;
+        }
+
+        .debug-section {
+            background: #f0f8ff;
+            border: 1px solid #b0d4f1;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .debug-section h3 {
+            color: #1e40af;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .debug-section p {
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .debug-section ul {
+            margin: 0.5rem 0 1rem 1.5rem;
+            font-size: 0.875rem;
+            color: #374151;
+        }
+
+        .debug-section li {
+            margin-bottom: 0.25rem;
+            font-family: 'Courier New', monospace;
+        }
+
+        .windows11-note {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        .windows11-note p {
+            margin: 0;
+            font-size: 0.875rem;
+            color: #856404;
+        }
+
+        .windows11-note a {
+            color: #0066cc;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .windows11-note a:hover {
+            color: #0052a3;
+        }
+
+        @media (max-width: 640px) {
+            .overlay-container {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay-container">
+        <div class="logo"></div>
+        <h1 class="title">VB-Audio Virtual Cable Required</h1>
+        <p class="subtitle">Whispra needs VB-Audio Virtual Cable to function properly</p>
+
+        <div id="error-message" class="error-message" style="display: none;"></div>
+
+        <div class="status-section">
+            <h3 class="status-title">Device Status</h3>
+            <div class="device-status">
+                <div id="cable-input-icon" class="status-icon error">✕</div>
+                <div class="device-name">CABLE Input</div>
+                <div class="device-status-text" id="cable-input-status">Not detected</div>
+            </div>
+            <div class="device-status">
+                <div id="cable-output-icon" class="status-icon error">✕</div>
+                <div class="device-name">CABLE Output</div>
+                <div class="device-status-text" id="cable-output-status">Not detected</div>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>Installation Steps</h3>
+            <ol>
+                <li><strong>Download</strong> VB-Audio Virtual Cable from the official website</li>
+                <li><strong>Install</strong> the software with administrator privileges</li>
+                <li><strong>Restart</strong> your computer</li>
+                <li><strong>Set CABLE Output</strong> as your default microphone in Windows Sound Settings</li>
+            </ol>
+            <div class="windows11-note" id="windows11-note" style="display: none;">
+                <p><strong>Windows 11 Users:</strong> If you're having issues, check our <a href="#" onclick="openWindows11Guide()">Windows 11 Setup Guide</a> for specific compatibility instructions.</p>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button id="download-btn" class="btn btn-primary">
+                <span>🌐</span>
+                Open Download Page
+            </button>
+            <button id="sound-settings-btn" class="btn btn-secondary">
+                <span>🔊</span>
+                Open Sound Settings
+            </button>
+            <button id="diagnostic-btn" class="btn btn-secondary">
+                <span>🔍</span>
+                Run Diagnostic
+            </button>
+            <button id="rescan-btn" class="btn btn-secondary">
+                <span id="rescan-icon">🔄</span>
+                Rescan Devices
+            </button>
+            <button id="manual-close-btn" class="btn btn-primary" style="display: none;">
+                <span>✅</span>
+                Continue to App
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Device check service integration
+        let deviceCheckService = null;
+
+        // Initialize the overlay
+        document.addEventListener('DOMContentLoaded', async () => {
+            console.log('Device check overlay initialized');
+            
+            // Check devices immediately
+            await checkDevices();
+            
+            // Set up event listeners
+            setupEventListeners();
+        });
+
+        function setupEventListeners() {
+            document.getElementById('download-btn').addEventListener('click', openDownloadPage);
+            document.getElementById('sound-settings-btn').addEventListener('click', openSoundSettings);
+            document.getElementById('diagnostic-btn').addEventListener('click', runDiagnostic);
+            document.getElementById('rescan-btn').addEventListener('click', rescanDevices);
+            document.getElementById('manual-close-btn').addEventListener('click', manualClose);
+        }
+
+        async function checkDevices() {
+            try {
+                // Clear any previous error messages
+                hideError();
+                
+                const devices = await navigator.mediaDevices.enumerateDevices();
+                console.log('Available devices:', devices.map(d => ({ label: d.label, kind: d.kind })));
+                
+                const audioInputDevices = devices.filter(device => device.kind === 'audioinput');
+                const audioOutputDevices = devices.filter(device => device.kind === 'audiooutput');
+                
+                // Enhanced detection patterns for Windows 11 compatibility
+                const cableInputPatterns = [
+                    'cable input',
+                    'vb-audio virtual cable',
+                    'vb-cable',
+                    'vb audio cable',
+                    'virtual cable input',
+                    'cable-input',
+                    'vbaudio cable',
+                    // Windows 11 specific patterns
+                    'cable input (vb-audio virtual cable)',
+                    'vb-audio cable input',
+                    'virtual audio cable input'
+                ];
+                
+                const cableOutputPatterns = [
+                    'cable output',
+                    'vb-audio virtual cable',
+                    'vb-cable',
+                    'vb audio cable',
+                    'virtual cable output',
+                    'cable-output',
+                    'vbaudio cable',
+                    // Windows 11 specific patterns
+                    'cable output (vb-audio virtual cable)',
+                    'vb-audio cable output',
+                    'virtual audio cable output'
+                ];
+
+                const hasCableInput = audioInputDevices.some(device => {
+                    const label = device.label.toLowerCase().trim();
+                    return cableInputPatterns.some(pattern => label.includes(pattern));
+                });
+                
+                const hasCableOutput = audioOutputDevices.some(device => {
+                    const label = device.label.toLowerCase().trim();
+                    return cableOutputPatterns.some(pattern => label.includes(pattern));
+                });
+
+                // Log detailed device information for debugging
+                console.log('🔍 Input devices:', audioInputDevices.map(d => d.label));
+                console.log('🔍 Output devices:', audioOutputDevices.map(d => d.label));
+                console.log('🔍 Detection results:', { hasCableInput, hasCableOutput });
+
+                // Detect Windows version
+                const windowsVersion = detectWindowsVersion();
+                console.log('🔍 Detected Windows version:', windowsVersion);
+
+                updateDeviceStatus('cable-input', hasCableInput);
+                updateDeviceStatus('cable-output', hasCableOutput);
+
+                // Show Windows 11 specific help if needed
+                if (windowsVersion.includes('10/11')) {
+                    showWindows11Note();
+                    
+                    if (!hasCableInput || !hasCableOutput) {
+                        showDeviceDebugInfo(audioInputDevices, audioOutputDevices);
+                    }
+                }
+
+                // Create device check result object
+                const deviceCheckResult = {
+                    hasCableInput,
+                    hasCableOutput,
+                    isComplete: hasCableInput && hasCableOutput
+                };
+
+                // If both devices are present, immediately close the overlay
+                if (hasCableInput && hasCableOutput) {
+                    console.log('All required devices detected, immediately closing overlay');
+                    try {
+                        await window.electronAPI.deviceCheckComplete(deviceCheckResult);
+                        console.log('Device check completed successfully - overlay should close');
+                    } catch (error) {
+                        console.error('Error completing device check:', error);
+                        showError('Failed to complete device check. Please try again.');
+                        // Show manual close button as fallback
+                        showManualCloseButton();
+                    }
+                } else {
+                    console.log('Devices not fully detected yet:', { hasCableInput, hasCableOutput });
+                    // Show manual close button if user wants to proceed anyway
+                    showManualCloseButton();
+                }
+
+            } catch (error) {
+                console.error('Error checking devices:', error);
+                showError('Failed to check audio devices. Please try again.');
+            }
+        }
+
+        function detectWindowsVersion() {
+            try {
+                const userAgent = navigator.userAgent;
+                
+                if (userAgent.includes('Windows NT 10.0')) {
+                    return 'Windows 10/11';
+                } else if (userAgent.includes('Windows NT 6.3')) {
+                    return 'Windows 8.1';
+                } else if (userAgent.includes('Windows NT 6.1')) {
+                    return 'Windows 7';
+                }
+                
+                return 'Unknown Windows Version';
+            } catch (error) {
+                console.warn('Could not detect Windows version:', error);
+                return 'Unknown';
+            }
+        }
+
+        function showDeviceDebugInfo(inputDevices, outputDevices) {
+            console.log('🔍 Showing device debug info for Windows 11 compatibility');
+            
+            // Create debug info section if it doesn't exist
+            let debugSection = document.getElementById('debug-info');
+            if (!debugSection) {
+                debugSection = document.createElement('div');
+                debugSection.id = 'debug-info';
+                debugSection.className = 'debug-section';
+                debugSection.innerHTML = `
+                    <h3>Device Debug Information</h3>
+                    <p><strong>Available Input Devices:</strong></p>
+                    <ul id="debug-inputs"></ul>
+                    <p><strong>Available Output Devices:</strong></p>
+                    <ul id="debug-outputs"></ul>
+                    <p><em>If you see VB-Audio devices listed above but they're not being detected, please report this issue.</em></p>
+                `;
+                
+                // Insert before button group
+                const buttonGroup = document.querySelector('.button-group');
+                buttonGroup.parentNode.insertBefore(debugSection, buttonGroup);
+            }
+
+            // Populate device lists
+            const inputsList = document.getElementById('debug-inputs');
+            const outputsList = document.getElementById('debug-outputs');
+            
+            inputsList.innerHTML = inputDevices.map(d => `<li>${d.label || 'Unnamed Device'}</li>`).join('');
+            outputsList.innerHTML = outputDevices.map(d => `<li>${d.label || 'Unnamed Device'}</li>`).join('');
+        }
+
+        function showWindows11Note() {
+            const note = document.getElementById('windows11-note');
+            if (note) {
+                note.style.display = 'block';
+            }
+        }
+
+        function openWindows11Guide() {
+            // Open the Windows 11 setup guide
+            window.electronAPI.openExternal('https://github.com/your-repo/blob/main/WINDOWS11_VB_AUDIO_SETUP.md');
+        }
+
+        async function runDiagnostic() {
+            const diagnosticBtn = document.getElementById('diagnostic-btn');
+            const originalText = diagnosticBtn.innerHTML;
+            
+            // Show loading state
+            diagnosticBtn.disabled = true;
+            diagnosticBtn.innerHTML = '<span class="loading"></span> Running...';
+            
+            try {
+                // Run the diagnostic script via IPC
+                await window.electronAPI.runDiagnostic();
+                showError('Diagnostic completed! Check the console output for detailed results.');
+            } catch (error) {
+                console.error('Error running diagnostic:', error);
+                showError('Failed to run diagnostic. Please try running it manually from the terminal.');
+            } finally {
+                // Restore button state
+                diagnosticBtn.disabled = false;
+                diagnosticBtn.innerHTML = originalText;
+            }
+        }
+
+        function updateDeviceStatus(deviceType, isPresent) {
+            const icon = document.getElementById(`${deviceType}-icon`);
+            const status = document.getElementById(`${deviceType}-status`);
+            
+            if (isPresent) {
+                icon.className = 'status-icon success';
+                icon.textContent = '✓';
+                status.textContent = 'Detected';
+            } else {
+                icon.className = 'status-icon error';
+                icon.textContent = '✕';
+                status.textContent = 'Not detected';
+            }
+        }
+
+        async function rescanDevices() {
+            const rescanBtn = document.getElementById('rescan-btn');
+            const rescanIcon = document.getElementById('rescan-icon');
+            
+            // Show loading state
+            rescanBtn.disabled = true;
+            rescanIcon.innerHTML = '<div class="loading"></div>';
+            
+            try {
+                await checkDevices();
+            } catch (error) {
+                console.error('Error during rescan:', error);
+                showError('Failed to rescan devices. Please try again.');
+            } finally {
+                // Restore button state
+                rescanBtn.disabled = false;
+                rescanIcon.textContent = '🔄';
+            }
+        }
+
+        function openDownloadPage() {
+            window.electronAPI.openExternal('https://vb-audio.com/Cable/');
+        }
+
+        function openSoundSettings() {
+            window.electronAPI.openSoundSettings();
+        }
+
+        function showError(message) {
+            const errorElement = document.getElementById('error-message');
+            errorElement.textContent = message;
+            errorElement.style.display = 'block';
+            
+            // Hide error after 5 seconds
+            setTimeout(() => {
+                hideError();
+            }, 5000);
+        }
+
+        function hideError() {
+            const errorElement = document.getElementById('error-message');
+            errorElement.style.display = 'none';
+        }
+
+        function showManualCloseButton() {
+            const manualCloseBtn = document.getElementById('manual-close-btn');
+            manualCloseBtn.style.display = 'inline-flex';
+        }
+
+        function hideManualCloseButton() {
+            const manualCloseBtn = document.getElementById('manual-close-btn');
+            manualCloseBtn.style.display = 'none';
+        }
+
+        async function manualClose() {
+            console.log('Manual close button clicked');
+            try {
+                // Get current device status for manual close
+                const devices = await navigator.mediaDevices.enumerateDevices();
+                const audioInputDevices = devices.filter(device => device.kind === 'audioinput');
+                const audioOutputDevices = devices.filter(device => device.kind === 'audiooutput');
+                
+                const cableInputPatterns = [
+                    'cable input', 'vb-audio virtual cable', 'vb-cable', 'vb audio cable',
+                    'virtual cable input', 'cable-input', 'vbaudio cable',
+                    'cable input (vb-audio virtual cable)', 'vb-audio cable input', 'virtual audio cable input'
+                ];
+                
+                const cableOutputPatterns = [
+                    'cable output', 'vb-audio virtual cable', 'vb-cable', 'vb audio cable',
+                    'virtual cable output', 'cable-output', 'vbaudio cable',
+                    'cable output (vb-audio virtual cable)', 'vb-audio cable output', 'virtual audio cable output'
+                ];
+
+                const hasCableInput = audioInputDevices.some(device => {
+                    const label = device.label.toLowerCase().trim();
+                    return cableInputPatterns.some(pattern => label.includes(pattern));
+                });
+                
+                const hasCableOutput = audioOutputDevices.some(device => {
+                    const label = device.label.toLowerCase().trim();
+                    return cableOutputPatterns.some(pattern => label.includes(pattern));
+                });
+
+                const deviceCheckResult = {
+                    hasCableInput,
+                    hasCableOutput,
+                    isComplete: hasCableInput && hasCableOutput
+                };
+
+                await window.electronAPI.deviceCheckComplete(deviceCheckResult);
+                console.log('Manual close completed successfully with result:', deviceCheckResult);
+            } catch (error) {
+                console.error('Error during manual close:', error);
+                showError('Failed to close overlay. Please try again.');
+            }
+        }
+
+        // Listen for device changes
+        navigator.mediaDevices.addEventListener('devicechange', async () => {
+            console.log('Device change detected, rechecking...');
+            await checkDevices();
+        });
+    </script>
+</body>
+</html>

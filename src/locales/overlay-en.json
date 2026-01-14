@@ -1,0 +1,102 @@
+{
+  "header": {
+    "title": "Whispra Controls",
+    "webOverlay": "Web Overlay"
+  },
+  "tabs": {
+    "translation": "Translation",
+    "bidirectional": "Bidirectional",
+    "screenTranslation": "Screen Translation",
+    "soundboard": "Soundboard",
+    "settings": "Settings"
+  },
+  "translation": {
+    "labels": {
+      "microphone": "Microphone",
+      "targetLanguage": "Target Language",
+      "voice": "Voice",
+      "output": "Output",
+      "pushToTalk": "Push-to-Talk",
+      "holdKeyToRecord": "Hold key to record"
+    },
+    "placeholders": {
+      "selectMicrophone": "Select microphone...",
+      "loadingVoices": "Loading voices..."
+    },
+    "buttons": {
+      "startTranslation": "Start Translation",
+      "outputVirtualDevice": "Output: Virtual Device",
+      "outputSystem": "Output: System"
+    }
+  },
+  "bidirectional": {
+    "labels": {
+      "outputDevice": "Output Device",
+      "systemInput": "System Input",
+      "incomingVoice": "Incoming Voice",
+      "screenCapture": "Screen/Window Capture",
+      "bidirectionalToggle": "Bidirectional Toggle",
+      "holdKeyToToggle": "Hold key to toggle bidirectional mode",
+      "autoDetectLanguage": "Auto-detect Language"
+    },
+    "placeholders": {
+      "loadingOutputDevices": "Loading output devices...",
+      "loadingVoices": "Loading voices...",
+      "displaySystemAudio": "Display/System Audio (Default)",
+      "selectScreenWindow": "Select screen or window..."
+    },
+    "buttons": {
+      "startBidirectional": "Start Bidirectional",
+      "refreshSources": "Refresh sources"
+    },
+    "help": {
+      "screenCaptureHelp": "Available screens and windows with PIDs will be detected automatically."
+    }
+  },
+  "screenTranslation": {
+    "labels": {
+      "screenSelection": "Screen Selection",
+      "translateTo": "Translate To",
+      "translateLanguage": "Translate Language",
+      "keybind": "Keybind"
+    },
+    "placeholders": {
+      "selectScreen": "Select screen..."
+    },
+    "buttons": {
+      "changeKeybind": "Change Key"
+    }
+  },
+  "soundboard": {
+    "labels": {
+      "soundBoardControls": "Sound Board Controls",
+      "volumeControls": "Volume Controls",
+      "soundPads": "Sound Pads",
+      "vbAudioVolume": "VB Audio:",
+      "headphonesVolume": "Headphones:"
+    },
+    "buttons": {
+      "addSound": "Add Sound",
+      "stopAll": "Stop All"
+    },
+    "placeholders": {
+      "noSoundsAdded": "No sounds added yet. Click \"Add Sound\" to get started!"
+    }
+  },
+  "settings": {
+    "labels": {
+      "overlayToggleHotkey": "Overlay Toggle Hotkey",
+      "pushToTalkHotkey": "Push-to-Talk Hotkey",
+      "bidirectionalToggleHotkey": "Bidirectional Toggle Hotkey"
+    },
+    "modifiers": {
+      "ctrl": "Ctrl",
+      "alt": "Alt",
+      "shift": "Shift"
+    }
+  },
+  "common": {
+    "volume": "%",
+    "keyPrefix": "Key:"
+  }
+}

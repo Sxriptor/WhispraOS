@@ -1,0 +1,24 @@
+{
+  "panel": {
+    "title": "Lydtavle",
+    "description": "Afspil brugerdefinerede lyde og lydklip under samtaler"
+  },
+  "controls": {
+    "outputDevice": "Output-enhed",
+    "vbAudioVolume": "VB Audio Volume",
+    "headphonesVolume": "Hovedtelefoner Volumen",
+    "soundPadGrid": "Lyd Pad Gitter",
+    "enableHotkeys": "Aktiver Soundboard Genvejstaster",
+    "addSoundFiles": "Tilføj Lydfiler",
+    "webOverlay": "Web Overlay",
+    "stopAllSounds": "Stop Alle Lyde"
+  },
+  "placeholders": {
+    "selectOutputDevice": "Vælg output-enhed...",
+    "defaultSystemOutput": "Standard System Output",
+    "virtualAudioCable": "Virtuel Audio Kabel"
+  },
+  "status": {
+    "volume": "%"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "panel": {
+    "title": "声音面板",
+    "description": "在对话期间播放自定义声音和音频剪辑"
+  },
+  "controls": {
+    "outputDevice": "输出设备",
+    "vbAudioVolume": "VB Audio 音量",
+    "headphonesVolume": "耳机音量",
+    "soundPadGrid": "声音垫网格",
+    "enableHotkeys": "启用声音面板快捷键",
+    "addSoundFiles": "添加声音文件",
+    "webOverlay": "网页叠加",
+    "stopAllSounds": "停止所有声音"
+  },
+  "placeholders": {
+    "selectOutputDevice": "选择输出设备...",
+    "defaultSystemOutput": "默认系统输出",
+    "virtualAudioCable": "虚拟音频线缆"
+  },
+  "status": {
+    "volume": "%"
+  }
+}

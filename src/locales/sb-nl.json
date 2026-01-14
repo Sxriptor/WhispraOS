@@ -1,0 +1,24 @@
+{
+  "panel": {
+    "title": "Geluid Paneel",
+    "description": "Speel aangepaste geluiden en audioclips tijdens gesprekken"
+  },
+  "controls": {
+    "outputDevice": "Uitvoerapparaat",
+    "vbAudioVolume": "VB Audio Volume",
+    "headphonesVolume": "Hoofdtelefoonvolume",
+    "soundPadGrid": "Geluid Pad Raster",
+    "enableHotkeys": "Schakel Soundboard Sneltoetsen In",
+    "addSoundFiles": "Geluid Bestanden Toevoegen",
+    "webOverlay": "Web Overlay",
+    "stopAllSounds": "Stop Alle Geluiden"
+  },
+  "placeholders": {
+    "selectOutputDevice": "Selecteer uitvoerapparaat...",
+    "defaultSystemOutput": "Standaard Systeemuitvoer",
+    "virtualAudioCable": "Virtuele Audiokabel"
+  },
+  "status": {
+    "volume": "%"
+  }
+}

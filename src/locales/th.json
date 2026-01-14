@@ -1,0 +1,62 @@
+{
+  "app": {
+    "name": "Whispra",
+    "loading": "กำลังโหลด...",
+    "ready": "พร้อม",
+    "idle": "ไม่ทำงาน",
+    "processing": "กำลังประมวลผล",
+    "error": "ข้อผิดพลาด"
+  },
+  "navigation": {
+    "translate": "แปล",
+    "bidirectional": "สองทิศทาง",
+    "screenTranslation": "การแปลหน้าจอ",
+    "soundBoard": "กระดานเสียง",
+    "voiceFilter": "ฟิลเตอร์เสียง",
+    "settings": "การตั้งค่า",
+    "logs": "บันทึก"
+  },
+  "common": {
+    "start": "เริ่ม",
+    "stop": "หยุด",
+    "cancel": "ยกเลิก",
+    "save": "บันทึก",
+    "close": "ปิด",
+    "back": "กลับ",
+    "next": "ถัดไป",
+    "continue": "ดำเนินการต่อ",
+    "retry": "ลองอีกครั้ง",
+    "yes": "ใช่",
+    "no": "ไม่",
+    "ok": "ตกลง"
+  },
+  "header": {
+    "profile": "โปรไฟล์",
+    "signOut": "ออกจากระบบ",
+    "language": "ภาษา"
+  },
+  "footer": {
+    "connectionStatus": "สถานะการเชื่อมต่อ",
+    "processingStatus": "สถานะการประมวลผล",
+    "feedback": "รายงานข้อผิดพลาด / แนะนำฟีเจอร์",
+    "debugConsole": "แสดงคอนโซลดีบัก"
+  },
+  "errors": {
+    "networkError": "ข้อผิดพลาดการเชื่อมต่อเครือข่าย",
+    "permissionDenied": "การเข้าถึงถูกปฏิเสธ",
+    "deviceNotFound": "ไม่พบอุปกรณ์",
+    "serviceUnavailable": "บริการไม่พร้อมใช้งาน",
+    "unknownError": "เกิดข้อผิดพลาดที่ไม่ทราบ"
+  },
+  "tooltips": {
+    "sidebarToggle": "สลับแถบด้านข้าง",
+    "profile": "เมนูโปรไฟล์",
+    "language": "เลือกภาษา"
+  },
+  "languageChange": {
+    "title": "เปลี่ยนภาษาแอปหรือไม่?",
+    "message": "คุณต้องการให้ข้อความของ Whispra เป็นภาษานี้ด้วยหรือไม่?",
+    "yes": "ใช่",
+    "no": "ไม่"
+  }
+}

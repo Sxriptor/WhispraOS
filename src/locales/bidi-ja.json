@@ -1,0 +1,31 @@
+{
+  "panel": {
+    "title": "双方向モード"
+  },
+  "controls": {
+    "startBidirectional": "双方向を開始",
+    "stopBidirectional": "双方向を停止",
+    "keybind": "キーバインド",
+    "toggleWith": "切り替えキー",
+    "changeKey": "キーを変更",
+    "outputDevice": "出力デバイス",
+    "systemInput": "システム入力",
+    "incomingVoice": "入力音声"
+  },
+  "placeholders": {
+    "loadingOutputDevices": "出力デバイスを読み込み中...",
+    "loadingVoices": "音声を読み込み中...",
+    "displaySystemAudio": "ディスプレイ/システムオーディオ（デフォルト）"
+  },
+  "status": {
+    "idle": "待機中",
+    "waiting": "待機中...",
+    "ready": "準備完了...",
+    "starting": "開始中...",
+    "stopping": "停止中..."
+  },
+  "labels": {
+    "detectedTarget": "検出（ターゲット言語）",
+    "respoken": "再発音"
+  }
+}

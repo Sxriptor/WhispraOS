@@ -1,0 +1,102 @@
+{
+  "header": {
+    "title": "Whispra 컨트롤",
+    "webOverlay": "웹 오버레이"
+  },
+  "tabs": {
+    "translation": "번역",
+    "bidirectional": "양방향",
+    "screenTranslation": "화면 번역",
+    "soundboard": "사운드보드",
+    "settings": "설정"
+  },
+  "translation": {
+    "labels": {
+      "microphone": "마이크",
+      "targetLanguage": "대상 언어",
+      "voice": "음성",
+      "output": "출력",
+      "pushToTalk": "Push-to-Talk",
+      "holdKeyToRecord": "녹음을 위해 키를 누르고 있어야 합니다"
+    },
+    "placeholders": {
+      "selectMicrophone": "마이크 선택...",
+      "loadingVoices": "음성 로딩 중..."
+    },
+    "buttons": {
+      "startTranslation": "번역 시작",
+      "outputVirtualDevice": "출력: 가상 장치",
+      "outputSystem": "출력: 시스템"
+    }
+  },
+  "bidirectional": {
+    "labels": {
+      "outputDevice": "출력 장치",
+      "systemInput": "시스템 입력",
+      "incomingVoice": "들어오는 음성",
+      "screenCapture": "화면/창 캡처",
+      "bidirectionalToggle": "양방향 전환",
+      "holdKeyToToggle": "양방향 모드를 전환하려면 키를 누르고 있어야 합니다",
+      "autoDetectLanguage": "자동 언어 감지"
+    },
+    "placeholders": {
+      "loadingOutputDevices": "출력 장치 로딩 중...",
+      "loadingVoices": "음성 로딩 중...",
+      "displaySystemAudio": "디스플레이/시스템 오디오 (기본값)",
+      "selectScreenWindow": "화면 또는 창 선택..."
+    },
+    "buttons": {
+      "startBidirectional": "양방향 시작",
+      "refreshSources": "소스 새로 고침"
+    },
+    "help": {
+      "screenCaptureHelp": "PID가 있는 사용 가능한 화면과 창이 자동으로 감지됩니다."
+    }
+  },
+  "screenTranslation": {
+    "labels": {
+      "screenSelection": "화면 선택",
+      "translateTo": "번역할 언어",
+      "translateLanguage": "번역 언어",
+      "keybind": "키 바인드"
+    },
+    "placeholders": {
+      "selectScreen": "화면 선택..."
+    },
+    "buttons": {
+      "changeKeybind": "키 변경"
+    }
+  },
+  "soundboard": {
+    "labels": {
+      "soundBoardControls": "사운드 보드 컨트롤",
+      "volumeControls": "볼륨 조절",
+      "soundPads": "사운드 패드",
+      "vbAudioVolume": "VB Audio:",
+      "headphonesVolume": "헤드폰:"
+    },
+    "buttons": {
+      "addSound": "사운드 추가",
+      "stopAll": "모두 중지"
+    },
+    "placeholders": {
+      "noSoundsAdded": "아직 추가된 사운드가 없습니다. 시작하려면 \"사운드 추가\"를 클릭하세요!"
+    }
+  },
+  "settings": {
+    "labels": {
+      "overlayToggleHotkey": "오버레이 전환 단축키",
+      "pushToTalkHotkey": "Push-to-Talk 단축키",
+      "bidirectionalToggleHotkey": "양방향 전환 단축키"
+    },
+    "modifiers": {
+      "ctrl": "Ctrl",
+      "alt": "Alt",
+      "shift": "Shift"
+    }
+  },
+  "common": {
+    "volume": "%",
+    "keyPrefix": "키:"
+  }
+}

@@ -1,0 +1,14 @@
+prefix=/opt/homebrew/Cellar/ffmpeg/8.0_2
+exec_prefix=${prefix}
+libdir=/opt/homebrew/Cellar/ffmpeg/8.0_2/lib
+includedir=/opt/homebrew/Cellar/ffmpeg/8.0_2/include
+
+Name: libavutil
+Description: FFmpeg utility library
+Version: 60.8.100
+Requires: 
+Requires.private: 
+Conflicts:
+Libs: -L${libdir}  -lavutil 
+Libs.private: -lm -framework VideoToolbox -pthread -L/opt/homebrew/Cellar/libx11/1.8.12/lib -lX11 -framework CoreFoundation -framework CoreMedia -framework CoreVideo -framework CoreServices
+Cflags: -I${includedir}

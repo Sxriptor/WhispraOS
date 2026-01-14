@@ -1,0 +1,88 @@
+{
+  "tab": {
+    "translation": "Traduction",
+    "bidirectional": "Bidirectionnel",
+    "soundboard": "Table de mixage",
+    "settings": "Paramètres"
+  },
+  "controls": {
+    "microphone": "Microphone",
+    "targetLanguage": "Langue cible",
+    "voice": "Voix",
+    "output": "Sortie",
+    "pushToTalk": "Push-to-Talk",
+    "startTranslation": "Démarrer la traduction",
+    "stopTranslation": "Arrêter la traduction",
+    "addCustomVoice": "Ajouter une voix personnalisée",
+    "accent": "Accent",
+    "noAccent": "Pas d'accent",
+    "accentOn": "Accent : ACTIVÉ",
+    "accentOff": "Accent : DÉSACTIVÉ"
+  },
+  "placeholders": {
+    "selectMicrophone": "Sélectionner le microphone...",
+    "loadingVoices": "Chargement des voix...",
+    "selectVoice": "Sélectionner la voix...",
+    "enterCustomAccent": "Entrer un accent personnalisé...",
+    "selectPreset": "Sélectionner un préréglage..."
+  },
+  "descriptions": {
+    "microphoneHelp": "Ce microphone est utilisé pour la traduction et le passage",
+    "outputMode": "Sortie vers un appareil virtuel",
+    "holdKeyToRecord": "Maintenez la touche pour enregistrer",
+    "toggleBidiMode": "Maintenez la touche pour basculer en mode bidirectionnel",
+    "autoDetectLanguage": "Détection automatique de la langue"
+  },
+  "bidirectional": {
+    "outputDevice": "Appareil de sortie",
+    "systemInput": "Entrée système",
+    "incomingVoice": "Voix entrante",
+    "screenCapture": "Capture d'écran/fenêtre",
+    "startBidirectional": "Démarrer bidirectionnel",
+    "stopBidirectional": "Arrêter bidirectionnel",
+    "loadingDevices": "Chargement des appareils de sortie...",
+    "selectOutputDevice": "Sélectionner l'appareil de sortie...",
+    "displayAudio": "Audio d'affichage/système (par défaut)",
+    "loadingVoices": "Chargement des voix...",
+    "selectIncomingVoice": "Sélectionner la voix entrante...",
+    "selectScreenOrWindow": "Sélectionner l'écran ou la fenêtre...",
+    "refreshSources": "Actualiser les sources",
+    "captureHelp": "Les écrans et fenêtres disponibles avec des PIDs seront détectés automatiquement"
+  },
+  "soundboard": {
+    "controls": "Contrôles de la table de mixage",
+    "addSound": "Ajouter un son",
+    "stopAll": "Tout arrêter",
+    "volumeControls": "Contrôles de volume",
+    "vbAudio": "VB Audio :",
+    "headphones": "Casque :",
+    "soundPads": "Tuiles sonores",
+    "noSounds": "Aucun son ajouté pour l'instant. Cliquez sur \"Ajouter un son\" pour commencer !",
+    "hotkeysEnabled": "Activer les raccourcis de la table de mixage"
+  },
+  "settings": {
+    "overlayHotkey": "Raccourci de basculement de superposition",
+    "pttHotkey": "Raccourci Push-to-Talk",
+    "bidiHotkey": "Raccourci de basculement bidirectionnel",
+    "clickThrough": "Clic à travers",
+    "alwaysOnTop": "Toujours au-dessus",
+    "overlayOpacity": "Opacité de la superposition",
+    "clickThroughDesc": "Activer le clic à travers en mode minimal",
+    "alwaysOnTopDesc": "Garder la superposition au-dessus des autres fenêtres"
+  },
+  "status": {
+    "ready": "Prêt à enregistrer...",
+    "recording": "Enregistrement...",
+    "processing": "Traitement...",
+    "stopped": "Arrêté",
+    "idle": "Inactif",
+    "active": "Actif",
+    "error": "Erreur"
+  },
+  "keys": {
+    "space": "ESPACE",
+    "ctrl": "Ctrl",
+    "alt": "Alt",
+    "shift": "Maj"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "panel": {
+    "title": "لوحة الصوت",
+    "description": "تشغيل الأصوات المخصصة ومقاطع الصوت أثناء المحادثات"
+  },
+  "controls": {
+    "outputDevice": "جهاز الإخراج",
+    "vbAudioVolume": "حجم صوت VB Audio",
+    "headphonesVolume": "حجم سماعات الرأس",
+    "soundPadGrid": "شبكة لوحة الصوت",
+    "enableHotkeys": "تفعيل مفاتيح الاختصار للوحة الصوت",
+    "addSoundFiles": "إضافة ملفات الصوت",
+    "webOverlay": "تراكب الويب",
+    "stopAllSounds": "إيقاف جميع الأصوات"
+  },
+  "placeholders": {
+    "selectOutputDevice": "اختر جهاز الإخراج...",
+    "defaultSystemOutput": "الإخراج الافتراضي للنظام",
+    "virtualAudioCable": "كابل الصوت الافتراضي"
+  },
+  "status": {
+    "volume": "%"
+  }
+}

@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whispra's Web Overlay</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* CSS Variables for theming */
+        :root {
+            /* Default dark theme */
+            --overlay-bg: rgba(10, 10, 10, 0.94);
+            --overlay-border: rgba(255, 255, 255, 0.12);
+            --overlay-text: white;
+            --overlay-text-secondary: rgba(255, 255, 255, 0.8);
+            --overlay-text-muted: rgba(255, 255, 255, 0.5);
+            --overlay-surface: rgba(20, 20, 20, 0.9);
+            --overlay-surface-border: rgba(255, 255, 255, 0.15);
+            --overlay-button-bg: rgba(255, 255, 255, 0.1);
+            --overlay-button-hover: rgba(255, 255, 255, 0.2);
+            --overlay-primary: #3b82f6;
+            --overlay-primary-hover: rgba(59, 130, 246, 1);
+            --overlay-success: rgba(34, 197, 94, 0.9);
+            --overlay-danger: rgba(239, 68, 68, 0.8);
+        }
+
+        /* Neo-Brutalism Theme */
+        [data-theme="neo-brutalism"] {
+            --overlay-bg: #FFFFFF;
+            --overlay-border: #000000;
+            --overlay-text: #000000;
+            --overlay-text-secondary: rgba(0, 0, 0, 0.8);
+            --overlay-text-muted: rgba(0, 0, 0, 0.5);
+            --overlay-surface: #FFFFFF;
+            --overlay-surface-border: #000000;
+            --overlay-button-bg: rgba(0, 0, 0, 0.1);
+            --overlay-button-hover: #00D9FF;
+            --overlay-primary: #00D9FF;
+            --overlay-primary-hover: #39FF14;
+            --overlay-success: #39FF14;
+            --overlay-danger: #FF1744;
+        }
+
+        /* Corporate Theme */
+        [data-theme="corporate"] {
+            --overlay-bg: #ffffff;
+            --overlay-border: #d1d5db;
+            --overlay-text: #111827;
+            --overlay-text-secondary: rgba(17, 24, 39, 0.8);
+            --overlay-text-muted: rgba(17, 24, 39, 0.5);
+            --overlay-surface: #f9fafb;
+            --overlay-surface-border: #d1d5db;
+            --overlay-button-bg: rgba(17, 24, 39, 0.1);
+            --overlay-button-hover: rgba(17, 24, 39, 0.2);
+            --overlay-primary: #2563eb;
+            --overlay-primary-hover: #1d4ed8;
+            --overlay-success: #059669;
+            --overlay-danger: #dc2626;
+        }
+
+        /* Hacker Theme */
+        [data-theme="hacker"] {
+            --overlay-bg: rgba(13, 17, 23, 0.94);
+            --overlay-border: rgba(0, 255, 65, 0.3);
+            --overlay-text: #c9d1d9;
+            --overlay-text-secondary: rgba(201, 209, 217, 0.8);
+            --overlay-text-muted: rgba(201, 209, 217, 0.5);
+            --overlay-surface: #161b22;
+            --overlay-surface-border: #30363d;
+            --overlay-button-bg: rgba(0, 255, 65, 0.1);
+            --overlay-button-hover: rgba(0, 255, 65, 0.2);
+            --overlay-primary: #00ff41;
+            --overlay-primary-hover: #00cc33;
+            --overlay-success: #3fb950;
+            --overlay-danger: #f85149;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: transparent;
+            overflow: hidden;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .overlay-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Soundboard Overlay Styles - now theme-aware */
+        .soundboard-overlay {
+            background: var(--overlay-bg);
+            border: 1px solid var(--overlay-border);
+            border-radius: 12px;
+            padding: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            width: 800px;
+            height: 600px;
+            position: relative;
+            z-index: 2147483647;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Neo-brutalism specific styling */
+        [data-theme="neo-brutalism"] .soundboard-overlay {
+            border: 3px solid var(--overlay-border);
+            border-radius: 0;
+            box-shadow: 0 8px 0 rgba(0, 0, 0, 0.15);
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+        }
+
+        .overlay-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--overlay-surface-border);
+            -webkit-app-region: drag;
+        }
+
+        [data-theme="neo-brutalism"] .overlay-header {
+            border-bottom: 3px solid var(--overlay-surface-border);
+        }
+
+        .overlay-title {
+            color: var(--overlay-text);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        [data-theme="neo-brutalism"] .overlay-title {
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            -webkit-app-region: no-drag;
+        }
+
+        .navigation-controls {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-button {
+            background: var(--overlay-primary);
+            border: 1px solid var(--overlay-primary);
+            border-radius: 4px;
+            padding: 4px 6px;
+            color: var(--overlay-text);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        [data-theme="neo-brutalism"] .nav-button {
+            border: 3px solid var(--overlay-border);
+            border-radius: 0;
+            font-weight: 900;
+            background: var(--overlay-surface);
+            color: var(--overlay-text);
+        }
+
+        .nav-button:hover {
+            background: var(--overlay-primary-hover);
+            border-color: var(--overlay-primary-hover);
+        }
+
+        [data-theme="neo-brutalism"] .nav-button:hover {
+            background: var(--overlay-button-hover);
+            transform: translate(-2px, -2px);
+            box-shadow: 0 5px 0 rgba(0, 0, 0, 0.15);
+        }
+
+        .nav-button:disabled {
+            background: var(--overlay-button-bg);
+            border-color: var(--overlay-surface-border);
+            color: var(--overlay-text-muted);
+            cursor: not-allowed;
+        }
+
+        [data-theme="neo-brutalism"] .nav-button:disabled {
+            transform: none;
+            box-shadow: none;
+        }
+
+        .url-bar {
+            background: var(--overlay-surface);
+            border: 1px solid var(--overlay-surface-border);
+            border-radius: 6px;
+            padding: 6px 10px;
+            color: var(--overlay-text);
+            font-size: 11px;
+            width: 200px;
+            margin: 0 8px;
+        }
+
+        [data-theme="neo-brutalism"] .url-bar {
+            border: 3px solid var(--overlay-border);
+            border-radius: 0;
+            font-weight: 700;
+        }
+
+        .url-bar:focus {
+            outline: none;
+            border-color: var(--overlay-primary);
+        }
+
+        [data-theme="neo-brutalism"] .url-bar:focus {
+            box-shadow: 0 0 0 4px var(--overlay-primary);
+        }
+
+        .header-button {
+            background: none;
+            border: none;
+            color: var(--overlay-text-muted);
+            cursor: pointer;
+            font-size: 14px;
+            padding: 4px;
+            border-radius: 4px;
+            transition: color 0.2s ease;
+        }
+
+        [data-theme="neo-brutalism"] .header-button {
+            border: 2px solid var(--overlay-border);
+            border-radius: 0;
+            background: var(--overlay-surface);
+            color: var(--overlay-text);
+            font-weight: 900;
+        }
+
+        .header-button:hover {
+            color: var(--overlay-text);
+            background: var(--overlay-button-hover);
+        }
+
+        [data-theme="neo-brutalism"] .header-button:hover {
+            background: var(--overlay-button-hover);
+            transform: translate(-2px, -2px);
+            box-shadow: 0 4px 0 rgba(0, 0, 0, 0.15);
+        }
+
+        .close-button:hover {
+            background: var(--overlay-danger);
+        }
+
+        [data-theme="neo-brutalism"] .close-button:hover {
+            background: var(--overlay-danger);
+            color: white;
+        }
+
+        .browser-content {
+            flex: 1;
+            position: relative;
+            background: var(--overlay-surface);
+            border: 1px solid var(--overlay-surface-border);
+            border-radius: 8px;
+            overflow: hidden;
+            min-height: 0; /* Allow flex child to shrink */
+        }
+
+        [data-theme="neo-brutalism"] .browser-content {
+            border: 3px solid var(--overlay-border);
+            border-radius: 0;
+        }
+
+        .browser-frame {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            /* Use theme-aware background */
+            background: var(--overlay-surface);
+            border-radius: 8px;
+        }
+
+        [data-theme="neo-brutalism"] .browser-frame {
+            border-radius: 0;
+        }
+
+        .loading-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--overlay-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 16px;
+            z-index: 1000;
+            border-radius: 8px;
+            /* If it ever sticks, do not block mouse/scroll */
+            pointer-events: none;
+        }
+
+        [data-theme="neo-brutalism"] .loading-overlay {
+            border-radius: 0;
+        }
+
+        .loading-spinner {
+            width: 32px;
+            height: 32px;
+            border: 3px solid var(--overlay-button-bg);
+            border-top: 3px solid var(--overlay-primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        [data-theme="neo-brutalism"] .loading-spinner {
+            border-radius: 0;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            color: var(--overlay-text-secondary);
+            font-size: 12px;
+        }
+
+        [data-theme="neo-brutalism"] .loading-text {
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .welcome-screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--overlay-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 24px;
+            z-index: 999;
+            border-radius: 8px;
+        }
+
+        [data-theme="neo-brutalism"] .welcome-screen {
+            border-radius: 0;
+        }
+
+        .welcome-content {
+            text-align: center;
+            max-width: 500px;
+            padding: 0 20px;
+        }
+
+        .welcome-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--overlay-text);
+            margin-bottom: 12px;
+        }
+
+        [data-theme="neo-brutalism"] .welcome-title {
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .welcome-subtitle {
+            font-size: 12px;
+            color: var(--overlay-text-secondary);
+            margin-bottom: 32px;
+            line-height: 1.5;
+        }
+
+        [data-theme="neo-brutalism"] .welcome-subtitle {
+            font-weight: 700;
+        }
+
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .quick-link {
+            background: var(--overlay-surface);
+            border: 1px solid var(--overlay-surface-border);
+            border-radius: 8px;
+            padding: 16px 12px;
+            text-decoration: none;
+            color: var(--overlay-text);
+            text-align: center;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        [data-theme="neo-brutalism"] .quick-link {
+            border: 3px solid var(--overlay-border);
+            border-radius: 0;
+            font-weight: 900;
+        }
+
+        .quick-link:hover {
+            background: var(--overlay-button-hover);
+            border-color: var(--overlay-primary);
+            transform: translateY(-2px);
+        }
+
+        [data-theme="neo-brutalism"] .quick-link:hover {
+            background: var(--overlay-button-hover);
+            transform: translate(-3px, -3px);
+            box-shadow: 0 6px 0 rgba(0, 0, 0, 0.15);
+        }
+
+        .quick-link-icon {
+            font-size: 20px;
+            margin-bottom: 8px;
+            display: block;
+        }
+        .quick-link-icon img {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+        }
+
+        .quick-link-text {
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        [data-theme="neo-brutalism"] .quick-link-text {
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .custom-url-input {
+            width: 100%;
+            max-width: 400px;
+            background: var(--overlay-surface);
+            border: 1px solid var(--overlay-surface-border);
+            border-radius: 6px;
+            padding: 10px 16px;
+            color: var(--overlay-text);
+            font-size: 12px;
+            text-align: center;
+        }
+
+        [data-theme="neo-brutalism"] .custom-url-input {
+            border: 3px solid var(--overlay-border);
+            border-radius: 0;
+            font-weight: 700;
+        }
+
+        .custom-url-input:focus {
+            outline: none;
+            border-color: var(--overlay-primary);
+        }
+
+        [data-theme="neo-brutalism"] .custom-url-input:focus {
+            box-shadow: 0 0 0 4px var(--overlay-primary);
+        }
+
+        .custom-url-input::placeholder {
+            color: var(--overlay-text-muted);
+        }
+
+        .audio-indicator {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: var(--overlay-success);
+            color: var(--overlay-text);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 600;
+            display: none;
+            z-index: 1001;
+            border: 1px solid var(--overlay-success);
+        }
+
+        [data-theme="neo-brutalism"] .audio-indicator {
+            border: 3px solid var(--overlay-border);
+            border-radius: 0;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: var(--overlay-text);
+        }
+
+        .audio-indicator.active {
+            display: block;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .resize-handle {
+            position: absolute;
+            bottom: 4px;
+            right: 4px;
+            width: 16px;
+            height: 16px;
+            background: linear-gradient(-45deg, transparent 30%, var(--overlay-text-muted) 30%, var(--overlay-text-muted) 40%, transparent 40%, transparent 60%, var(--overlay-text-muted) 60%, var(--overlay-text-muted) 70%, transparent 70%);
+            cursor: nw-resize;
+            -webkit-app-region: no-drag;
+            border-radius: 0 0 8px 0;
+        }
+
+        [data-theme="neo-brutalism"] .resize-handle {
+            border-radius: 0;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay-container">
+        <div class="soundboard-overlay">
+            <div class="overlay-header">
+                <div class="overlay-title">🌐 Soundboard Web Overlay</div>
+                <div class="header-controls">
+                    <div class="navigation-controls">
+                        <button id="back-btn" class="nav-button" title="Back">←</button>
+                        <button id="forward-btn" class="nav-button" title="Forward">→</button>
+                        <button id="refresh-btn" class="nav-button" title="Refresh">⟳</button>
+                        <button id="home-btn" class="nav-button" title="Home">🏠</button>
+                    </div>
+                    <input type="text" id="url-bar" class="url-bar" placeholder="Enter URL or search...">
+                    <button id="audio-toggle" class="header-button" title="Toggle Audio Routing">🔊</button>
+                    <button id="minimize-btn" class="header-button" title="Minimize">−</button>
+                    <button id="close-btn" class="header-button close-button" title="Close">×</button>
+                </div>
+            </div>
+
+            <div class="browser-content">
+                <div id="welcome-screen" class="welcome-screen">
+                    <div class="welcome-content">
+                        <div class="welcome-title">Web Overlay (YouTube/Twitch is Stable)</div>
+                        <div class="welcome-subtitle">
+                            Browse the web with audio routed through your soundboard system.
+                            Perfect for playing music, sound effects, or any web content during streams or calls.
+                            (Check to ensure headphone slider works, some websites may not work and wont play through microphone)
+                        </div>
+                        
+                        <div class="quick-links">
+                            <a href="#" class="quick-link" data-url="https://youtube.com">
+                                <span class="quick-link-icon">📺</span>
+                                <span class="quick-link-text">YouTube</span>
+                            </a>
+                            <a href="#" class="quick-link" data-url="https://whispra.xyz">
+                                <span class="quick-link-icon"><img src="assets/favicon-32x32.png" alt="Whispra" onerror="this.src='assets/favicon-16x16.png'" /></span>
+                                <span class="quick-link-text">Whispra</span>
+                            </a>
+                            <a href="#" class="quick-link" data-url="https://soundcloud.com">
+                                <span class="quick-link-icon">☁️</span>
+                                <span class="quick-link-text">SoundCloud</span>
+                            </a>
+                            <a href="#" class="quick-link" data-url="https://twitch.tv">
+                                <span class="quick-link-icon">🎮</span>
+                                <span class="quick-link-text">Twitch</span>
+                            </a>
+                        </div>
+
+                        <input type="text" id="custom-url" class="custom-url-input" placeholder="Or enter any URL...">
+                    </div>
+                </div>
+
+                <div id="loading-overlay" class="loading-overlay" style="display: none;">
+                    <div class="loading-spinner"></div>
+                    <div class="loading-text">Loading...</div>
+                </div>
+
+                <webview id="browser-frame" class="browser-frame" style="display: none;" preload="soundboard-overlay-preload.js"></webview>
+            </div>
+
+            <div id="audio-indicator" class="audio-indicator">🔊 Audio Active</div>
+            <div class="resize-handle"></div>
+        </div>
+    </div>
+
+    <script src="soundboard-overlay-renderer.js"></script>
+</body>
+</html>

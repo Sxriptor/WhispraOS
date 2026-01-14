@@ -1,0 +1,88 @@
+{
+  "tab": {
+    "translation": "번역",
+    "bidirectional": "양방향",
+    "soundboard": "사운드보드",
+    "settings": "설정"
+  },
+  "controls": {
+    "microphone": "마이크",
+    "targetLanguage": "대상 언어",
+    "voice": "음성",
+    "output": "출력",
+    "pushToTalk": "푸시 투 토크",
+    "startTranslation": "번역 시작",
+    "stopTranslation": "번역 중지",
+    "addCustomVoice": "사용자 음성 추가",
+    "accent": "억양",
+    "noAccent": "억양 없음",
+    "accentOn": "억양: 켬",
+    "accentOff": "억양: 끔"
+  },
+  "placeholders": {
+    "selectMicrophone": "마이크 선택...",
+    "loadingVoices": "음성 로딩 중...",
+    "selectVoice": "음성 선택...",
+    "enterCustomAccent": "사용자 억양 입력...",
+    "selectPreset": "프리셋 선택..."
+  },
+  "descriptions": {
+    "microphoneHelp": "이 마이크는 번역 및 패스스루에 사용됩니다.",
+    "outputMode": "가상 장치로 출력",
+    "holdKeyToRecord": "녹음하려면 키를 누르고 계세요",
+    "toggleBidiMode": "양방향 모드를 전환하려면 키를 누르고 계세요",
+    "autoDetectLanguage": "언어 자동 감지"
+  },
+  "bidirectional": {
+    "outputDevice": "출력 장치",
+    "systemInput": "시스템 입력",
+    "incomingVoice": "들어오는 음성",
+    "screenCapture": "화면/창 캡처",
+    "startBidirectional": "양방향 시작",
+    "stopBidirectional": "양방향 중지",
+    "loadingDevices": "출력 장치 로딩 중...",
+    "selectOutputDevice": "출력 장치 선택...",
+    "displayAudio": "디스플레이/시스템 오디오 (기본값)",
+    "loadingVoices": "음성 로딩 중...",
+    "selectIncomingVoice": "들어오는 음성 선택...",
+    "selectScreenOrWindow": "화면 또는 창 선택...",
+    "refreshSources": "소스 새로 고침",
+    "captureHelp": "PID가 있는 사용 가능한 화면과 창이 자동으로 감지됩니다."
+  },
+  "soundboard": {
+    "controls": "사운드 보드 컨트롤",
+    "addSound": "소리 추가",
+    "stopAll": "모두 중지",
+    "volumeControls": "볼륨 조절",
+    "vbAudio": "VB Audio:",
+    "headphones": "헤드폰:",
+    "soundPads": "사운드 패드",
+    "noSounds": "아직 추가된 소리가 없습니다. \"소리 추가\"를 클릭하여 시작하세요!",
+    "hotkeysEnabled": "사운드보드 단축키 활성화"
+  },
+  "settings": {
+    "overlayHotkey": "오버레이 토글 단축키",
+    "pttHotkey": "푸시 투 토크 단축키",
+    "bidiHotkey": "양방향 토글 단축키",
+    "clickThrough": "클릭 스루",
+    "alwaysOnTop": "항상 위에",
+    "overlayOpacity": "오버레이 불투명도",
+    "clickThroughDesc": "미니멀 모드에서 클릭 스루 활성화",
+    "alwaysOnTopDesc": "오버레이를 다른 창 위에 유지"
+  },
+  "status": {
+    "ready": "녹음 준비 완료...",
+    "recording": "녹음 중...",
+    "processing": "처리 중...",
+    "stopped": "중지됨",
+    "idle": "대기 중",
+    "active": "활성",
+    "error": "오류"
+  },
+  "keys": {
+    "space": "스페이스",
+    "ctrl": "Ctrl",
+    "alt": "Alt",
+    "shift": "Shift"
+  }
+}

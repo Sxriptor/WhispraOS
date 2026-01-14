@@ -1,0 +1,62 @@
+{
+  "app": {
+    "name": "Whispra",
+    "loading": "جارٍ التحميل...",
+    "ready": "جاهز",
+    "idle": "خامل",
+    "processing": "جارٍ المعالجة",
+    "error": "خطأ"
+  },
+  "navigation": {
+    "translate": "ترجمة",
+    "bidirectional": "ثنائي الاتجاه",
+    "screenTranslation": "ترجمة الشاشة",
+    "soundBoard": "لوحة الصوت",
+    "voiceFilter": "فلتر الصوت",
+    "settings": "الإعدادات",
+    "logs": "السجلات"
+  },
+  "common": {
+    "start": "ابدأ",
+    "stop": "أوقف",
+    "cancel": "إلغاء",
+    "save": "احفظ",
+    "close": "أغلق",
+    "back": "عودة",
+    "next": "التالي",
+    "continue": "تابع",
+    "retry": "إعادة المحاولة",
+    "yes": "نعم",
+    "no": "لا",
+    "ok": "حسناً"
+  },
+  "header": {
+    "profile": "الملف الشخصي",
+    "signOut": "تسجيل الخروج",
+    "language": "اللغة"
+  },
+  "footer": {
+    "connectionStatus": "حالة الاتصال",
+    "processingStatus": "حالة المعالجة",
+    "feedback": "الإبلاغ عن خطأ / اقتراح ميزة",
+    "debugConsole": "عرض وحدة التحكم للتصحيح"
+  },
+  "errors": {
+    "networkError": "خطأ في اتصال الشبكة",
+    "permissionDenied": "تم رفض الإذن",
+    "deviceNotFound": "لم يتم العثور على الجهاز",
+    "serviceUnavailable": "الخدمة غير متاحة",
+    "unknownError": "حدث خطأ غير معروف"
+  },
+  "tooltips": {
+    "sidebarToggle": "تبديل الشريط الجانبي",
+    "profile": "قائمة الملف الشخصي",
+    "language": "اختر اللغة"
+  },
+  "languageChange": {
+    "title": "تغيير لغة التطبيق؟",
+    "message": "هل تريد جعل نصوص Whispra بهذه اللغة أيضاً؟",
+    "yes": "نعم",
+    "no": "لا"
+  }
+}

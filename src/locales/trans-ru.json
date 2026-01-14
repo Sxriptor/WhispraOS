@@ -1,0 +1,88 @@
+{
+  "tab": {
+    "translation": "Перевод",
+    "bidirectional": "Двунаправленный",
+    "soundboard": "Звуковая Панель",
+    "settings": "Настройки"
+  },
+  "controls": {
+    "microphone": "Микрофон",
+    "targetLanguage": "Целевой Язык",
+    "voice": "Голос",
+    "output": "Выход",
+    "pushToTalk": "Push-to-Talk",
+    "startTranslation": "Начать Перевод",
+    "stopTranslation": "Остановить Перевод",
+    "addCustomVoice": "Добавить Пользовательский Голос",
+    "accent": "Акцент",
+    "noAccent": "Без Акцента",
+    "accentOn": "Акцент: ВКЛ",
+    "accentOff": "Акцент: ВЫКЛ"
+  },
+  "placeholders": {
+    "selectMicrophone": "Выберите микрофон...",
+    "loadingVoices": "Загрузка голосов...",
+    "selectVoice": "Выберите голос...",
+    "enterCustomAccent": "Введите пользовательский акцент...",
+    "selectPreset": "Выберите preset..."
+  },
+  "descriptions": {
+    "microphoneHelp": "Этот микрофон используется для перевода и сквозной передачи",
+    "outputMode": "Выход на Виртуальное Устройство",
+    "holdKeyToRecord": "Удерживайте клавишу для записи",
+    "toggleBidiMode": "Удерживайте клавишу для переключения двунаправленного режима",
+    "autoDetectLanguage": "Автоопределение Языка"
+  },
+  "bidirectional": {
+    "outputDevice": "Устройство Выхода",
+    "systemInput": "Системный Вход",
+    "incomingVoice": "Входящий Голос",
+    "screenCapture": "Захват Экрана/Окна",
+    "startBidirectional": "Начать Двунаправленный",
+    "stopBidirectional": "Остановить Двунаправленный",
+    "loadingDevices": "Загрузка устройств выхода...",
+    "selectOutputDevice": "Выберите устройство выхода...",
+    "displayAudio": "Аудио Экрана/Системы (По умолчанию)",
+    "loadingVoices": "Загрузка голосов...",
+    "selectIncomingVoice": "Выберите входящий голос...",
+    "selectScreenOrWindow": "Выберите экран или окно...",
+    "refreshSources": "Обновить источники",
+    "captureHelp": "Доступные экраны и окна с PID будут обнаружены автоматически"
+  },
+  "soundboard": {
+    "controls": "Управление Звуковой Панелью",
+    "addSound": "Добавить Звук",
+    "stopAll": "Остановить Все",
+    "volumeControls": "Управление Громкостью",
+    "vbAudio": "VB Audio:",
+    "headphones": "Наушники:",
+    "soundPads": "Звуковые Пады",
+    "noSounds": "Звуки еще не добавлены. Нажмите \"Добавить Звук\", чтобы начать.",
+    "hotkeysEnabled": "Включить Горячие Клавиши Звуковой Панели"
+  },
+  "settings": {
+    "overlayHotkey": "Горячая Клавиша Переключения Overlay",
+    "pttHotkey": "Горячая Клавиша Push-to-Talk",
+    "bidiHotkey": "Горячая Клавиша Переключения Двунаправленного",
+    "clickThrough": "Click-through",
+    "alwaysOnTop": "Всегда Сверху",
+    "overlayOpacity": "Прозрачность Overlay",
+    "clickThroughDesc": "Включить click-through в Минимальном режиме",
+    "alwaysOnTopDesc": "Держать overlay над другими окнами"
+  },
+  "status": {
+    "ready": "Готов к записи...",
+    "recording": "Запись...",
+    "processing": "Обработка...",
+    "stopped": "Остановлено",
+    "idle": "Ожидание",
+    "active": "Активно",
+    "error": "Ошибка"
+  },
+  "keys": {
+    "space": "ПРОБЕЛ",
+    "ctrl": "Ctrl",
+    "alt": "Alt",
+    "shift": "Shift"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "app": {
+    "name": "Whispra",
+    "loading": "Ładowanie...",
+    "ready": "Gotowe",
+    "idle": "Bezczynny",
+    "processing": "Przetwarzanie",
+    "error": "Błąd"
+  },
+  "navigation": {
+    "translate": "Tłumacz",
+    "bidirectional": "Dwukierunkowy",
+    "screenTranslation": "Tłumaczenie ekranu",
+    "soundBoard": "Tablica dźwięków",
+    "voiceFilter": "Filtr głosu",
+    "settings": "Ustawienia",
+    "logs": "Dzienniki"
+  },
+  "common": {
+    "start": "Start",
+    "stop": "Stop",
+    "cancel": "Anuluj",
+    "save": "Zapisz",
+    "close": "Zamknij",
+    "back": "Wstecz",
+    "next": "Dalej",
+    "continue": "Kontynuuj",
+    "retry": "Spróbuj ponownie",
+    "yes": "Tak",
+    "no": "Nie",
+    "ok": "OK"
+  },
+  "header": {
+    "profile": "Profil",
+    "signOut": "Wyloguj się",
+    "language": "Język"
+  },
+  "footer": {
+    "connectionStatus": "Status połączenia",
+    "processingStatus": "Status przetwarzania",
+    "feedback": "Zgłoś błąd / Sugeruj funkcję",
+    "debugConsole": "Pokaż konsolę debugowania"
+  },
+  "errors": {
+    "networkError": "Błąd połączenia sieciowego",
+    "permissionDenied": "Odmowa dostępu",
+    "deviceNotFound": "Urządzenie nie znalezione",
+    "serviceUnavailable": "Usługa niedostępna",
+    "unknownError": "Wystąpił nieznany błąd"
+  },
+  "tooltips": {
+    "sidebarToggle": "Przełącz pasek boczny",
+    "profile": "Menu profilu",
+    "language": "Wybierz język"
+  },
+  "languageChange": {
+    "title": "Zmień język aplikacji?",
+    "message": "Czy chcesz, aby tekst Whispra był również w tym języku?",
+    "yes": "Tak",
+    "no": "Nie"
+  }
+}

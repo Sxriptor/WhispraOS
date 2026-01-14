@@ -1,0 +1,24 @@
+{
+  "panel": {
+    "title": "Ljudbräda",
+    "description": "Spela anpassade ljud och ljudklipp under samtal"
+  },
+  "controls": {
+    "outputDevice": "Utmatningsenhet",
+    "vbAudioVolume": "VB Audio Volym",
+    "headphonesVolume": "Hörlursvolym",
+    "soundPadGrid": "Ljudpad Gitter",
+    "enableHotkeys": "Aktivera Ljudbräda Genvägar",
+    "addSoundFiles": "Lägg till Ljudfiler",
+    "webOverlay": "Webböverlägg",
+    "stopAllSounds": "Stoppa Alla Ljud"
+  },
+  "placeholders": {
+    "selectOutputDevice": "Välj utmatningsenhet...",
+    "defaultSystemOutput": "Standard Systemutgång",
+    "virtualAudioCable": "Virtuell Ljudkabel"
+  },
+  "status": {
+    "volume": "%"
+  }
+}

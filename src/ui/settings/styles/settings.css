@@ -1,0 +1,568 @@
+/**
+ * Settings Modal CSS - Neo-Brutalism Style
+ * Raw, bold, unapologetic design inspired by brutalist architecture
+ */
+
+/* CSS Variables for Neo-Brutalism theming */
+:root {
+  --settings-electric-blue: #00D9FF;
+  --settings-neon-red: #FF1744;
+  --settings-acid-green: #39FF14;
+  --settings-bright-yellow: #FFEA00;
+  --settings-pure-white: #FFFFFF;
+  --settings-true-black: #000000;
+  
+  --settings-primary-color: var(--settings-electric-blue);
+  --settings-primary-hover: var(--settings-acid-green);
+  --settings-secondary-color: var(--settings-true-black);
+  --settings-background: var(--settings-pure-white);
+  --settings-surface: var(--settings-pure-white);
+  --settings-border: var(--settings-true-black);
+  --settings-text: var(--settings-true-black);
+  --settings-text-secondary: var(--settings-true-black);
+  --settings-error: var(--settings-neon-red);
+  --settings-success: var(--settings-acid-green);
+  --settings-warning: var(--settings-bright-yellow);
+  --settings-bg-secondary: rgba(0, 0, 0, 0.05);
+  
+  /* Spacing */
+  --settings-spacing-xs: 0.5rem;
+  --settings-spacing-sm: 0.75rem;
+  --settings-spacing-md: 1.5rem;
+  --settings-spacing-lg: 2rem;
+  --settings-spacing-xl: 3rem;
+  
+  /* Borders */
+  --settings-border-width: 3px;
+  
+  /* Shadows */
+  --settings-shadow-harsh: 0 5px 0 rgba(0, 0, 0, 0.15);
+  --settings-shadow-large: 0 8px 0 rgba(0, 0, 0, 0.15);
+}
+
+/* Theme-specific overrides */
+[data-theme="neo-brutalism"] {
+  --settings-electric-blue: #00D9FF;
+  --settings-neon-red: #FF1744;
+  --settings-acid-green: #39FF14;
+  --settings-bright-yellow: #FFEA00;
+  --settings-pure-white: #FFFFFF;
+  --settings-true-black: #000000;
+  
+  --settings-primary-color: var(--settings-electric-blue);
+  --settings-primary-hover: var(--settings-acid-green);
+  --settings-secondary-color: var(--settings-true-black);
+  --settings-background: var(--settings-pure-white);
+  --settings-surface: var(--settings-pure-white);
+  --settings-border: var(--settings-true-black);
+  --settings-text: var(--settings-true-black);
+  --settings-text-secondary: var(--settings-true-black);
+  --settings-error: var(--settings-neon-red);
+  --settings-success: var(--settings-acid-green);
+  --settings-warning: var(--settings-bright-yellow);
+  --settings-bg-secondary: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="corporate"] {
+  --settings-primary-color: #2563eb;
+  --settings-primary-hover: #1d4ed8;
+  --settings-secondary-color: #6b7280;
+  --settings-background: #ffffff;
+  --settings-surface: #f9fafb;
+  --settings-border: #d1d5db;
+  --settings-text: #111827;
+  --settings-text-secondary: #6b7280;
+  --settings-error: #dc2626;
+  --settings-success: #059669;
+  --settings-warning: #d97706;
+  --settings-bg-secondary: #f3f4f6;
+}
+
+[data-theme="hacker"] {
+  --settings-primary-color: #00ff41;
+  --settings-primary-hover: #00cc33;
+  --settings-secondary-color: #008f11;
+  --settings-background: #0d1117;
+  --settings-surface: #161b22;
+  --settings-border: #30363d;
+  --settings-text: #c9d1d9;
+  --settings-text-secondary: #8b949e;
+  --settings-error: #f85149;
+  --settings-success: #3fb950;
+  --settings-warning: #d29922;
+  --settings-bg-secondary: rgba(255, 255, 255, 0.05);
+}
+
+/* Modal Overlay - Neo-Brutalism */
+.settings-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: none;
+}
+
+/* Modal Container - Neo-Brutalism */
+.settings-modal {
+  background: var(--settings-background);
+  border: var(--settings-border-width) solid var(--settings-border);
+  border-radius: 0;
+  box-shadow: var(--settings-shadow-large);
+  width: 90vw;
+  max-width: 900px;
+  height: 85vh;
+  max-height: 700px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Modal Header - Neo-Brutalism */
+.settings-modal-header {
+  padding: var(--settings-spacing-lg) var(--settings-spacing-xl);
+  border-bottom: var(--settings-border-width) solid var(--settings-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--settings-bright-yellow);
+}
+
+.settings-modal-title {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--settings-text);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: 'Inter', 'Arial Black', sans-serif;
+}
+
+.settings-modal-close {
+  background: var(--settings-background);
+  border: var(--settings-border-width) solid var(--settings-border);
+  font-size: 1.75rem;
+  color: var(--settings-text);
+  cursor: pointer;
+  padding: 0.75rem 1rem;
+  border-radius: 0;
+  transition: all 0.15s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  font-weight: 900;
+  box-shadow: var(--settings-shadow-harsh);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.settings-modal-close:hover {
+  background: var(--settings-neon-red);
+  color: var(--settings-pure-white);
+  transform: translate(-2px, -2px);
+  box-shadow: 0 7px 0 rgba(0, 0, 0, 0.15);
+}
+
+/* Modal Body - Neo-Brutalism */
+.settings-modal-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Tab Navigation - Neo-Brutalism */
+.settings-tab-nav {
+  width: 220px;
+  background: var(--settings-pure-white);
+  border-right: var(--settings-border-width) solid var(--settings-border);
+  padding: var(--settings-spacing-md);
+  overflow-y: auto;
+}
+
+.settings-tab-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.settings-tab-nav-item {
+  margin-bottom: var(--settings-spacing-sm);
+}
+
+.settings-tab-nav-button {
+  width: 100%;
+  padding: var(--settings-spacing-md);
+  border: var(--settings-border-width) solid var(--settings-border);
+  background: var(--settings-background);
+  color: var(--settings-text-secondary);
+  text-align: left;
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.15s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  display: flex;
+  align-items: center;
+  gap: var(--settings-spacing-sm);
+  font-size: 0.95rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: var(--settings-shadow-harsh);
+}
+
+.settings-tab-nav-button:hover {
+  background: var(--settings-electric-blue);
+  color: var(--settings-true-black);
+  transform: translate(-3px, -3px);
+  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.15);
+}
+
+.settings-tab-nav-button.active {
+  background: var(--settings-bright-yellow);
+  color: var(--settings-true-black) !important;
+  border-color: var(--settings-true-black);
+}
+
+.settings-tab-nav-button.active * {
+  color: var(--settings-true-black) !important;
+}
+
+.settings-tab-nav-button.active:hover {
+  background: var(--settings-neon-red);
+  color: var(--settings-pure-white) !important;
+}
+
+.settings-tab-nav-button.active:hover * {
+  color: var(--settings-pure-white) !important;
+}
+
+.settings-tab-nav-icon {
+  font-size: 1.25rem;
+  width: 24px;
+  text-align: center;
+}
+
+/* Tab Content - Neo-Brutalism */
+.settings-tab-content {
+  flex: 1;
+  padding: var(--settings-spacing-xl);
+  overflow-y: auto;
+  background: var(--settings-background);
+}
+
+.settings-tab-panel {
+  display: none;
+}
+
+.settings-tab-panel.active {
+  display: block;
+}
+
+/* Modal Footer - Neo-Brutalism */
+.settings-modal-footer {
+  padding: var(--settings-spacing-lg) var(--settings-spacing-xl);
+  border-top: var(--settings-border-width) solid var(--settings-border);
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--settings-spacing-md);
+  background: var(--settings-pure-white);
+}
+
+.settings-button {
+  padding: var(--settings-spacing-md) var(--settings-spacing-lg);
+  border-radius: 0;
+  font-size: 1rem;
+  font-weight: 900;
+  cursor: pointer;
+  transition: all 0.15s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  border: var(--settings-border-width) solid var(--settings-border);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: var(--settings-shadow-harsh);
+}
+
+.settings-button-primary {
+  background: var(--settings-primary-color);
+  color: var(--settings-true-black);
+  border-color: var(--settings-border);
+}
+
+.settings-button-primary:hover {
+  background: var(--settings-primary-hover);
+  transform: translate(-3px, -3px);
+  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.15);
+}
+
+.settings-button-secondary {
+  background: var(--settings-background);
+  color: var(--settings-text-secondary);
+  border-color: var(--settings-border);
+}
+
+.settings-button-secondary:hover {
+  background: var(--settings-bright-yellow);
+  transform: translate(-3px, -3px);
+  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.15);
+}
+
+/* Form Elements - Neo-Brutalism */
+.settings-form-group {
+  margin-bottom: var(--settings-spacing-lg);
+}
+
+.settings-form-label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 900;
+  color: var(--settings-text);
+  margin-bottom: var(--settings-spacing-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.settings-form-input {
+  width: 100%;
+  padding: var(--settings-spacing-md);
+  border: var(--settings-border-width) solid var(--settings-border);
+  border-radius: 0;
+  background: var(--settings-background);
+  color: var(--settings-text);
+  font-size: 1rem;
+  font-weight: 700;
+  transition: all 0.15s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  box-shadow: var(--settings-shadow-harsh);
+}
+
+.settings-form-input:focus {
+  outline: none;
+  border-color: var(--settings-electric-blue);
+  box-shadow: 0 0 0 4px var(--settings-electric-blue), var(--settings-shadow-harsh);
+}
+
+.settings-form-select {
+  width: 100%;
+  padding: var(--settings-spacing-md);
+  border: var(--settings-border-width) solid var(--settings-border);
+  border-radius: 0;
+  background: var(--settings-background);
+  color: var(--settings-text);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--settings-shadow-harsh);
+}
+
+.settings-form-textarea {
+  width: 100%;
+  padding: var(--settings-spacing-md);
+  border: var(--settings-border-width) solid var(--settings-border);
+  border-radius: 0;
+  background: var(--settings-background);
+  color: var(--settings-text);
+  font-size: 1rem;
+  font-weight: 700;
+  resize: vertical;
+  min-height: 120px;
+  box-shadow: var(--settings-shadow-harsh);
+}
+
+.settings-form-checkbox {
+  margin-right: var(--settings-spacing-sm);
+  width: 24px;
+  height: 24px;
+  border: var(--settings-border-width) solid var(--settings-border);
+  accent-color: var(--settings-electric-blue);
+}
+
+.settings-form-help {
+  font-size: 0.9rem;
+  color: var(--settings-text-secondary);
+  margin-top: var(--settings-spacing-xs);
+  font-weight: 700;
+}
+
+/* Error States - Neo-Brutalism */
+.settings-form-input.error,
+.settings-form-select.error,
+.settings-form-textarea.error {
+  border-color: var(--settings-error);
+  background: var(--settings-bright-yellow);
+}
+
+.settings-form-error {
+  color: var(--settings-error);
+  font-size: 0.9rem;
+  margin-top: var(--settings-spacing-xs);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+/* Success States - Neo-Brutalism */
+.settings-form-success {
+  color: var(--settings-success);
+  font-size: 0.9rem;
+  margin-top: var(--settings-spacing-xs);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+/* Warning States - Neo-Brutalism */
+.settings-form-warning {
+  color: var(--settings-warning);
+  font-size: 0.9rem;
+  margin-top: var(--settings-spacing-xs);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+/* Section Headers - Neo-Brutalism */
+.settings-section-header {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--settings-text);
+  margin: 0 0 var(--settings-spacing-lg) 0;
+  padding-bottom: var(--settings-spacing-sm);
+  border-bottom: var(--settings-border-width) solid var(--settings-border);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.settings-section-description {
+  color: var(--settings-text-secondary);
+  font-size: 1rem;
+  margin-bottom: var(--settings-spacing-lg);
+  font-weight: 700;
+}
+
+/* Loading States - Neo-Brutalism */
+.settings-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--settings-spacing-xl);
+  color: var(--settings-text-secondary);
+  font-weight: 900;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+}
+
+.settings-spinner {
+  width: 32px;
+  height: 32px;
+  border: var(--settings-border-width) solid var(--settings-border);
+  border-top: var(--settings-border-width) solid var(--settings-electric-blue);
+  border-radius: 0;
+  animation: settings-spin 1s linear infinite;
+  margin-right: var(--settings-spacing-sm);
+}
+
+@keyframes settings-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .settings-modal {
+    width: 95vw;
+    height: 90vh;
+    margin: var(--settings-spacing-md);
+  }
+  
+  .settings-modal-body {
+    flex-direction: column;
+  }
+  
+  .settings-tab-nav {
+    width: 100%;
+    border-right: none;
+    border-bottom: var(--settings-border-width) solid var(--settings-border);
+    padding: var(--settings-spacing-sm);
+  }
+  
+  .settings-tab-nav-list {
+    display: flex;
+    overflow-x: auto;
+    gap: var(--settings-spacing-xs);
+  }
+  
+  .settings-tab-nav-item {
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+  
+  .settings-tab-nav-button {
+    white-space: nowrap;
+    min-width: 140px;
+    justify-content: center;
+  }
+  
+  .settings-tab-content {
+    padding: var(--settings-spacing-md);
+  }
+  
+  .settings-modal-header,
+  .settings-modal-footer {
+    padding: var(--settings-spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .settings-modal {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    margin: 0;
+  }
+  
+  .settings-modal-footer {
+    flex-direction: column;
+  }
+  
+  .settings-button {
+    width: 100%;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .settings-tab-nav-button,
+  .settings-button,
+  .settings-form-input,
+  .settings-modal-close {
+    transition: none;
+  }
+  
+  .settings-spinner {
+    animation: none;
+  }
+}
+
+/* Focus indicators for keyboard navigation */
+.settings-tab-nav-button:focus,
+.settings-button:focus,
+.settings-form-input:focus,
+.settings-form-select:focus,
+.settings-form-textarea:focus,
+.settings-modal-close:focus {
+  outline: 4px solid var(--settings-electric-blue);
+  outline-offset: 2px;
+}
+
+/* Utility Classes */
+.settings-hidden {
+  display: none !important;
+}
+
+.settings-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

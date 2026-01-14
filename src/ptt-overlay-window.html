@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PTT Overlay</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: transparent;
+            overflow: hidden;
+            -webkit-app-region: no-drag;
+        }
+
+        .ptt-overlay {
+            position: fixed;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            
+            background: rgba(30, 30, 30, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 8px 16px;
+            
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+        }
+
+        .ptt-bars {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            height: 24px;
+        }
+
+        .ptt-bar {
+            width: 2.5px;
+            height: 20%;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 2px;
+            transition: height 0.1s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="ptt-overlay">
+        <div class="ptt-bars" id="ptt-bars"></div>
+    </div>
+
+    <script>
+        // Create 8 bars
+        const barsContainer = document.getElementById('ptt-bars');
+        const bars = [];
+        for (let i = 0; i < 8; i++) {
+            const bar = document.createElement('div');
+            bar.className = 'ptt-bar';
+            bars.push(bar);
+            barsContainer.appendChild(bar);
+        }
+
+        // Listen for audio data from main process
+        window.electronAPI.onPTTAudioData((audioData) => {
+            // Update bars based on audio data
+            bars.forEach((bar, index) => {
+                const value = audioData[index] || 0.15;
+                bar.style.height = `${value * 100}%`;
+            });
+        });
+    </script>
+</body>
+</html>

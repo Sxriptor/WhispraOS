@@ -1,0 +1,47 @@
+{
+  "modal": {
+    "title": "Säker API-konfiguration",
+    "close": "Stäng"
+  },
+  "instructions": {
+    "title": "Instruktioner för API-nyckelinställning",
+    "openaiTitle": "OpenAI API-nyckel",
+    "openaiPermissions": "Läsa behörigheter: Modeller, Funktioner",
+    "openaiUsage": "Används för tal-till-text och text-till-tal översättning",
+    "openaiLink": "platform.openai.com/api-keys",
+    "elevenlabsTitle": "ElevenLabs API-nyckel",
+    "elevenlabsRestrict": "Begränsa nyckel: Aktiverad",
+    "elevenlabsNoAccess": "Allt annat: Ingen åtkomst",
+    "elevenlabsTts": "Text till tal: Åtkomst",
+    "elevenlabsSts": "Tal till tal: Åtkomst",
+    "elevenlabsAgents": "ElevenLabs-agenter: Skriva",
+    "elevenlabsVoices": "Röster: Skriva",
+    "elevenlabsVoiceGen": "Röstgenerering: Åtkomst",
+    "elevenlabsUser": "Användare: Läsa",
+    "elevenlabsLink": "elevenlabs.io/app/profile"
+  },
+  "fields": {
+    "openaiLabel": "OpenAI API-nyckel:",
+    "openaiPlaceholder": "Ange din OpenAI API-nyckel",
+    "openaiStored": "Nyckel lagrad säkert",
+    "openaiHelp": "Ange din OpenAI API-nyckel (sk-...)",
+    "elevenlabsLabel": "ElevenLabs API-nyckel:",
+    "elevenlabsPlaceholder": "Ange din ElevenLabs API-nyckel",
+    "elevenlabsStored": "Nyckel lagrad säkert",
+    "elevenlabsHelp": "Ange din ElevenLabs API-nyckel (32 tecken)"
+  },
+  "buttons": {
+    "showKey": "Visa nyckel",
+    "removeKey": "Ta bort nyckel",
+    "clearAll": "Rensa alla nycklar",
+    "cancel": "Avbryt",
+    "save": "Spara"
+  },
+  "status": {
+    "keyStored": "✓ Nyckel lagrad säkert"
+  },
+  "links": {
+    "openai": "Generera nyckel på: platform.openai.com/api-keys",
+    "elevenlabs": "Generera nyckel på: elevenlabs.io/app/profile"
+  }
+}

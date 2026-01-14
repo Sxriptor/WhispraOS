@@ -1,0 +1,62 @@
+{
+  "app": {
+    "name": "Whispra",
+    "loading": "加载中...",
+    "ready": "就绪",
+    "idle": "空闲",
+    "processing": "处理中",
+    "error": "错误"
+  },
+  "navigation": {
+    "translate": "翻译",
+    "bidirectional": "双向",
+    "screenTranslation": "屏幕翻译",
+    "soundBoard": "声音面板",
+    "voiceFilter": "语音过滤",
+    "settings": "设置",
+    "logs": "日志"
+  },
+  "common": {
+    "start": "开始",
+    "stop": "停止",
+    "cancel": "取消",
+    "save": "保存",
+    "close": "关闭",
+    "back": "返回",
+    "next": "下一步",
+    "continue": "继续",
+    "retry": "重试",
+    "yes": "是",
+    "no": "否",
+    "ok": "确定"
+  },
+  "header": {
+    "profile": "个人资料",
+    "signOut": "登出",
+    "language": "语言"
+  },
+  "footer": {
+    "connectionStatus": "连接状态",
+    "processingStatus": "处理状态",
+    "feedback": "报告错误 / 建议功能",
+    "debugConsole": "显示调试控制台"
+  },
+  "errors": {
+    "networkError": "网络连接错误",
+    "permissionDenied": "权限被拒绝",
+    "deviceNotFound": "未找到设备",
+    "serviceUnavailable": "服务不可用",
+    "unknownError": "发生未知错误"
+  },
+  "tooltips": {
+    "sidebarToggle": "切换侧边栏",
+    "profile": "个人资料菜单",
+    "language": "选择语言"
+  },
+  "languageChange": {
+    "title": "更改应用语言？",
+    "message": "您是否也希望将 Whispra 的文本改为这种语言？",
+    "yes": "是",
+    "no": "否"
+  }
+}

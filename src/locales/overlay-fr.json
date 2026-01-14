@@ -1,0 +1,102 @@
+{
+  "header": {
+    "title": "Contrôles Whispra",
+    "webOverlay": "Superposition Web"
+  },
+  "tabs": {
+    "translation": "Traduction",
+    "bidirectional": "Bidirectionnel",
+    "screenTranslation": "Traduction d'Écran",
+    "soundboard": "Table de Mixage",
+    "settings": "Paramètres"
+  },
+  "translation": {
+    "labels": {
+      "microphone": "Microphone",
+      "targetLanguage": "Langue Cible",
+      "voice": "Voix",
+      "output": "Sortie",
+      "pushToTalk": "Push-to-Talk",
+      "holdKeyToRecord": "Maintenez la touche pour enregistrer"
+    },
+    "placeholders": {
+      "selectMicrophone": "Sélectionnez le microphone...",
+      "loadingVoices": "Chargement des voix..."
+    },
+    "buttons": {
+      "startTranslation": "Démarrer la Traduction",
+      "outputVirtualDevice": "Sortie : Dispositif Virtuel",
+      "outputSystem": "Sortie : Système"
+    }
+  },
+  "bidirectional": {
+    "labels": {
+      "outputDevice": "Dispositif de Sortie",
+      "systemInput": "Entrée Système",
+      "incomingVoice": "Voix Entrante",
+      "screenCapture": "Capture d'Écran/Fenêtre",
+      "bidirectionalToggle": "Bascule Bidirectionnelle",
+      "holdKeyToToggle": "Maintenez la touche pour basculer le mode bidirectionnel",
+      "autoDetectLanguage": "Détection Automatique de la Langue"
+    },
+    "placeholders": {
+      "loadingOutputDevices": "Chargement des dispositifs de sortie...",
+      "loadingVoices": "Chargement des voix...",
+      "displaySystemAudio": "Affichage/Audio Système (Par Défaut)",
+      "selectScreenWindow": "Sélectionnez l'écran ou la fenêtre..."
+    },
+    "buttons": {
+      "startBidirectional": "Démarrer Bidirectionnel",
+      "refreshSources": "Rafraîchir les sources"
+    },
+    "help": {
+      "screenCaptureHelp": "Les écrans et fenêtres disponibles avec PIDs seront détectés automatiquement."
+    }
+  },
+  "screenTranslation": {
+    "labels": {
+      "screenSelection": "Sélection d'Écran",
+      "translateTo": "Traduire Vers",
+      "translateLanguage": "Langue de Traduction",
+      "keybind": "Raccourci"
+    },
+    "placeholders": {
+      "selectScreen": "Sélectionnez l'écran..."
+    },
+    "buttons": {
+      "changeKeybind": "Changer la Touche"
+    }
+  },
+  "soundboard": {
+    "labels": {
+      "soundBoardControls": "Contrôles de la Table de Mixage",
+      "volumeControls": "Contrôles de Volume",
+      "soundPads": "Tapis Sonores",
+      "vbAudioVolume": "VB Audio :",
+      "headphonesVolume": "Casque :"
+    },
+    "buttons": {
+      "addSound": "Ajouter un Son",
+      "stopAll": "Tout Arrêter"
+    },
+    "placeholders": {
+      "noSoundsAdded": "Aucun son ajouté pour l'instant. Cliquez sur \"Ajouter un Son\" pour commencer !"
+    }
+  },
+  "settings": {
+    "labels": {
+      "overlayToggleHotkey": "Touche de Bascule de Superposition",
+      "pushToTalkHotkey": "Touche de Push-to-Talk",
+      "bidirectionalToggleHotkey": "Touche de Bascule Bidirectionnelle"
+    },
+    "modifiers": {
+      "ctrl": "Ctrl",
+      "alt": "Alt",
+      "shift": "Maj"
+    }
+  },
+  "common": {
+    "volume": "%",
+    "keyPrefix": "Touche :"
+  }
+}

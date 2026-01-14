@@ -1,0 +1,47 @@
+{
+  "modal": {
+    "title": "안전한 API 구성",
+    "close": "닫기"
+  },
+  "instructions": {
+    "title": "API 키 설정 지침",
+    "openaiTitle": "OpenAI API 키",
+    "openaiPermissions": "읽기 권한: 모델, 기능",
+    "openaiUsage": "음성 인식 및 음성 합성 번역에 사용됨",
+    "openaiLink": "platform.openai.com/api-keys",
+    "elevenlabsTitle": "ElevenLabs API 키",
+    "elevenlabsRestrict": "키 제한: 활성화됨",
+    "elevenlabsNoAccess": "기타 모든 것: 접근 불가",
+    "elevenlabsTts": "텍스트 음성 변환: 접근",
+    "elevenlabsSts": "음성 음성 변환: 접근",
+    "elevenlabsAgents": "ElevenLabs 에이전트: 쓰기",
+    "elevenlabsVoices": "음성: 쓰기",
+    "elevenlabsVoiceGen": "음성 생성: 접근",
+    "elevenlabsUser": "사용자: 읽기",
+    "elevenlabsLink": "elevenlabs.io/app/profile"
+  },
+  "fields": {
+    "openaiLabel": "OpenAI API 키:",
+    "openaiPlaceholder": "OpenAI API 키를 입력하세요",
+    "openaiStored": "키가 안전하게 저장됨",
+    "openaiHelp": "OpenAI API 키를 입력하세요 (sk-...)",
+    "elevenlabsLabel": "ElevenLabs API 키:",
+    "elevenlabsPlaceholder": "ElevenLabs API 키를 입력하세요",
+    "elevenlabsStored": "키가 안전하게 저장됨",
+    "elevenlabsHelp": "ElevenLabs API 키를 입력하세요 (32자)"
+  },
+  "buttons": {
+    "showKey": "키 표시",
+    "removeKey": "키 제거",
+    "clearAll": "모든 키 지우기",
+    "cancel": "취소",
+    "save": "저장"
+  },
+  "status": {
+    "keyStored": "✓ 키가 안전하게 저장됨"
+  },
+  "links": {
+    "openai": "키 생성: platform.openai.com/api-keys",
+    "elevenlabs": "키 생성: elevenlabs.io/app/profile"
+  }
+}

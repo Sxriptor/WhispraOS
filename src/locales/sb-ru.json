@@ -1,0 +1,24 @@
+{
+  "panel": {
+    "title": "Звуковая Панель",
+    "description": "Воспроизводить пользовательские звуки и аудио клипы во время разговоров"
+  },
+  "controls": {
+    "outputDevice": "Устройство Вывода",
+    "vbAudioVolume": "Громкость VB Audio",
+    "headphonesVolume": "Громкость Наушников",
+    "soundPadGrid": "Сетка Звуковых Падов",
+    "enableHotkeys": "Включить Горячие Клавиши Звуковой Панели",
+    "addSoundFiles": "Добавить Звуковые Файлы",
+    "webOverlay": "Веб Оверлей",
+    "stopAllSounds": "Остановить Все Звуки"
+  },
+  "placeholders": {
+    "selectOutputDevice": "Выберите устройство вывода...",
+    "defaultSystemOutput": "Вывод Системы По Умолчанию",
+    "virtualAudioCable": "Виртуальный Аудио Кабель"
+  },
+  "status": {
+    "volume": "%"
+  }
+}

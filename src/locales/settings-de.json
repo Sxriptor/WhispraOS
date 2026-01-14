@@ -1,0 +1,47 @@
+{
+  "modal": {
+    "title": "Sichere API-Konfiguration",
+    "close": "Schließen"
+  },
+  "instructions": {
+    "title": "Anleitung zur API-Schlüssel-Einrichtung",
+    "openaiTitle": "OpenAI API-Schlüssel",
+    "openaiPermissions": "Leseberechtigungen: Modelle, Fähigkeiten",
+    "openaiUsage": "Verwendet für Sprach-zu-Text und Text-zu-Sprache Übersetzung",
+    "openaiLink": "platform.openai.com/api-keys",
+    "elevenlabsTitle": "ElevenLabs API-Schlüssel",
+    "elevenlabsRestrict": "Schlüssel einschränken: Aktiviert",
+    "elevenlabsNoAccess": "Alles andere: Kein Zugriff",
+    "elevenlabsTts": "Text zu Sprache: Zugriff",
+    "elevenlabsSts": "Sprache zu Sprache: Zugriff",
+    "elevenlabsAgents": "ElevenLabs-Agenten: Schreiben",
+    "elevenlabsVoices": "Stimmen: Schreiben",
+    "elevenlabsVoiceGen": "Stimmengenerierung: Zugriff",
+    "elevenlabsUser": "Benutzer: Lesen",
+    "elevenlabsLink": "elevenlabs.io/app/profile"
+  },
+  "fields": {
+    "openaiLabel": "OpenAI API-Schlüssel:",
+    "openaiPlaceholder": "Geben Sie Ihren OpenAI API-Schlüssel ein",
+    "openaiStored": "Schlüssel sicher gespeichert",
+    "openaiHelp": "Geben Sie Ihren OpenAI API-Schlüssel ein (sk-...)",
+    "elevenlabsLabel": "ElevenLabs API-Schlüssel:",
+    "elevenlabsPlaceholder": "Geben Sie Ihren ElevenLabs API-Schlüssel ein",
+    "elevenlabsStored": "Schlüssel sicher gespeichert",
+    "elevenlabsHelp": "Geben Sie Ihren ElevenLabs API-Schlüssel ein (32 Zeichen)"
+  },
+  "buttons": {
+    "showKey": "Schlüssel anzeigen",
+    "removeKey": "Schlüssel entfernen",
+    "clearAll": "Alle Schlüssel löschen",
+    "cancel": "Abbrechen",
+    "save": "Speichern"
+  },
+  "status": {
+    "keyStored": "✓ Schlüssel sicher gespeichert"
+  },
+  "links": {
+    "openai": "Schlüssel generieren unter: platform.openai.com/api-keys",
+    "elevenlabs": "Schlüssel generieren unter: elevenlabs.io/app/profile"
+  }
+}

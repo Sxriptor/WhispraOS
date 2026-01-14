@@ -1,0 +1,32 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "ES2020",
+    "moduleResolution": "node",
+    "outDir": "./dist/renderer"
+  },
+  "include": [
+    "src/renderer.ts",
+    "src/renderer/**/*",
+    "src/overlay-renderer.ts",
+    "src/mini-overlay-renderer.ts",
+    "src/expanded-overlay-renderer.ts",
+    "src/soundboard-overlay-renderer.ts",
+    "src/ui/**/*",
+    "src/types/**/*",
+    "src/interfaces/**/*",
+    "src/components/**/*",
+    "src/utils/**/*",
+    "src/services/BidirectionalTTSProcessor.ts",
+    "src/services/TranslateTTSProcessor.ts",
+    "src/services/StreamingAudioPlayer.ts",
+    "src/services/TranslationContextManager.ts"
+
+  ],
+  "exclude": [
+    "src/main.ts",
+    "src/preload.ts",
+    "src/ipc/**/*",
+    "src/tests/**/*"
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "tab": {
+    "translation": "Übersetzung",
+    "bidirectional": "Bidirektional",
+    "soundboard": "Soundboard",
+    "settings": "Einstellungen"
+  },
+  "controls": {
+    "microphone": "Mikrofon",
+    "targetLanguage": "Zielsprache",
+    "voice": "Stimme",
+    "output": "Ausgabe",
+    "pushToTalk": "Push-to-Talk",
+    "startTranslation": "Übersetzung starten",
+    "stopTranslation": "Übersetzung stoppen",
+    "addCustomVoice": "Benutzerdefinierte Stimme hinzufügen",
+    "accent": "Akzent",
+    "noAccent": "Kein Akzent",
+    "accentOn": "Akzent: EIN",
+    "accentOff": "Akzent: AUS"
+  },
+  "placeholders": {
+    "selectMicrophone": "Mikrofon auswählen...",
+    "loadingVoices": "Stimmen werden geladen...",
+    "selectVoice": "Stimme auswählen...",
+    "enterCustomAccent": "Benutzerdefinierten Akzent eingeben...",
+    "selectPreset": "Voreinstellung auswählen..."
+  },
+  "descriptions": {
+    "microphoneHelp": "Dieses Mikrofon wird für die Übersetzung und Durchleitung verwendet",
+    "outputMode": "Ausgabe an virtuelles Gerät",
+    "holdKeyToRecord": "Taste gedrückt halten, um aufzunehmen",
+    "toggleBidiMode": "Taste gedrückt halten, um den bidirektionalen Modus umzuschalten",
+    "autoDetectLanguage": "Sprache automatisch erkennen"
+  },
+  "bidirectional": {
+    "outputDevice": "Ausgabegerät",
+    "systemInput": "Systemeingang",
+    "incomingVoice": "Eingehende Stimme",
+    "screenCapture": "Bildschirm/Fensteraufnahme",
+    "startBidirectional": "Bidirektional starten",
+    "stopBidirectional": "Bidirektional stoppen",
+    "loadingDevices": "Ausgabegeräte werden geladen...",
+    "selectOutputDevice": "Ausgabegerät auswählen...",
+    "displayAudio": "Anzeige/Systemaudio (Standard)",
+    "loadingVoices": "Stimmen werden geladen...",
+    "selectIncomingVoice": "Eingehende Stimme auswählen...",
+    "selectScreenOrWindow": "Bildschirm oder Fenster auswählen...",
+    "refreshSources": "Quellen aktualisieren",
+    "captureHelp": "Verfügbare Bildschirme und Fenster mit PIDs werden automatisch erkannt"
+  },
+  "soundboard": {
+    "controls": "Soundboard-Steuerungen",
+    "addSound": "Geräusch hinzufügen",
+    "stopAll": "Alle stoppen",
+    "volumeControls": "Lautstärkeregler",
+    "vbAudio": "VB Audio:",
+    "headphones": "Kopfhörer:",
+    "soundPads": "Sound Pads",
+    "noSounds": "Noch keine Geräusche hinzugefügt. Klicken Sie auf \"Geräusch hinzufügen\", um zu beginnen!",
+    "hotkeysEnabled": "Soundboard-Hotkeys aktivieren"
+  },
+  "settings": {
+    "overlayHotkey": "Overlay-Umschalttaste",
+    "pttHotkey": "Push-to-Talk-Hotkey",
+    "bidiHotkey": "Bidirektionale Umschalttaste",
+    "clickThrough": "Durchklicken",
+    "alwaysOnTop": "Immer im Vordergrund",
+    "overlayOpacity": "Overlay-Transparenz",
+    "clickThroughDesc": "Durchklicken im Minimalmodus aktivieren",
+    "alwaysOnTopDesc": "Overlay über anderen Fenstern halten"
+  },
+  "status": {
+    "ready": "Bereit zum Aufnehmen...",
+    "recording": "Aufnahme...",
+    "processing": "Verarbeitung...",
+    "stopped": "Gestoppt",
+    "idle": "Inaktiv",
+    "active": "Aktiv",
+    "error": "Fehler"
+  },
+  "keys": {
+    "space": "LEERTASTE",
+    "ctrl": "Strg",
+    "alt": "Alt",
+    "shift": "Umschalt"
+  }
+}

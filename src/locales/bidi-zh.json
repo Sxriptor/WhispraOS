@@ -1,0 +1,31 @@
+{
+  "panel": {
+    "title": "双向模式"
+  },
+  "controls": {
+    "startBidirectional": "开始双向翻译",
+    "stopBidirectional": "停止双向翻译",
+    "keybind": "快捷键",
+    "toggleWith": "切换键",
+    "changeKey": "更改按键",
+    "outputDevice": "输出设备",
+    "systemInput": "系统输入",
+    "incomingVoice": "输入语音"
+  },
+  "placeholders": {
+    "loadingOutputDevices": "加载输出设备中...",
+    "loadingVoices": "加载语音中...",
+    "displaySystemAudio": "显示/系统音频（默认）"
+  },
+  "status": {
+    "idle": "空闲",
+    "waiting": "等待中...",
+    "ready": "就绪...",
+    "starting": "启动中...",
+    "stopping": "停止中..."
+  },
+  "labels": {
+    "detectedTarget": "检测到（目标语言）",
+    "respoken": "重新发音"
+  }
+}

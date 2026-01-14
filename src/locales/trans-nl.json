@@ -1,0 +1,88 @@
+{
+  "tab": {
+    "translation": "Vertaling",
+    "bidirectional": "Bidirectioneel",
+    "soundboard": "Geluidspaneel",
+    "settings": "Instellingen"
+  },
+  "controls": {
+    "microphone": "Microfoon",
+    "targetLanguage": "Doeltaal",
+    "voice": "Stem",
+    "output": "Uitgang",
+    "pushToTalk": "Push-to-Talk",
+    "startTranslation": "Start vertaling",
+    "stopTranslation": "Stop vertaling",
+    "addCustomVoice": "Voeg aangepaste stem toe",
+    "accent": "Accent",
+    "noAccent": "Geen accent",
+    "accentOn": "Accent: AAN",
+    "accentOff": "Accent: UIT"
+  },
+  "placeholders": {
+    "selectMicrophone": "Selecteer microfoon...",
+    "loadingVoices": "Stemmen laden...",
+    "selectVoice": "Selecteer stem...",
+    "enterCustomAccent": "Voer aangepast accent in...",
+    "selectPreset": "Selecteer preset..."
+  },
+  "descriptions": {
+    "microphoneHelp": "Deze microfoon wordt gebruikt voor vertaling en doorvoer",
+    "outputMode": "Uitgang naar Virtueel Apparaat",
+    "holdKeyToRecord": "Houd toets ingedrukt om op te nemen",
+    "toggleBidiMode": "Houd toets ingedrukt om bidirectionele modus te schakelen",
+    "autoDetectLanguage": "Automatisch taal detecteren"
+  },
+  "bidirectional": {
+    "outputDevice": "Uitgangsapparaat",
+    "systemInput": "Systeeminvoer",
+    "incomingVoice": "Binnenkomende stem",
+    "screenCapture": "Scherm/Window Capture",
+    "startBidirectional": "Start bidirectioneel",
+    "stopBidirectional": "Stop bidirectioneel",
+    "loadingDevices": "Uitgangsapparaten laden...",
+    "selectOutputDevice": "Selecteer uitgangsapparaat...",
+    "displayAudio": "Weergave/Systeem Audio (Standaard)",
+    "loadingVoices": "Stemmen laden...",
+    "selectIncomingVoice": "Selecteer binnenkomende stem...",
+    "selectScreenOrWindow": "Selecteer scherm of venster...",
+    "refreshSources": "Vernieuw bronnen",
+    "captureHelp": "Beschikbare schermen en vensters met PID's worden automatisch gedetecteerd"
+  },
+  "soundboard": {
+    "controls": "Geluidspaneelbediening",
+    "addSound": "Voeg geluid toe",
+    "stopAll": "Stop alles",
+    "volumeControls": "Volume-instellingen",
+    "vbAudio": "VB Audio:",
+    "headphones": "Hoofdtelefoon:",
+    "soundPads": "Geluidspads",
+    "noSounds": "Nog geen geluiden toegevoegd. Klik op \"Voeg geluid toe\" om te beginnen!",
+    "hotkeysEnabled": "Schakel sneltoetsen voor het geluidspaneel in"
+  },
+  "settings": {
+    "overlayHotkey": "Overlay Toggle Sneltoets",
+    "pttHotkey": "Push-to-Talk Sneltoets",
+    "bidiHotkey": "Bidirectioneel Toggle Sneltoets",
+    "clickThrough": "Klik-door",
+    "alwaysOnTop": "Altijd bovenop",
+    "overlayOpacity": "Overlay Opacity",
+    "clickThroughDesc": "Schakel klik-door in minimale modus in",
+    "alwaysOnTopDesc": "Houd overlay boven andere vensters"
+  },
+  "status": {
+    "ready": "Klaar om op te nemen...",
+    "recording": "Opnemen...",
+    "processing": "Verwerken...",
+    "stopped": "Gestopt",
+    "idle": "Inactief",
+    "active": "Actief",
+    "error": "Fout"
+  },
+  "keys": {
+    "space": "SPATIE",
+    "ctrl": "Ctrl",
+    "alt": "Alt",
+    "shift": "Shift"
+  }
+}

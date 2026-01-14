@@ -1,0 +1,33 @@
+{
+  "panel": {
+    "title": "Bidirektionaler Modus"
+  },
+  "controls": {
+    "startBidirectional": "Bidirektional starten",
+    "stopBidirectional": "Bidirektional stoppen",
+    "keybind": "Tastenkombination",
+    "toggleWith": "Umschalten mit",
+    "changeKey": "Taste ändern",
+    "outputDevice": "Ausgabegerät",
+    "systemInput": "Systemeingang",
+    "incomingVoice": "Eingehende Stimme"
+  },
+  "placeholders": {
+    "loadingOutputDevices": "Lade Ausgabegeräte...",
+    "loadingVoices": "Lade Stimmen...",
+    "displaySystemAudio": "Anzeige/Systemaudio (Standard)"
+  },
+  "status": {
+    "idle": "Inaktiv",
+    "waiting": "Warten...",
+    "ready": "Bereit...",
+    "starting": "Starte...",
+    "stopping": "Stoppe..."
+  },
+  "labels": {
+    "detectedTarget": "Erkannt (Zielsprache)",
+    "respoken": "Wiederholt",
+    "sourceLanguage": "Quellsprache - Sprache, die Sie hören",
+    "targetLanguage": "Zielsprache - Übersetzen in"
+  }
+}

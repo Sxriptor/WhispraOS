@@ -1,0 +1,33 @@
+{
+  "panel": {
+    "title": "Bidirectionele Modus"
+  },
+  "controls": {
+    "startBidirectional": "Start Bidirectioneel",
+    "stopBidirectional": "Stop Bidirectioneel",
+    "keybind": "Toetsbinding",
+    "toggleWith": "Wissel met",
+    "changeKey": "Verander Toets",
+    "outputDevice": "Uitvoerapparaat",
+    "systemInput": "Systeem Invoer",
+    "incomingVoice": "Binnenkomende Stem"
+  },
+  "placeholders": {
+    "loadingOutputDevices": "Uitvoerapparaten laden...",
+    "loadingVoices": "Stemmen laden...",
+    "displaySystemAudio": "Weergave/Systeem Audio (Standaard)"
+  },
+  "status": {
+    "idle": "Inactief",
+    "waiting": "Wachten...",
+    "ready": "Klaar...",
+    "starting": "Bezig met starten...",
+    "stopping": "Bezig met stoppen..."
+  },
+  "labels": {
+    "detectedTarget": "Gedetecteerd (Doeltaal)",
+    "respoken": "Herhaald",
+    "sourceLanguage": "Brontaal - Taal waar je naar luistert",
+    "targetLanguage": "Doeltaal - Vertalen naar"
+  }
+}

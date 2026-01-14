@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in - Whispra</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data:">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #ffffff;
+            color: #000000;
+            min-height: 100vh;
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .main-container {
+            display: flex;
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        .left-side {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            background: #ffffff;
+        }
+
+        .right-side {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 4rem;
+            background: #111111;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .right-side::before {
+            display: none;
+        }
+
+        .quote-container {
+            max-width: 600px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            z-index: 1;
+        }
+
+        .quote-text {
+            font-size: 2rem;
+            line-height: 1.5;
+            color: #ffffff;
+            font-weight: 300;
+            font-style: normal;
+            margin-bottom: 3rem;
+            letter-spacing: -0.02em;
+        }
+
+        .quote-author {
+            font-size: 1.125rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-style: normal;
+            text-align: right;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 28rem;
+        }
+
+        @media (max-width: 768px) {
+            .main-container {
+                flex-direction: column;
+            }
+
+            .right-side {
+                padding: 2rem;
+                min-height: 200px;
+            }
+
+            .quote-text {
+                font-size: 1.125rem;
+            }
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .logo {
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .brand-text {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #111827;
+        }
+
+        .title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: #6b7280;
+            margin-top: 0.5rem;
+        }
+
+        .card {
+            border: none;
+            border-radius: 0;
+            background: transparent;
+            box-shadow: none;
+        }
+
+        .card-content {
+            padding: 0;
+        }
+
+        .signin-button {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            background: #111111;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .signin-button:hover:not(:disabled) {
+            transform: translateY(-1px);
+            background: #222222;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .signin-button:active:not(:disabled) {
+            transform: translateY(0);
+        }
+
+        .signin-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .status-message {
+            margin-top: 1rem;
+            text-align: center;
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+
+        .language-toggle {
+            background: transparent;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            padding: 0.5rem 0.75rem;
+            color: #374151;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-bottom: 1rem;
+            min-width: 80px;
+        }
+
+        .language-toggle:hover {
+            background: #f9fafb;
+            border-color: #d1d5db;
+        }
+
+        .language-toggle:focus {
+            outline: none;
+            border-color: #000;
+            box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .language-toggle option {
+            background: #fff;
+            color: #374151;
+            padding: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <!-- Left Side - Sign In -->
+        <div class="left-side">
+            <div class="container">
+                <!-- Header -->
+                <div class="header">
+                    <div class="brand">
+                        <div class="logo">
+                            <img src="assets/favicon-32x32.png" alt="Whispra Logo"
+                                onerror="this.style.display='none'; this.parentElement.innerHTML='W'; this.parentElement.style.background='#000'; this.parentElement.style.color='#fff'; this.parentElement.style.fontWeight='bold'; this.parentElement.style.fontSize='14px';">
+                        </div>
+                        <span class="brand-text">Whispra</span>
+                    </div>
+
+                    <!-- Language Toggle -->
+                    <select id="language-toggle" class="language-toggle" title="Select Language">
+                        <option value="en">🇺🇸 English</option>
+                        <option value="es">🇪🇸 Español</option>
+                        <option value="ru">🇷🇺 Русский</option>
+                        <option value="zh">🇨🇳 中文</option>
+                        <option value="ja">🇯🇵 日本語</option>
+                    </select>
+
+                    <h1 class="title">Welcome back</h1>
+                    <p class="subtitle">Sign in to your account</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <button type="button" id="signin-button" class="signin-button">
+                            Sign in
+                        </button>
+                    </div>
+                </div>
+
+                <div id="status-message" class="status-message"></div>
+            </div>
+        </div>
+
+        <!-- Right Side - Quote/Description -->
+        <div class="right-side">
+            <div class="quote-container">
+                <p class="quote-text">
+                    "Breaking down language barriers, one conversation at a time. Real-time voice translation that brings the world together."
+                </p>
+                <p class="quote-author">- Cole Templin</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Translation data for sign-in page
+        const translations = {
+            'en': {
+                title: 'Welcome back',
+                subtitle: 'Sign in to your account',
+                signin: 'Sign in',
+                signingin: 'Signing in...',
+                opening: 'Opening browser...',
+                waiting: 'Waiting for sign-in...',
+                error: 'Could not start sign-in.',
+                success: 'Signed in. Loading main app...',
+                subscriptionRequired: 'Active subscription required'
+            },
+            'es': {
+                title: 'Bienvenido de nuevo',
+                subtitle: 'Inicia sesión en tu cuenta',
+                signin: 'Iniciar sesión',
+                signingin: 'Iniciando sesión...',
+                opening: 'Abriendo navegador...',
+                waiting: 'Esperando inicio de sesión...',
+                error: 'No se pudo iniciar la sesión.',
+                success: 'Sesión iniciada. Cargando aplicación principal...',
+                subscriptionRequired: 'Se requiere suscripción activa'
+            },
+            'ru': {
+                title: 'Добро пожаловать обратно',
+                subtitle: 'Войдите в свой аккаунт',
+                signin: 'Войти',
+                signingin: 'Вход в систему...',
+                opening: 'Открытие браузера...',
+                waiting: 'Ожидание входа...',
+                error: 'Не удалось начать вход.',
+                success: 'Вход выполнен. Загрузка основного приложения...',
+                subscriptionRequired: 'Требуется активная подписка'
+            },
+            'zh': {
+                title: '欢迎回来',
+                subtitle: '登录您的账户',
+                signin: '登录',
+                signingin: '正在登录...',
+                opening: '正在打开浏览器...',
+                waiting: '等待登录...',
+                error: '无法开始登录。',
+                success: '登录成功。正在加载主应用程序...',
+                subscriptionRequired: '需要有效订阅'
+            },
+            'ja': {
+                title: 'おかえりなさい',
+                subtitle: 'アカウントにサインイン',
+                signin: 'サインイン',
+                signingin: 'サインイン中...',
+                opening: 'ブラウザを開いています...',
+                waiting: 'サインインを待機中...',
+                error: 'サインインを開始できませんでした。',
+                success: 'サインインしました。メインアプリを読み込み中...',
+                subscriptionRequired: 'アクティブなサブスクリプションが必要です'
+            }
+        };
+
+        // Global variable for current language
+        let currentLanguage = 'en';
+
+        function updateUIText(languageCode) {
+            const langTranslations = translations[languageCode] || translations['en'];
+            const titleElement = document.querySelector('.title');
+            const subtitleElement = document.querySelector('.subtitle');
+            const signinButton = document.getElementById('signin-button');
+
+            if (titleElement) titleElement.textContent = langTranslations.title;
+            if (subtitleElement) subtitleElement.textContent = langTranslations.subtitle;
+            if (signinButton) signinButton.textContent = langTranslations.signin;
+        }
+
+        async function saveLanguagePreference(languageCode) {
+            try {
+                console.log('Saving language preference:', languageCode);
+                await window.electronAPI.invoke('config:set', {
+                    id: Date.now().toString(),
+                    timestamp: Date.now(),
+                    payload: {
+                        uiSettings: {
+                            preferredLanguage: languageCode
+                        }
+                    }
+                });
+                console.log('Language preference saved successfully');
+            } catch (error) {
+                console.error('Failed to save language preference:', error);
+            }
+        }
+
+        async function loadLanguagePreference() {
+            try {
+                console.log('Loading language preference...');
+                const config = await window.electronAPI.invoke('config:get', {
+                    id: Date.now().toString(),
+                    timestamp: Date.now(),
+                    payload: null
+                });
+
+                if (config?.success && config.payload?.uiSettings?.preferredLanguage) {
+                    currentLanguage = config.payload.uiSettings.preferredLanguage;
+                    console.log('Loaded preferred language:', currentLanguage);
+                    return currentLanguage;
+                } else {
+                    console.log('No saved language preference found, using default: en');
+                    return 'en';
+                }
+            } catch (error) {
+                console.error('Failed to load language preference:', error);
+                console.log('Using fallback language: en');
+                return 'en';
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const signinButton = document.getElementById('signin-button');
+            const statusMessage = document.getElementById('status-message');
+            const languageToggle = document.getElementById('language-toggle');
+
+            // Initialize language toggle
+            if (languageToggle) {
+                // Load saved language preference and initialize
+                loadLanguagePreference().then((savedLanguage) => {
+                    currentLanguage = savedLanguage;
+                    languageToggle.value = currentLanguage;
+                    updateUIText(currentLanguage);
+                }).catch((error) => {
+                    console.error('Error loading language preference:', error);
+                    currentLanguage = 'en';
+                    languageToggle.value = currentLanguage;
+                    updateUIText(currentLanguage);
+                });
+
+                // Handle language change
+                languageToggle.addEventListener('change', () => {
+                    currentLanguage = languageToggle.value;
+                    updateUIText(currentLanguage);
+                    saveLanguagePreference(currentLanguage);
+                });
+            }
+
+            // Handle sign in button click
+            signinButton.addEventListener('click', async () => {
+                try {
+                    signinButton.disabled = true;
+                    const langTranslations = translations[currentLanguage] || translations['en'];
+                    signinButton.textContent = langTranslations.signingin;
+                    statusMessage.textContent = langTranslations.opening;
+
+                    await window.electronAPI.startSignIn();
+                    statusMessage.textContent = langTranslations.waiting;
+                } catch (e) {
+                    const langTranslations = translations[currentLanguage] || translations['en'];
+                    statusMessage.textContent = langTranslations.error;
+                    signinButton.disabled = false;
+                    signinButton.textContent = langTranslations.signin;
+                    // Report the error to backend
+                    window.electronAPI.reportError({
+                        message: e instanceof Error ? e.message : String(e),
+                        stack: e instanceof Error ? e.stack : undefined,
+                        category: 'api',
+                        severity: 'high',
+                        component: 'signin',
+                        context: { action: 'startSignIn' }
+                    });
+                }
+            });
+
+            // Listen for successful sign-in
+            window.electronAPI.onSignedIn(() => {
+                const langTranslations = translations[currentLanguage] || translations['en'];
+                statusMessage.textContent = langTranslations.success;
+                // Navigate to main app first, then device check overlay will appear
+                window.location.replace('index.html');
+            });
+
+            // Listen for subscription required error
+            window.electronAPI.onSubscriptionRequired((data) => {
+                console.log('Subscription required:', data);
+                const langTranslations = translations[currentLanguage] || translations['en'];
+                statusMessage.textContent = data.message || langTranslations.subscriptionRequired;
+                signinButton.disabled = false;
+                signinButton.textContent = langTranslations.signin;
+                // Report subscription required error
+                window.electronAPI.reportError({
+                    message: data.message || 'Subscription required',
+                    category: 'api',
+                    severity: 'medium',
+                    component: 'signin',
+                    context: { action: 'subscriptionRequired', subscriptionStatus: data.subscriptionStatus }
+                });
+            });
+
+            // Listen for sign-in error and refresh the app
+            window.electronAPI.onSignInError((data) => {
+                console.log('Sign-in error:', data);
+                // Report sign-in error
+                window.electronAPI.reportError({
+                    message: data.message || 'Sign-in failed',
+                    category: 'api',
+                    severity: 'high',
+                    component: 'signin',
+                    context: { action: 'signInError' }
+                });
+                // Refresh the page to reset the button state
+                window.location.reload();
+            });
+        });
+    </script>
+</body>
+
+</html>

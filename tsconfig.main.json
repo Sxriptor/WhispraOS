@@ -1,0 +1,30 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "commonjs",
+    "outDir": "./dist"
+  },
+  "include": [
+    "src/main.ts",
+    "src/preload.ts",
+    "src/overlay-preload.ts",
+    "src/mini-overlay-preload.ts",
+    "src/expanded-overlay-preload.ts",
+    "src/soundboard-overlay-preload.ts",
+    "src/services/**/*",
+    "src/ipc/**/*",
+    "src/utils/**/*",
+    "src/soundboard/**/*",
+    "src/paddle/**/*",
+    "src/types/**/*",
+    "src/interfaces/**/*"
+  ],
+  "exclude": [
+    "src/renderer.ts",
+    "src/ui/**/*",
+    "src/tests/**/*",
+    "src/services/StreamingAudioPlayer.ts",
+    "src/services/BidirectionalTTSProcessor.ts",
+    "src/services/TranslationContextManager.ts"
+  ]
+}

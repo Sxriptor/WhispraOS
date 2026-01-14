@@ -1,0 +1,88 @@
+{
+  "tab": {
+    "translation": "Oversettelse",
+    "bidirectional": "Bidirectional",
+    "soundboard": "Lydpanel",
+    "settings": "Innstillinger"
+  },
+  "controls": {
+    "microphone": "Mikrofon",
+    "targetLanguage": "Mål språk",
+    "voice": "Stemme",
+    "output": "Utgang",
+    "pushToTalk": "Push-to-Talk",
+    "startTranslation": "Start oversettelse",
+    "stopTranslation": "Stopp oversettelse",
+    "addCustomVoice": "Legg til egendefinert stemme",
+    "accent": "Aksent",
+    "noAccent": "Ingen aksent",
+    "accentOn": "Aksent: PÅ",
+    "accentOff": "Aksent: AV"
+  },
+  "placeholders": {
+    "selectMicrophone": "Velg mikrofon...",
+    "loadingVoices": "Laster stemmer...",
+    "selectVoice": "Velg stemme...",
+    "enterCustomAccent": "Skriv inn egendefinert aksent...",
+    "selectPreset": "Velg forhåndsinnstilling..."
+  },
+  "descriptions": {
+    "microphoneHelp": "Denne mikrofonen brukes til oversettelse og passthrough",
+    "outputMode": "Utgang til virtuell enhet",
+    "holdKeyToRecord": "Hold tast for å ta opp",
+    "toggleBidiMode": "Hold tast for å veksle mellom bidireksjonal modus",
+    "autoDetectLanguage": "Automatisk oppdagelse av språk"
+  },
+  "bidirectional": {
+    "outputDevice": "Utgangsenhet",
+    "systemInput": "Systeminngang",
+    "incomingVoice": "Inkommende stemme",
+    "screenCapture": "Skjerm/Vindu Fangst",
+    "startBidirectional": "Start Bidirectional",
+    "stopBidirectional": "Stopp Bidirectional",
+    "loadingDevices": "Laster utgangsenheter...",
+    "selectOutputDevice": "Velg utgangsenhet...",
+    "displayAudio": "Vis/Systemlyd (Standard)",
+    "loadingVoices": "Laster stemmer...",
+    "selectIncomingVoice": "Velg innkommende stemme...",
+    "selectScreenOrWindow": "Velg skjerm eller vindu...",
+    "refreshSources": "Oppdater kilder",
+    "captureHelp": "Tilgjengelige skjermer og vinduer med PID-er vil bli oppdaget automatisk"
+  },
+  "soundboard": {
+    "controls": "Lydpanelkontroller",
+    "addSound": "Legg til lyd",
+    "stopAll": "Stopp alt",
+    "volumeControls": "Lydkontroller",
+    "vbAudio": "VB Audio:",
+    "headphones": "Hodetelefoner:",
+    "soundPads": "Lydputer",
+    "noSounds": "Ingen lyder lagt til ennå. Klikk \"Legg til lyd\" for å komme i gang!",
+    "hotkeysEnabled": "Aktiver hurtigtaster for lydpanelet"
+  },
+  "settings": {
+    "overlayHotkey": "Hurtigtast for overlegg",
+    "pttHotkey": "Hurtigtast for Push-to-Talk",
+    "bidiHotkey": "Hurtigtast for bidireksjonal veksling",
+    "clickThrough": "Klikk-gjennom",
+    "alwaysOnTop": "Alltid øverst",
+    "overlayOpacity": "Overlegg Opasitet",
+    "clickThroughDesc": "Aktiver klikk-gjennom i minimal modus",
+    "alwaysOnTopDesc": "Hold overlegg over andre vinduer"
+  },
+  "status": {
+    "ready": "Klar til å ta opp...",
+    "recording": "Tar opp...",
+    "processing": "Behandler...",
+    "stopped": "Stoppet",
+    "idle": "Inaktiv",
+    "active": "Aktiv",
+    "error": "Feil"
+  },
+  "keys": {
+    "space": "MELLOMROM",
+    "ctrl": "Ctrl",
+    "alt": "Alt",
+    "shift": "Shift"
+  }
+}

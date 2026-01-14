@@ -1,0 +1,62 @@
+{
+  "app": {
+    "name": "Whispra",
+    "loading": "Yükleniyor...",
+    "ready": "Hazır",
+    "idle": "Boşta",
+    "processing": "İşleniyor",
+    "error": "Hata"
+  },
+  "navigation": {
+    "translate": "Çevir",
+    "bidirectional": "İki yönlü",
+    "screenTranslation": "Ekran Çevirisi",
+    "soundBoard": "Ses Panosu",
+    "voiceFilter": "Ses Filtre",
+    "settings": "Ayarlar",
+    "logs": "Günlükler"
+  },
+  "common": {
+    "start": "Başla",
+    "stop": "Durdur",
+    "cancel": "İptal",
+    "save": "Kaydet",
+    "close": "Kapat",
+    "back": "Geri",
+    "next": "İleri",
+    "continue": "Devam et",
+    "retry": "Yeniden dene",
+    "yes": "Evet",
+    "no": "Hayır",
+    "ok": "Tamam"
+  },
+  "header": {
+    "profile": "Profil",
+    "signOut": "Çıkış Yap",
+    "language": "Dil"
+  },
+  "footer": {
+    "connectionStatus": "Bağlantı Durumu",
+    "processingStatus": "İşleme Durumu",
+    "feedback": "Hata Bildir / Özellik Öner",
+    "debugConsole": "Hata Ayıklama Konsolunu Göster"
+  },
+  "errors": {
+    "networkError": "Ağ bağlantı hatası",
+    "permissionDenied": "İzin reddedildi",
+    "deviceNotFound": "Cihaz bulunamadı",
+    "serviceUnavailable": "Hizmet kullanılamıyor",
+    "unknownError": "Bilinmeyen bir hata oluştu"
+  },
+  "tooltips": {
+    "sidebarToggle": "Yan menüyü aç/kapa",
+    "profile": "Profil menüsü",
+    "language": "Dili seç"
+  },
+  "languageChange": {
+    "title": "Uygulama Dilini Değiştirmek İstiyor Musunuz?",
+    "message": "Whispra'nın metnini bu dilde de yapmak ister misiniz?",
+    "yes": "Evet",
+    "no": "Hayır"
+  }
+}

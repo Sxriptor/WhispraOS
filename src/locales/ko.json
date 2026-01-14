@@ -1,0 +1,62 @@
+{
+  "app": {
+    "name": "Whispra",
+    "loading": "로딩 중...",
+    "ready": "준비 완료",
+    "idle": "대기 중",
+    "processing": "처리 중",
+    "error": "오류"
+  },
+  "navigation": {
+    "translate": "번역",
+    "bidirectional": "양방향",
+    "screenTranslation": "화면 번역",
+    "soundBoard": "사운드 보드",
+    "voiceFilter": "음성 필터",
+    "settings": "설정",
+    "logs": "로그"
+  },
+  "common": {
+    "start": "시작",
+    "stop": "중지",
+    "cancel": "취소",
+    "save": "저장",
+    "close": "닫기",
+    "back": "뒤로",
+    "next": "다음",
+    "continue": "계속",
+    "retry": "재시도",
+    "yes": "예",
+    "no": "아니오",
+    "ok": "확인"
+  },
+  "header": {
+    "profile": "프로필",
+    "signOut": "로그아웃",
+    "language": "언어"
+  },
+  "footer": {
+    "connectionStatus": "연결 상태",
+    "processingStatus": "처리 상태",
+    "feedback": "버그 신고 / 기능 제안",
+    "debugConsole": "디버그 콘솔 보기"
+  },
+  "errors": {
+    "networkError": "네트워크 연결 오류",
+    "permissionDenied": "권한 거부",
+    "deviceNotFound": "장치 찾을 수 없음",
+    "serviceUnavailable": "서비스를 사용할 수 없음",
+    "unknownError": "알 수 없는 오류가 발생했습니다"
+  },
+  "tooltips": {
+    "sidebarToggle": "사이드바 전환",
+    "profile": "프로필 메뉴",
+    "language": "언어 선택"
+  },
+  "languageChange": {
+    "title": "앱 언어 변경?",
+    "message": "Whispra의 텍스트를 이 언어로도 변경하시겠습니까?",
+    "yes": "예",
+    "no": "아니오"
+  }
+}

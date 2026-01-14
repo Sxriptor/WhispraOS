@@ -1,0 +1,33 @@
+{
+  "panel": {
+    "title": "Bidirectional Mode"
+  },
+  "controls": {
+    "startBidirectional": "Start Bidirectional",
+    "stopBidirectional": "Stop Bidirectional",
+    "keybind": "Keybind",
+    "toggleWith": "Toggle with",
+    "changeKey": "Change Key",
+    "outputDevice": "Output Device",
+    "systemInput": "System Input",
+    "incomingVoice": "Incoming Voice"
+  },
+  "placeholders": {
+    "loadingOutputDevices": "Loading output devices...",
+    "loadingVoices": "Loading voices...",
+    "displaySystemAudio": "Display/System Audio (Default)"
+  },
+  "status": {
+    "idle": "Idle",
+    "waiting": "Waiting...",
+    "ready": "Ready...",
+    "starting": "Starting...",
+    "stopping": "Stopping..."
+  },
+  "labels": {
+    "detectedTarget": "Detected (Target Language)",
+    "respoken": "Re-spoken",
+    "sourceLanguage": "Source Language - Language You're Listening To",
+    "targetLanguage": "Target Language - Translate To"
+  }
+}

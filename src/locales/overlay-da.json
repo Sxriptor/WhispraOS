@@ -1,0 +1,102 @@
+{
+  "header": {
+    "title": "Whispra Kontroller",
+    "webOverlay": "Web Overlay"
+  },
+  "tabs": {
+    "translation": "Oversættelse",
+    "bidirectional": "Bidirektional",
+    "screenTranslation": "Skærmoversættelse",
+    "soundboard": "Lydtavle",
+    "settings": "Indstillinger"
+  },
+  "translation": {
+    "labels": {
+      "microphone": "Mikrofon",
+      "targetLanguage": "Mål sprog",
+      "voice": "Stemme",
+      "output": "Output",
+      "pushToTalk": "Push-to-Talk",
+      "holdKeyToRecord": "Hold tast for at optage"
+    },
+    "placeholders": {
+      "selectMicrophone": "Vælg mikrofon...",
+      "loadingVoices": "Indlæser stemmer..."
+    },
+    "buttons": {
+      "startTranslation": "Start Oversættelse",
+      "outputVirtualDevice": "Output: Virtuelt Enhed",
+      "outputSystem": "Output: System"
+    }
+  },
+  "bidirectional": {
+    "labels": {
+      "outputDevice": "Output Enhed",
+      "systemInput": "System Input",
+      "incomingVoice": "Indkommende Stemme",
+      "screenCapture": "Skærm/Vindue Optagelse",
+      "bidirectionalToggle": "Bidirektional Toggle",
+      "holdKeyToToggle": "Hold tast for at skifte til bidirektional tilstand",
+      "autoDetectLanguage": "Automatisk registrering af sprog"
+    },
+    "placeholders": {
+      "loadingOutputDevices": "Indlæser output enheder...",
+      "loadingVoices": "Indlæser stemmer...",
+      "displaySystemAudio": "Vis/System Audio (Standard)",
+      "selectScreenWindow": "Vælg skærm eller vindue..."
+    },
+    "buttons": {
+      "startBidirectional": "Start Bidirektional",
+      "refreshSources": "Opdater kilder"
+    },
+    "help": {
+      "screenCaptureHelp": "Tilgængelige skærme og vinduer med PID'er vil blive registreret automatisk."
+    }
+  },
+  "screenTranslation": {
+    "labels": {
+      "screenSelection": "Skærmvalg",
+      "translateTo": "Oversæt Til",
+      "translateLanguage": "Oversæt Sprog",
+      "keybind": "Tastaturbinding"
+    },
+    "placeholders": {
+      "selectScreen": "Vælg skærm..."
+    },
+    "buttons": {
+      "changeKeybind": "Ændre Tast"
+    }
+  },
+  "soundboard": {
+    "labels": {
+      "soundBoardControls": "Lydtavle Kontroller",
+      "volumeControls": "Lydstyrkekontroller",
+      "soundPads": "Lyd Pads",
+      "vbAudioVolume": "VB Audio:",
+      "headphonesVolume": "Hovedtelefoner:"
+    },
+    "buttons": {
+      "addSound": "Tilføj Lyd",
+      "stopAll": "Stop Alle"
+    },
+    "placeholders": {
+      "noSoundsAdded": "Ingen lyde tilføjet endnu. Klik \"Tilføj Lyd\" for at komme i gang!"
+    }
+  },
+  "settings": {
+    "labels": {
+      "overlayToggleHotkey": "Overlay Skift Hotkey",
+      "pushToTalkHotkey": "Push-to-Talk Hotkey",
+      "bidirectionalToggleHotkey": "Bidirektional Toggle Hotkey"
+    },
+    "modifiers": {
+      "ctrl": "Ctrl",
+      "alt": "Alt",
+      "shift": "Shift"
+    }
+  },
+  "common": {
+    "volume": "%",
+    "keyPrefix": "Tast:"
+  }
+}

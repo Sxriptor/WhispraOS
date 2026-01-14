@@ -1,0 +1,24 @@
+{
+  "panel": {
+    "title": "साउंड बोर्ड",
+    "description": "बातचीत के दौरान कस्टम ध्वनियाँ और ऑडियो क्लिप चलाएँ"
+  },
+  "controls": {
+    "outputDevice": "आउटपुट डिवाइस",
+    "vbAudioVolume": "VB ऑडियो वॉल्यूम",
+    "headphonesVolume": "हेडफ़ोन वॉल्यूम",
+    "soundPadGrid": "साउंड पैड ग्रिड",
+    "enableHotkeys": "साउंडबोर्ड हॉटकीज़ सक्षम करें",
+    "addSoundFiles": "ध्वनि फ़ाइलें जोड़ें",
+    "webOverlay": "वेब ओवरले",
+    "stopAllSounds": "सभी ध्वनियाँ रोकें"
+  },
+  "placeholders": {
+    "selectOutputDevice": "आउटपुट डिवाइस चुनें...",
+    "defaultSystemOutput": "डिफ़ॉल्ट सिस्टम आउटपुट",
+    "virtualAudioCable": "वर्चुअल ऑडियो केबल"
+  },
+  "status": {
+    "volume": "%"
+  }
+}

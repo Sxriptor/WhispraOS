@@ -1,0 +1,14 @@
+{
+	"name": "wasapi-loopback",
+	"version": "0.1.0",
+	"private": true,
+	"gypfile": true,
+	"description": "Windows WASAPI per-application loopback capture (Node.js N-API addon)",
+	"license": "MIT",
+	"scripts": {
+		"build": "node-gyp configure build"
+	},
+	"dependencies": {
+		"node-addon-api": "^7.1.1"
+	}
+}

@@ -1,0 +1,47 @@
+{
+  "modal": {
+    "title": "Безопасная Конфигурация API",
+    "close": "Закрыть"
+  },
+  "instructions": {
+    "title": "Инструкции по Настройке Ключей API",
+    "openaiTitle": "Ключ API OpenAI",
+    "openaiPermissions": "Разрешения на чтение: Модели, Возможности",
+    "openaiUsage": "Используется для перевода речи в текст и текста в речь",
+    "openaiLink": "platform.openai.com/api-keys",
+    "elevenlabsTitle": "Ключ API ElevenLabs",
+    "elevenlabsRestrict": "Ограничить ключ: Включено",
+    "elevenlabsNoAccess": "Все остальное: Нет доступа",
+    "elevenlabsTts": "Текст в речь: Доступ",
+    "elevenlabsSts": "Речь в речь: Доступ",
+    "elevenlabsAgents": "Агенты ElevenLabs: Запись",
+    "elevenlabsVoices": "Голоса: Запись",
+    "elevenlabsVoiceGen": "Генерация голоса: Доступ",
+    "elevenlabsUser": "Пользователь: Чтение",
+    "elevenlabsLink": "elevenlabs.io/app/profile"
+  },
+  "fields": {
+    "openaiLabel": "Ключ API OpenAI:",
+    "openaiPlaceholder": "Введите ваш ключ API OpenAI",
+    "openaiStored": "Ключ хранится безопасно",
+    "openaiHelp": "Введите ваш ключ API OpenAI (sk-...)",
+    "elevenlabsLabel": "Ключ API ElevenLabs:",
+    "elevenlabsPlaceholder": "Введите ваш ключ API ElevenLabs",
+    "elevenlabsStored": "Ключ хранится безопасно",
+    "elevenlabsHelp": "Введите ваш ключ API ElevenLabs (32 символа)"
+  },
+  "buttons": {
+    "showKey": "Показать Ключ",
+    "removeKey": "Удалить Ключ",
+    "clearAll": "Удалить Все Ключи",
+    "cancel": "Отмена",
+    "save": "Сохранить"
+  },
+  "status": {
+    "keyStored": "✓ Ключ хранится безопасно"
+  },
+  "links": {
+    "openai": "Сгенерировать ключ на: platform.openai.com/api-keys",
+    "elevenlabs": "Сгенерировать ключ на: elevenlabs.io/app/profile"
+  }
+}

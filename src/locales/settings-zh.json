@@ -1,0 +1,47 @@
+{
+  "modal": {
+    "title": "安全 API 配置",
+    "close": "关闭"
+  },
+  "instructions": {
+    "title": "API 密钥设置说明",
+    "openaiTitle": "OpenAI API 密钥",
+    "openaiPermissions": "读取权限：模型、功能",
+    "openaiUsage": "用于语音转文本和文本转语音翻译",
+    "openaiLink": "platform.openai.com/api-keys",
+    "elevenlabsTitle": "ElevenLabs API 密钥",
+    "elevenlabsRestrict": "限制密钥：已启用",
+    "elevenlabsNoAccess": "其他所有内容：无访问权限",
+    "elevenlabsTts": "文本转语音：访问权限",
+    "elevenlabsSts": "语音转语音：访问权限",
+    "elevenlabsAgents": "ElevenLabs 代理：写入",
+    "elevenlabsVoices": "语音：写入",
+    "elevenlabsVoiceGen": "语音生成：访问权限",
+    "elevenlabsUser": "用户：读取",
+    "elevenlabsLink": "elevenlabs.io/app/profile"
+  },
+  "fields": {
+    "openaiLabel": "OpenAI API 密钥：",
+    "openaiPlaceholder": "输入您的 OpenAI API 密钥",
+    "openaiStored": "密钥已安全存储",
+    "openaiHelp": "输入您的 OpenAI API 密钥 (sk-...)",
+    "elevenlabsLabel": "ElevenLabs API 密钥：",
+    "elevenlabsPlaceholder": "输入您的 ElevenLabs API 密钥",
+    "elevenlabsStored": "密钥已安全存储",
+    "elevenlabsHelp": "输入您的 ElevenLabs API 密钥 (32 个字符)"
+  },
+  "buttons": {
+    "showKey": "显示密钥",
+    "removeKey": "删除密钥",
+    "clearAll": "清除所有密钥",
+    "cancel": "取消",
+    "save": "保存"
+  },
+  "status": {
+    "keyStored": "✓ 密钥已安全存储"
+  },
+  "links": {
+    "openai": "在以下位置生成密钥：platform.openai.com/api-keys",
+    "elevenlabs": "在以下位置生成密钥：elevenlabs.io/app/profile"
+  }
+}

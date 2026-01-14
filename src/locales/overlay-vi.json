@@ -1,0 +1,102 @@
+{
+  "header": {
+    "title": "Điều Khiển Whispra",
+    "webOverlay": "Overlay Web"
+  },
+  "tabs": {
+    "translation": "Dịch",
+    "bidirectional": "Hai chiều",
+    "screenTranslation": "Dịch Màn Hình",
+    "soundboard": "Bảng Âm Thanh",
+    "settings": "Cài Đặt"
+  },
+  "translation": {
+    "labels": {
+      "microphone": "Micro",
+      "targetLanguage": "Ngôn Ngữ Đích",
+      "voice": "Giọng Nói",
+      "output": "Đầu Ra",
+      "pushToTalk": "Push-to-Talk",
+      "holdKeyToRecord": "Giữ phím để ghi âm"
+    },
+    "placeholders": {
+      "selectMicrophone": "Chọn micro...",
+      "loadingVoices": "Đang tải giọng nói..."
+    },
+    "buttons": {
+      "startTranslation": "Bắt Đầu Dịch",
+      "outputVirtualDevice": "Đầu Ra: Thiết Bị Ảo",
+      "outputSystem": "Đầu Ra: Hệ Thống"
+    }
+  },
+  "bidirectional": {
+    "labels": {
+      "outputDevice": "Thiết Bị Đầu Ra",
+      "systemInput": "Đầu Vào Hệ Thống",
+      "incomingVoice": "Giọng Nói Đến",
+      "screenCapture": "Ghi Màn Hình/Cửa Sổ",
+      "bidirectionalToggle": "Chuyển Đổi Hai Chiều",
+      "holdKeyToToggle": "Giữ phím để chuyển đổi chế độ hai chiều",
+      "autoDetectLanguage": "Tự động phát hiện ngôn ngữ"
+    },
+    "placeholders": {
+      "loadingOutputDevices": "Đang tải thiết bị đầu ra...",
+      "loadingVoices": "Đang tải giọng nói...",
+      "displaySystemAudio": "Hiển Thị Âm Thanh Hệ Thống (Mặc Định)",
+      "selectScreenWindow": "Chọn màn hình hoặc cửa sổ..."
+    },
+    "buttons": {
+      "startBidirectional": "Bắt Đầu Hai Chiều",
+      "refreshSources": "Làm Mới Nguồn"
+    },
+    "help": {
+      "screenCaptureHelp": "Các màn hình và cửa sổ có PID sẽ được phát hiện tự động."
+    }
+  },
+  "screenTranslation": {
+    "labels": {
+      "screenSelection": "Chọn Màn Hình",
+      "translateTo": "Dịch Đến",
+      "translateLanguage": "Ngôn Ngữ Dịch",
+      "keybind": "Phím Tắt"
+    },
+    "placeholders": {
+      "selectScreen": "Chọn màn hình..."
+    },
+    "buttons": {
+      "changeKeybind": "Thay Đổi Phím"
+    }
+  },
+  "soundboard": {
+    "labels": {
+      "soundBoardControls": "Điều Khiển Bảng Âm Thanh",
+      "volumeControls": "Điều Khiển Âm Lượng",
+      "soundPads": "Bảng Âm Thanh",
+      "vbAudioVolume": "VB Audio:",
+      "headphonesVolume": "Tai Nghe:"
+    },
+    "buttons": {
+      "addSound": "Thêm Âm Thanh",
+      "stopAll": "Dừng Tất Cả"
+    },
+    "placeholders": {
+      "noSoundsAdded": "Chưa có âm thanh nào được thêm. Nhấn \"Thêm Âm Thanh\" để bắt đầu!"
+    }
+  },
+  "settings": {
+    "labels": {
+      "overlayToggleHotkey": "Phím Tắt Chuyển Đổi Overlay",
+      "pushToTalkHotkey": "Phím Tắt Push-to-Talk",
+      "bidirectionalToggleHotkey": "Phím Tắt Chuyển Đổi Hai Chiều"
+    },
+    "modifiers": {
+      "ctrl": "Ctrl",
+      "alt": "Alt",
+      "shift": "Shift"
+    }
+  },
+  "common": {
+    "volume": "%",
+    "keyPrefix": "Phím:"
+  }
+}

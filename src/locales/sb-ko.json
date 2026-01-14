@@ -1,0 +1,24 @@
+{
+  "panel": {
+    "title": "사운드 보드",
+    "description": "대화 중 사용자 정의 사운드 및 오디오 클립 재생"
+  },
+  "controls": {
+    "outputDevice": "출력 장치",
+    "vbAudioVolume": "VB 오디오 볼륨",
+    "headphonesVolume": "헤드폰 볼륨",
+    "soundPadGrid": "사운드 패드 그리드",
+    "enableHotkeys": "사운드보드 단축키 활성화",
+    "addSoundFiles": "사운드 파일 추가",
+    "webOverlay": "웹 오버레이",
+    "stopAllSounds": "모든 사운드 중지"
+  },
+  "placeholders": {
+    "selectOutputDevice": "출력 장치 선택...",
+    "defaultSystemOutput": "기본 시스템 출력",
+    "virtualAudioCable": "가상 오디오 케이블"
+  },
+  "status": {
+    "volume": "%"
+  }
+}

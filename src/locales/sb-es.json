@@ -1,0 +1,24 @@
+{
+  "panel": {
+    "title": "Panel de Sonido",
+    "description": "Reproduce sonidos personalizados y clips de audio durante conversaciones"
+  },
+  "controls": {
+    "outputDevice": "Dispositivo de Salida",
+    "vbAudioVolume": "Volumen VB Audio",
+    "headphonesVolume": "Volumen de Auriculares",
+    "soundPadGrid": "Cuadrícula de Pad de Sonido",
+    "enableHotkeys": "Habilitar Teclas Rápidas del Panel de Sonido",
+    "addSoundFiles": "Agregar Archivos de Sonido",
+    "webOverlay": "Superposición Web",
+    "stopAllSounds": "Detener Todos los Sonidos"
+  },
+  "placeholders": {
+    "selectOutputDevice": "Seleccionar dispositivo de salida...",
+    "defaultSystemOutput": "Salida del Sistema Predeterminada",
+    "virtualAudioCable": "Cable de Audio Virtual"
+  },
+  "status": {
+    "volume": "%"
+  }
+}

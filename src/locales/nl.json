@@ -1,0 +1,62 @@
+{
+  "app": {
+    "name": "Whispra",
+    "loading": "Laden...",
+    "ready": "Klaar",
+    "idle": "Inactief",
+    "processing": "Verwerken",
+    "error": "Fout"
+  },
+  "navigation": {
+    "translate": "Vertalen",
+    "bidirectional": "Tweedirectioneel",
+    "screenTranslation": "Schermvertaling",
+    "soundBoard": "Geluidspaneel",
+    "voiceFilter": "Stemfilter",
+    "settings": "Instellingen",
+    "logs": "Logboeken"
+  },
+  "common": {
+    "start": "Start",
+    "stop": "Stop",
+    "cancel": "Annuleren",
+    "save": "Opslaan",
+    "close": "Sluiten",
+    "back": "Terug",
+    "next": "Volgende",
+    "continue": "Doorgaan",
+    "retry": "Opnieuw proberen",
+    "yes": "Ja",
+    "no": "Nee",
+    "ok": "OK"
+  },
+  "header": {
+    "profile": "Profiel",
+    "signOut": "Uitloggen",
+    "language": "Taal"
+  },
+  "footer": {
+    "connectionStatus": "Verbindingsstatus",
+    "processingStatus": "Verwerkingsstatus",
+    "feedback": "Bug rapporteren / Functie voorstellen",
+    "debugConsole": "Toon debugconsole"
+  },
+  "errors": {
+    "networkError": "Netwerkverbinding fout",
+    "permissionDenied": "Toegang geweigerd",
+    "deviceNotFound": "Apparaat niet gevonden",
+    "serviceUnavailable": "Dienst niet beschikbaar",
+    "unknownError": "Er is een onbekende fout opgetreden"
+  },
+  "tooltips": {
+    "sidebarToggle": "Zijbalk in- of uitschakelen",
+    "profile": "Profielmenu",
+    "language": "Selecteer taal"
+  },
+  "languageChange": {
+    "title": "App-taal wijzigen?",
+    "message": "Wilt u de tekst van Whispra ook in deze taal maken?",
+    "yes": "Ja",
+    "no": "Nee"
+  }
+}

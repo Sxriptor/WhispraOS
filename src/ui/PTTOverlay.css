@@ -1,0 +1,89 @@
+/* PTT Overlay - Minimal audio visualization */
+.ptt-overlay {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10000;
+    
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 12px 20px;
+    
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.ptt-overlay.hidden {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+    pointer-events: none;
+}
+
+.ptt-bars {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    height: 32px;
+}
+
+.ptt-bar {
+    width: 3px;
+    height: 20%;
+    background: linear-gradient(to top, #4CAF50, #8BC34A);
+    border-radius: 2px;
+    transition: height 0.1s ease;
+}
+
+/* Neo-Brutalism Theme */
+[data-theme="neo-brutalism"] .ptt-overlay {
+    background: var(--pure-white);
+    border: 3px solid var(--true-black);
+    border-radius: 0;
+    padding: 16px 24px;
+    box-shadow: 0 8px 0 rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="neo-brutalism"] .ptt-bar {
+    width: 4px;
+    background: var(--electric-blue);
+    border-radius: 0;
+    border: 2px solid var(--true-black);
+}
+
+/* Hacker Theme */
+[data-theme="hacker"] .ptt-overlay {
+    background: var(--hacker-bg);
+    border: 1px solid var(--hacker-border);
+    border-radius: 0;
+    padding: 12px 20px;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5), 0 0 40px rgba(0, 255, 0, 0.3);
+}
+
+[data-theme="hacker"] .ptt-bar {
+    width: 3px;
+    background: var(--hacker-green);
+    border-radius: 0;
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.8);
+}
+
+/* Corporate Theme */
+[data-theme="corporate"] .ptt-overlay {
+    background: var(--corporate-white);
+    border: 1px solid var(--corporate-border-gray);
+    border-radius: 12px;
+    padding: 12px 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="corporate"] .ptt-bar {
+    width: 3px;
+    background: var(--corporate-accent);
+    border-radius: 2px;
+}

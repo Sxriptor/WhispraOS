@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whispra Overlay</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: transparent;
+            overflow: hidden;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .overlay-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Minimal HUD Styles */
+        .minimal-hud {
+            background: rgba(32, 34, 37, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            cursor: move;
+            -webkit-app-region: drag;
+            min-width: 140px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3),
+                        0 2px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Subtle inner glow effect */
+        .minimal-hud::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .status-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+
+        .status-indicator.idle {
+            background-color: #43b581;
+            box-shadow: 0 0 0 2px rgba(67, 181, 129, 0.2);
+        }
+
+        .status-indicator.listening {
+            background-color: #43b581;
+            box-shadow: 0 0 0 2px rgba(67, 181, 129, 0.2), 0 0 6px rgba(67, 181, 129, 0.4);
+            animation: gentle-pulse 2s infinite;
+        }
+
+        .status-indicator.translating {
+            background-color: #7289da;
+            box-shadow: 0 0 0 2px rgba(114, 137, 218, 0.2), 0 0 8px rgba(114, 137, 218, 0.5);
+            animation: gentle-pulse 1.5s infinite;
+        }
+
+        /* Flashing red state for bidirectional (always listening) */
+        .status-indicator.bidirectional {
+            background-color: #f04747;
+            box-shadow: 0 0 0 2px rgba(240, 71, 71, 0.2), 0 0 10px rgba(240, 71, 71, 0.6);
+            animation: gentle-pulse 1s infinite;
+        }
+
+        .status-indicator.disconnected {
+            background-color: #747f8d;
+            box-shadow: 0 0 0 2px rgba(116, 127, 141, 0.2);
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        @keyframes gentle-pulse {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.7;
+                transform: scale(1.1);
+            }
+        }
+
+        .status-text {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.025em;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+
+        .language-labels {
+            display: flex;
+            gap: 6px;
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+            letter-spacing: 0.025em;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+
+        .language-labels span {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2px 6px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 10px;
+        }
+
+        .mic-activity {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.4);
+            transition: all 0.2s ease;
+            margin-left: 4px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .mic-activity.active {
+            background: #43b581;
+            box-shadow: 0 0 4px rgba(67, 181, 129, 0.6);
+            transform: scale(1.2);
+        }
+
+        /* Emphasize active states on the minimal HUD */
+        .minimal-hud.speaking {
+            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4),
+                        0 2px 10px rgba(0, 0, 0, 0.3),
+                        0 0 0 1px rgba(67, 181, 129, 0.1);
+        }
+
+        .minimal-hud.speaking::before {
+            background: linear-gradient(135deg, rgba(67, 181, 129, 0.05) 0%, transparent 50%);
+        }
+
+        .bidirectional-indicator {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 600;
+            letter-spacing: 0.025em;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+            background: rgba(240, 71, 71, 0.1);
+            padding: 2px 6px;
+            border-radius: 6px;
+            border: 1px solid rgba(240, 71, 71, 0.2);
+            display: none;
+            position: relative;
+            z-index: 1;
+        }
+
+        .bidirectional-indicator.active {
+            display: block;
+            animation: gentle-pulse 2s infinite;
+        }
+
+        /* Expanded Overlay Styles */
+        .expanded-overlay {
+            background: rgba(10, 10, 10, 0.94);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 12px;
+            padding: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            width: 500px;
+            height: 380px;
+            display: none;
+            position: relative;
+            z-index: 2147483647;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .expanded-overlay .content-scroll {
+            overflow-y: auto;
+            flex: 1;
+            padding-right: 4px;
+            max-height: 280px;
+            -webkit-app-region: no-drag;
+        }
+
+        .expanded-overlay .content-scroll::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .expanded-overlay .content-scroll::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+        }
+
+        .expanded-overlay .content-scroll::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+        }
+
+        .expanded-overlay .content-scroll::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .overlay-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            -webkit-app-region: drag;
+        }
+
+        .overlay-title {
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .close-button {
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.6);
+            cursor: pointer;
+            font-size: 16px;
+            padding: 4px;
+            border-radius: 4px;
+            transition: color 0.2s ease;
+            -webkit-app-region: no-drag;
+        }
+
+        .close-button:hover {
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .tab-container {
+            display: flex;
+            margin-bottom: 16px;
+        }
+
+        .tab-button {
+            flex: 1;
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.6);
+            padding: 8px 16px;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s ease;
+            font-size: 12px;
+            -webkit-app-region: no-drag;
+        }
+
+        .tab-button.active {
+            color: white;
+            border-bottom-color: #ffffff;
+        }
+
+        .tab-content {
+            color: white;
+            font-size: 12px;
+        }
+
+        .setting-group {
+            margin-bottom: 12px;
+        }
+
+        .setting-label {
+            display: block;
+            margin-bottom: 4px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 11px;
+        }
+
+        .setting-input {
+            width: 100%;
+            background: rgba(20, 20, 20, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 6px;
+            padding: 8px 10px;
+            color: white;
+            font-size: 12px;
+            -webkit-app-region: no-drag;
+            cursor: pointer;
+            pointer-events: auto;
+        }
+
+        .setting-input:focus {
+            outline: none;
+            border-color: #3b82f6;
+        }
+
+        .toggle-switch {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .switch {
+            position: relative;
+            width: 32px;
+            height: 18px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 9px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            -webkit-app-region: no-drag;
+        }
+
+        .switch.active {
+            background: #ffffff;
+        }
+
+        .switch-handle {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 14px;
+            height: 14px;
+            background: rgba(156, 163, 175, 0.8);
+            border-radius: 50%;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .switch.active .switch-handle {
+            transform: translateX(14px);
+            background: white;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay-container">
+        <!-- Minimal HUD -->
+        <div id="minimal-hud" class="minimal-hud">
+            <div id="status-indicator" class="status-indicator idle"></div>
+            <div id="status-text" class="status-text">Ready</div>
+            <div id="language-labels" class="language-labels hidden">
+                <span id="source-lang">EN</span>
+                <span>→</span>
+                <span id="target-lang">RU</span>
+            </div>
+            <div id="mic-activity" class="mic-activity"></div>
+            <div id="bidirectional-indicator" class="bidirectional-indicator">BIDIRECTIONAL</div>
+        </div>
+
+        <!-- Expanded Overlay -->
+        <div id="expanded-overlay" class="expanded-overlay">
+            <div class="overlay-header">
+                <div class="overlay-title">Whispra Controls</div>
+                <button id="close-button" class="close-button">×</button>
+            </div>
+
+            <div class="tab-container">
+                <button id="translation-tab" class="tab-button active">➡️ Translation</button>
+                <button id="bidirectional-tab" class="tab-button">⬅️ Bidirectional</button>
+                <button id="overlay-settings-tab" class="tab-button">⚙️ Settings</button>
+            </div>
+
+            <div class="content-scroll">
+            <div id="translation-content" class="tab-content" style="padding-bottom: 20px;">
+                <div class="setting-group">
+                    <label class="setting-label">🎤 Microphone</label>
+                    <select id="microphone-select" class="setting-input">
+                        <option value="">Select microphone...</option>
+                    </select>
+                </div>
+
+                <div class="setting-group">
+                    <label class="setting-label">🌍 Target Language</label>
+                    <select id="language-select" class="setting-input"></select>
+                </div>
+
+                <div class="setting-group">
+                    <label class="setting-label">🎤 Voice</label>
+                    <select id="voice-select" class="setting-input">
+                        <option value="">Loading voices...</option>
+                    </select>
+                </div>
+
+                <div class="setting-group">
+                    <label class="setting-label">🔊 Output</label>
+                    <button id="output-toggle-button" class="setting-input" style="text-align:left;">🔀 Output: Virtual Device</button>
+                </div>
+
+                <div class="setting-group">
+                    <label class="setting-label">Push-to-Talk</label>
+                    <div class="toggle-switch">
+                        <div id="ptt-toggle" class="switch">
+                            <div class="switch-handle"></div>
+                        </div>
+                        <span class="setting-label">Hold key to record</span>
+                        <span style="margin-left:auto; font-size:11px; color:rgba(255,255,255,0.8);">Key: <kbd id="current-keybind">SPACE</kbd></span>
+                    </div>
+                </div>
+
+                <div class="setting-group" style="text-align:center;">
+                    <button id="start-button" class="setting-input" style="cursor:pointer; text-align:center; font-weight:600;">▶️ Start Translation</button>
+                </div>
+
+            </div>
+
+            <div id="bidirectional-content" class="tab-content hidden" style="padding-bottom: 20px;">
+                <div class="setting-group">
+                    <label class="setting-label">🔊 Output Device</label>
+                    <select id="bidirectional-output-select" class="setting-input">
+                        <option value="">Loading output devices...</option>
+                    </select>
+                </div>
+
+                <div class="setting-group">
+                    <label class="setting-label">🎧 System Input</label>
+                    <div class="setting-input" style="background: rgba(40, 40, 40, 0.9); color: rgba(255, 255, 255, 0.7); cursor: not-allowed;">
+                        Display/System Audio (Default)
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <label class="setting-label">🎤 Incoming Voice</label>
+                    <select id="incoming-voice-select" class="setting-input">
+                        <option value="">Loading voices...</option>
+                    </select>
+                </div>
+
+                <div class="setting-group">
+                    <label class="setting-label">🖥️ Screen/Window Capture</label>
+                    <div style="display:flex; gap:8px; align-items:center;">
+                        <select id="bidi-capture-source" class="setting-input" style="flex:1;">
+                            <option value="">Select screen or window...</option>
+                        </select>
+                        <button id="bidi-refresh-sources" class="close-button" title="Refresh sources">⟳</button>
+                    </div>
+                    <div style="color: rgba(255,255,255,0.6); font-size: 10px; margin-top: 6px;">
+                        Available screens and windows with PIDs will be detected automatically.
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <label class="setting-label">Bidirectional Toggle</label>
+                    <div class="toggle-switch">
+                        <div id="bidi-toggle" class="switch">
+                            <div class="switch-handle"></div>
+                        </div>
+                        <span class="setting-label">Hold key to toggle bidirectional mode</span>
+                        <span style="margin-left:auto; font-size:11px; color:rgba(255,255,255,0.8);">Key: <kbd id="bidi-current-keybind">B</kbd></span>
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <div class="toggle-switch">
+                        <div id="auto-detect-toggle" class="switch active">
+                            <div class="switch-handle"></div>
+                        </div>
+                        <label class="setting-label">Auto-detect Language</label>
+                    </div>
+                </div>
+
+                <div class="setting-group" id="gpu-mode-setting">
+                    <label class="setting-label">⚡ OCR Speed</label>
+                    <div class="toggle-switch">
+                        <div id="gpu-mode-toggle" class="switch">
+                            <div class="switch-handle"></div>
+                        </div>
+                        <span class="setting-label" id="gpu-mode-label">Normal (CPU)</span>
+                    </div>
+                </div>
+
+                <div class="setting-group" style="text-align:center;">
+                    <button id="start-bidirectional-button" class="setting-input" style="cursor:pointer; text-align:center; font-weight:600;">▶️ Start Bidirectional</button>
+                </div>
+            </div>
+
+            <div id="overlay-settings-content" class="tab-content hidden" style="padding-bottom: 20px;">
+                <div class="setting-group">
+                    <label class="setting-label">Overlay Toggle Hotkey</label>
+                    <select id="overlay-hotkey" class="setting-input">
+                        <option value="F8">F8</option>
+                        <option value="F9">F9</option>
+                        <option value="F10">F10</option>
+                        <option value="F11" selected>F11</option>
+                        <option value="F12">F12</option>
+                    </select>
+                </div>
+
+                <div class="setting-group">
+                    <label class="setting-label">Push-to-Talk Hotkey</label>
+                    <div style="display:flex; gap:8px; align-items:center;">
+                        <select id="ptt-hotkey-select" class="setting-input" style="flex:1;">
+                            <option value="Space">Space</option>
+                            <option value="F8">F8</option>
+                            <option value="F9">F9</option>
+                            <option value="F10">F10</option>
+                            <option value="F11">F11</option>
+                            <option value="F12">F12</option>
+                            <option value="KeyB">B</option>
+                            <option value="KeyV">V</option>
+                            <option value="KeyG">G</option>
+                        </select>
+                        <label style="font-size:10px; display:flex; align-items:center; gap:4px;">
+                            <input type="checkbox" id="ptt-ctrl"> Ctrl
+                        </label>
+                        <label style="font-size:10px; display:flex; align-items:center; gap:4px;">
+                            <input type="checkbox" id="ptt-alt"> Alt
+                        </label>
+                        <label style="font-size:10px; display:flex; align-items:center; gap:4px;">
+                            <input type="checkbox" id="ptt-shift"> Shift
+                        </label>
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <label class="setting-label">Bidirectional Toggle Hotkey</label>
+                    <div style="display:flex; gap:8px; align-items:center;">
+                        <select id="bidi-hotkey-select" class="setting-input" style="flex:1;">
+                            <option value="KeyB">B</option>
+                            <option value="F8">F8</option>
+                            <option value="F9">F9</option>
+                            <option value="F10">F10</option>
+                            <option value="F11">F11</option>
+                            <option value="F12">F12</option>
+                            <option value="KeyV">V</option>
+                            <option value="KeyG">G</option>
+                        </select>
+                        <label style="font-size:10px; display:flex; align-items:center; gap:4px;">
+                            <input type="checkbox" id="bidi-ctrl"> Ctrl
+                        </label>
+                        <label style="font-size:10px; display:flex; align-items:center; gap:4px;">
+                            <input type="checkbox" id="bidi-alt"> Alt
+                        </label>
+                        <label style="font-size:10px; display:flex; align-items:center; gap:4px;">
+                            <input type="checkbox" id="bidi-shift"> Shift
+                        </label>
+                    </div>
+                </div>
+                <div class="setting-group">
+                    <label class="setting-label">Click-through</label>
+                    <div class="toggle-switch">
+                        <div id="overlay-clickthrough-toggle" class="switch">
+                            <div class="switch-handle"></div>
+                        </div>
+                        <span class="setting-label">Enable click-through in Minimal mode</span>
+                    </div>
+                </div>
+                <div class="setting-group">
+                    <label class="setting-label">Always On Top</label>
+                    <div class="toggle-switch">
+                        <div id="overlay-ontop-toggle" class="switch active">
+                            <div class="switch-handle"></div>
+                        </div>
+                        <span class="setting-label">Keep overlay above other windows</span>
+                    </div>
+                </div>
+                <div class="setting-group">
+                    <label class="setting-label">Overlay Opacity</label>
+                    <input id="overlay-opacity" type="range" min="10" max="100" value="90" class="setting-input" />
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="overlay-renderer.js"></script>
+</body>
+</html>

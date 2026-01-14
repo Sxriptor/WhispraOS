@@ -1,0 +1,24 @@
+{
+  "panel": {
+    "title": "サウンドボード",
+    "description": "会話中にカスタムサウンドとオーディオクリップを再生"
+  },
+  "controls": {
+    "outputDevice": "出力デバイス",
+    "vbAudioVolume": "VB Audio 音量",
+    "headphonesVolume": "ヘッドフォン音量",
+    "soundPadGrid": "サウンドパッドグリッド",
+    "enableHotkeys": "サウンドボードホットキーを有効化",
+    "addSoundFiles": "サウンドファイルを追加",
+    "webOverlay": "ウェブオーバーレイ",
+    "stopAllSounds": "すべてのサウンドを停止"
+  },
+  "placeholders": {
+    "selectOutputDevice": "出力デバイスを選択...",
+    "defaultSystemOutput": "デフォルトシステム出力",
+    "virtualAudioCable": "仮想オーディオケーブル"
+  },
+  "status": {
+    "volume": "%"
+  }
+}

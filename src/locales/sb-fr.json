@@ -1,0 +1,24 @@
+{
+  "panel": {
+    "title": "Table de Son",
+    "description": "Jouez des sons et des clips audio personnalisés pendant les conversations"
+  },
+  "controls": {
+    "outputDevice": "Dispositif de Sortie",
+    "vbAudioVolume": "Volume VB Audio",
+    "headphonesVolume": "Volume des Casques",
+    "soundPadGrid": "Grille de Pad Sonore",
+    "enableHotkeys": "Activer les Raccourcis du Soundboard",
+    "addSoundFiles": "Ajouter des Fichiers Audio",
+    "webOverlay": "Superposition Web",
+    "stopAllSounds": "Arrêter Tous les Sons"
+  },
+  "placeholders": {
+    "selectOutputDevice": "Sélectionner le dispositif de sortie...",
+    "defaultSystemOutput": "Sortie Système Par Défaut",
+    "virtualAudioCable": "Câble Audio Virtuel"
+  },
+  "status": {
+    "volume": "%"
+  }
+}

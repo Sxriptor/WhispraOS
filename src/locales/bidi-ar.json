@@ -1,0 +1,33 @@
+{
+  "panel": {
+    "title": "وضع ثنائي الاتجاه"
+  },
+  "controls": {
+    "startBidirectional": "بدء ثنائي الاتجاه",
+    "stopBidirectional": "إيقاف ثنائي الاتجاه",
+    "keybind": "تعيين المفتاح",
+    "toggleWith": "التبديل مع",
+    "changeKey": "تغيير المفتاح",
+    "outputDevice": "جهاز الإخراج",
+    "systemInput": "إدخال النظام",
+    "incomingVoice": "صوت وارد"
+  },
+  "placeholders": {
+    "loadingOutputDevices": "جارٍ تحميل أجهزة الإخراج...",
+    "loadingVoices": "جارٍ تحميل الأصوات...",
+    "displaySystemAudio": "عرض/صوت النظام (افتراضي)"
+  },
+  "status": {
+    "idle": "خامل",
+    "waiting": "في الانتظار...",
+    "ready": "جاهز...",
+    "starting": "جارٍ البدء...",
+    "stopping": "جارٍ الإيقاف..."
+  },
+  "labels": {
+    "detectedTarget": "تم الكشف عن (اللغة المستهدفة)",
+    "respoken": "إعادة النطق",
+    "sourceLanguage": "اللغة المصدر - اللغة التي تستمع إليها",
+    "targetLanguage": "اللغة المستهدفة - الترجمة إلى"
+  }
+}

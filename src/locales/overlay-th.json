@@ -1,0 +1,102 @@
+{
+  "header": {
+    "title": "การควบคุม Whispra",
+    "webOverlay": "เว็บโอเวอร์เลย์"
+  },
+  "tabs": {
+    "translation": "การแปล",
+    "bidirectional": "สองทิศทาง",
+    "screenTranslation": "การแปลหน้าจอ",
+    "soundboard": "แผงเสียง",
+    "settings": "การตั้งค่า"
+  },
+  "translation": {
+    "labels": {
+      "microphone": "ไมโครโฟน",
+      "targetLanguage": "ภาษาที่ต้องการ",
+      "voice": "เสียง",
+      "output": "ผลลัพธ์",
+      "pushToTalk": "Push-to-Talk",
+      "holdKeyToRecord": "กดปุ่มเพื่อบันทึก"
+    },
+    "placeholders": {
+      "selectMicrophone": "เลือกไมโครโฟน...",
+      "loadingVoices": "กำลังโหลดเสียง..."
+    },
+    "buttons": {
+      "startTranslation": "เริ่มการแปล",
+      "outputVirtualDevice": "ผลลัพธ์: อุปกรณ์เสมือน",
+      "outputSystem": "ผลลัพธ์: ระบบ"
+    }
+  },
+  "bidirectional": {
+    "labels": {
+      "outputDevice": "อุปกรณ์ผลลัพธ์",
+      "systemInput": "การป้อนข้อมูลระบบ",
+      "incomingVoice": "เสียงที่เข้ามา",
+      "screenCapture": "การจับภาพหน้าจอ/หน้าต่าง",
+      "bidirectionalToggle": "สลับสองทิศทาง",
+      "holdKeyToToggle": "กดปุ่มเพื่อสลับโหมดสองทิศทาง",
+      "autoDetectLanguage": "ตรวจจับภาษาอัตโนมัติ"
+    },
+    "placeholders": {
+      "loadingOutputDevices": "กำลังโหลดอุปกรณ์ผลลัพธ์...",
+      "loadingVoices": "กำลังโหลดเสียง...",
+      "displaySystemAudio": "แสดง/เสียงระบบ (ค่าเริ่มต้น)",
+      "selectScreenWindow": "เลือกหน้าจอหรือหน้าต่าง..."
+    },
+    "buttons": {
+      "startBidirectional": "เริ่มสองทิศทาง",
+      "refreshSources": "รีเฟรชแหล่งข้อมูล"
+    },
+    "help": {
+      "screenCaptureHelp": "หน้าจอและหน้าต่างที่มี PID จะถูกตรวจจับโดยอัตโนมัติ."
+    }
+  },
+  "screenTranslation": {
+    "labels": {
+      "screenSelection": "การเลือกหน้าจอ",
+      "translateTo": "แปลเป็น",
+      "translateLanguage": "แปลภาษา",
+      "keybind": "การผูกปุ่ม"
+    },
+    "placeholders": {
+      "selectScreen": "เลือกหน้าจอ..."
+    },
+    "buttons": {
+      "changeKeybind": "เปลี่ยนปุ่ม"
+    }
+  },
+  "soundboard": {
+    "labels": {
+      "soundBoardControls": "การควบคุมแผงเสียง",
+      "volumeControls": "การควบคุมระดับเสียง",
+      "soundPads": "แผ่นเสียง",
+      "vbAudioVolume": "VB Audio:",
+      "headphonesVolume": "หูฟัง:"
+    },
+    "buttons": {
+      "addSound": "เพิ่มเสียง",
+      "stopAll": "หยุดทั้งหมด"
+    },
+    "placeholders": {
+      "noSoundsAdded": "ยังไม่มีเสียงที่เพิ่มเข้ามา คลิก \"เพิ่มเสียง\" เพื่อเริ่มต้น!"
+    }
+  },
+  "settings": {
+    "labels": {
+      "overlayToggleHotkey": "ปุ่มลัดสลับโอเวอร์เลย์",
+      "pushToTalkHotkey": "ปุ่มลัด Push-to-Talk",
+      "bidirectionalToggleHotkey": "ปุ่มลัดสลับสองทิศทาง"
+    },
+    "modifiers": {
+      "ctrl": "Ctrl",
+      "alt": "Alt",
+      "shift": "Shift"
+    }
+  },
+  "common": {
+    "volume": "%",
+    "keyPrefix": "ปุ่ม:"
+  }
+}

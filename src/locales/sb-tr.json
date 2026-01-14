@@ -1,0 +1,24 @@
+{
+  "panel": {
+    "title": "Ses Panosu",
+    "description": "Konuşmalar sırasında özel sesleri ve ses kliplerini çal"
+  },
+  "controls": {
+    "outputDevice": "Çıkış Cihazı",
+    "vbAudioVolume": "VB Audio Ses Seviyesi",
+    "headphonesVolume": "Kulaklık Ses Seviyesi",
+    "soundPadGrid": "Ses Pad Izgarası",
+    "enableHotkeys": "Ses Panosu Kısayollarını Etkinleştir",
+    "addSoundFiles": "Ses Dosyaları Ekle",
+    "webOverlay": "Web Üst Katmanı",
+    "stopAllSounds": "Tüm Sesleri Durdur"
+  },
+  "placeholders": {
+    "selectOutputDevice": "Çıkış cihazını seçin...",
+    "defaultSystemOutput": "Varsayılan Sistem Çıkışı",
+    "virtualAudioCable": "Sanal Ses Kablosu"
+  },
+  "status": {
+    "volume": "%"
+  }
+}

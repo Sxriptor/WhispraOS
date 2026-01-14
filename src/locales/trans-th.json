@@ -1,0 +1,88 @@
+{
+  "tab": {
+    "translation": "การแปล",
+    "bidirectional": "สองทิศทาง",
+    "soundboard": "แผงเสียง",
+    "settings": "การตั้งค่า"
+  },
+  "controls": {
+    "microphone": "ไมโครโฟน",
+    "targetLanguage": "ภาษาที่ต้องการ",
+    "voice": "เสียง",
+    "output": "ผลลัพธ์",
+    "pushToTalk": "กดเพื่อพูด",
+    "startTranslation": "เริ่มการแปล",
+    "stopTranslation": "หยุดการแปล",
+    "addCustomVoice": "เพิ่มเสียงที่กำหนดเอง",
+    "accent": "สำเนียง",
+    "noAccent": "ไม่มีสำเนียง",
+    "accentOn": "สำเนียง: เปิด",
+    "accentOff": "สำเนียง: ปิด"
+  },
+  "placeholders": {
+    "selectMicrophone": "เลือกไมโครโฟน...",
+    "loadingVoices": "กำลังโหลดเสียง...",
+    "selectVoice": "เลือกเสียง...",
+    "enterCustomAccent": "ป้อนสำเนียงที่กำหนดเอง...",
+    "selectPreset": "เลือกพรีเซ็ต..."
+  },
+  "descriptions": {
+    "microphoneHelp": "ไมโครโฟนนี้ใช้สำหรับการแปลและการส่งผ่าน",
+    "outputMode": "ส่งออกไปยังอุปกรณ์เสมือน",
+    "holdKeyToRecord": "กดปุ่มเพื่อบันทึก",
+    "toggleBidiMode": "กดปุ่มเพื่อสลับโหมดสองทิศทาง",
+    "autoDetectLanguage": "ตรวจจับภาษาอัตโนมัติ"
+  },
+  "bidirectional": {
+    "outputDevice": "อุปกรณ์ส่งออก",
+    "systemInput": "การป้อนข้อมูลของระบบ",
+    "incomingVoice": "เสียงที่เข้ามา",
+    "screenCapture": "การบันทึกหน้าจอ/หน้าต่าง",
+    "startBidirectional": "เริ่มสองทิศทาง",
+    "stopBidirectional": "หยุดสองทิศทาง",
+    "loadingDevices": "กำลังโหลดอุปกรณ์ส่งออก...",
+    "selectOutputDevice": "เลือกอุปกรณ์ส่งออก...",
+    "displayAudio": "เสียงแสดง/เสียงระบบ (ค่าเริ่มต้น)",
+    "loadingVoices": "กำลังโหลดเสียง...",
+    "selectIncomingVoice": "เลือกเสียงที่เข้ามา...",
+    "selectScreenOrWindow": "เลือกหน้าจอหรือหน้าต่าง...",
+    "refreshSources": "รีเฟรชแหล่งข้อมูล",
+    "captureHelp": "หน้าจอและหน้าต่างที่มี PID จะถูกตรวจจับโดยอัตโนมัติ"
+  },
+  "soundboard": {
+    "controls": "การควบคุมแผงเสียง",
+    "addSound": "เพิ่มเสียง",
+    "stopAll": "หยุดทั้งหมด",
+    "volumeControls": "การควบคุมระดับเสียง",
+    "vbAudio": "VB Audio:",
+    "headphones": "หูฟัง:",
+    "soundPads": "แผ่นเสียง",
+    "noSounds": "ยังไม่มีเสียงที่เพิ่มเข้ามา คลิก \"เพิ่มเสียง\" เพื่อเริ่มต้น!",
+    "hotkeysEnabled": "เปิดใช้งานปุ่มลัดแผงเสียง"
+  },
+  "settings": {
+    "overlayHotkey": "ปุ่มลัดการเปิด/ปิดหน้าต่างทับ",
+    "pttHotkey": "ปุ่มลัดกดเพื่อพูด",
+    "bidiHotkey": "ปุ่มลัดสลับสองทิศทาง",
+    "clickThrough": "คลิกผ่าน",
+    "alwaysOnTop": "อยู่ด้านบนเสมอ",
+    "overlayOpacity": "ความโปร่งใสของหน้าต่างทับ",
+    "clickThroughDesc": "เปิดใช้งานคลิกผ่านในโหมดขั้นต่ำ",
+    "alwaysOnTopDesc": "เก็บหน้าต่างทับอยู่เหนือหน้าต่างอื่น"
+  },
+  "status": {
+    "ready": "พร้อมบันทึก...",
+    "recording": "กำลังบันทึก...",
+    "processing": "กำลังประมวลผล...",
+    "stopped": "หยุด",
+    "idle": "ไม่ทำงาน",
+    "active": "ทำงาน",
+    "error": "ข้อผิดพลาด"
+  },
+  "keys": {
+    "space": "SPACE",
+    "ctrl": "Ctrl",
+    "alt": "Alt",
+    "shift": "Shift"
+  }
+}

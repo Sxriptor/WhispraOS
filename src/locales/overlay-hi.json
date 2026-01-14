@@ -1,0 +1,102 @@
+{
+  "header": {
+    "title": "Whispra Controls",
+    "webOverlay": "वेब ओवरले"
+  },
+  "tabs": {
+    "translation": "अनुवाद",
+    "bidirectional": "द्विदिश",
+    "screenTranslation": "स्क्रीन अनुवाद",
+    "soundboard": "साउंडबोर्ड",
+    "settings": "सेटिंग्स"
+  },
+  "translation": {
+    "labels": {
+      "microphone": "माइक्रोफोन",
+      "targetLanguage": "लक्षित भाषा",
+      "voice": "स्वर",
+      "output": "आउटपुट",
+      "pushToTalk": "Push-to-Talk",
+      "holdKeyToRecord": "रिकॉर्ड करने के लिए कुंजी दबाए रखें"
+    },
+    "placeholders": {
+      "selectMicrophone": "माइक्रोफोन चुनें...",
+      "loadingVoices": "स्वरों को लोड कर रहा है..."
+    },
+    "buttons": {
+      "startTranslation": "अनुवाद शुरू करें",
+      "outputVirtualDevice": "आउटपुट: वर्चुअल डिवाइस",
+      "outputSystem": "आउटपुट: सिस्टम"
+    }
+  },
+  "bidirectional": {
+    "labels": {
+      "outputDevice": "आउटपुट डिवाइस",
+      "systemInput": "सिस्टम इनपुट",
+      "incomingVoice": "आगामी स्वर",
+      "screenCapture": "स्क्रीन/विंडो कैप्चर",
+      "bidirectionalToggle": "द्विदिश टॉगल",
+      "holdKeyToToggle": "द्विदिश मोड टॉगल करने के लिए कुंजी दबाए रखें",
+      "autoDetectLanguage": "स्वतः भाषा पहचानें"
+    },
+    "placeholders": {
+      "loadingOutputDevices": "आउटपुट डिवाइस लोड हो रहे हैं...",
+      "loadingVoices": "स्वरों को लोड कर रहा है...",
+      "displaySystemAudio": "डिस्प्ले/सिस्टम ऑडियो (डिफ़ॉल्ट)",
+      "selectScreenWindow": "स्क्रीन या विंडो चुनें..."
+    },
+    "buttons": {
+      "startBidirectional": "द्विदिश शुरू करें",
+      "refreshSources": "स्रोतों को ताज़ा करें"
+    },
+    "help": {
+      "screenCaptureHelp": "पीआईडी के साथ उपलब्ध स्क्रीन और विंडो स्वचालित रूप से पहचान ली जाएंगी।"
+    }
+  },
+  "screenTranslation": {
+    "labels": {
+      "screenSelection": "स्क्रीन चयन",
+      "translateTo": "अनुवाद करें",
+      "translateLanguage": "अनुवाद भाषा",
+      "keybind": "कीबाइंड"
+    },
+    "placeholders": {
+      "selectScreen": "स्क्रीन चुनें..."
+    },
+    "buttons": {
+      "changeKeybind": "की बदलें"
+    }
+  },
+  "soundboard": {
+    "labels": {
+      "soundBoardControls": "साउंड बोर्ड नियंत्रण",
+      "volumeControls": "ध्वनि नियंत्रण",
+      "soundPads": "ध्वनि पैड",
+      "vbAudioVolume": "VB Audio:",
+      "headphonesVolume": "हेडफ़ोन:"
+    },
+    "buttons": {
+      "addSound": "ध्वनि जोड़ें",
+      "stopAll": "सभी रोकें"
+    },
+    "placeholders": {
+      "noSoundsAdded": "अभी तक कोई ध्वनि नहीं जोड़ी गई है। शुरू करने के लिए \"ध्वनि जोड़ें\" पर क्लिक करें!"
+    }
+  },
+  "settings": {
+    "labels": {
+      "overlayToggleHotkey": "ओवरले टॉगल हॉटकी",
+      "pushToTalkHotkey": "Push-to-Talk हॉटकी",
+      "bidirectionalToggleHotkey": "द्विदिश टॉगल हॉटकी"
+    },
+    "modifiers": {
+      "ctrl": "Ctrl",
+      "alt": "Alt",
+      "shift": "Shift"
+    }
+  },
+  "common": {
+    "volume": "%",
+    "keyPrefix": "की:"
+  }
+}

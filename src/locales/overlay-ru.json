@@ -1,0 +1,102 @@
+{
+  "header": {
+    "title": "Управление Whispra",
+    "webOverlay": "Веб Оверлей"
+  },
+  "tabs": {
+    "translation": "Перевод",
+    "bidirectional": "Двунаправленный",
+    "screenTranslation": "Перевод экрана",
+    "soundboard": "Звуковая Панель",
+    "settings": "Настройки"
+  },
+  "translation": {
+    "labels": {
+      "microphone": "Микрофон",
+      "targetLanguage": "Целевой Язык",
+      "voice": "Голос",
+      "output": "Выход",
+      "pushToTalk": "Push-to-Talk",
+      "holdKeyToRecord": "Удерживайте клавишу для записи"
+    },
+    "placeholders": {
+      "selectMicrophone": "Выберите микрофон...",
+      "loadingVoices": "Загрузка голосов..."
+    },
+    "buttons": {
+      "startTranslation": "Начать Перевод",
+      "outputVirtualDevice": "Выход: Виртуальное Устройство",
+      "outputSystem": "Выход: Система"
+    }
+  },
+  "bidirectional": {
+    "labels": {
+      "outputDevice": "Устройство Вывода",
+      "systemInput": "Системный Вход",
+      "incomingVoice": "Входящий Голос",
+      "screenCapture": "Захват Экрана/Окна",
+      "bidirectionalToggle": "Переключение Двунаправленного",
+      "holdKeyToToggle": "Удерживайте клавишу для переключения двунаправленного режима",
+      "autoDetectLanguage": "Автоопределение Языка"
+    },
+    "placeholders": {
+      "loadingOutputDevices": "Загрузка устройств вывода...",
+      "loadingVoices": "Загрузка голосов...",
+      "displaySystemAudio": "Экран/Системный Аудио (По умолчанию)",
+      "selectScreenWindow": "Выберите экран или окно..."
+    },
+    "buttons": {
+      "startBidirectional": "Начать Двунаправленный",
+      "refreshSources": "Обновить источники"
+    },
+    "help": {
+      "screenCaptureHelp": "Доступные экраны и окна с PID будут автоматически обнаружены."
+    }
+  },
+  "screenTranslation": {
+    "labels": {
+      "screenSelection": "Выбор экрана",
+      "translateTo": "Перевести на",
+      "translateLanguage": "Язык перевода",
+      "keybind": "Горячая клавиша"
+    },
+    "placeholders": {
+      "selectScreen": "Выберите экран..."
+    },
+    "buttons": {
+      "changeKeybind": "Изменить клавишу"
+    }
+  },
+  "soundboard": {
+    "labels": {
+      "soundBoardControls": "Управление Звуковой Панелью",
+      "volumeControls": "Управление Громкостью",
+      "soundPads": "Звуковые Пады",
+      "vbAudioVolume": "VB Audio:",
+      "headphonesVolume": "Наушники:"
+    },
+    "buttons": {
+      "addSound": "Добавить Звук",
+      "stopAll": "Остановить Все"
+    },
+    "placeholders": {
+      "noSoundsAdded": "Звуки еще не добавлены. Нажмите \"Добавить Звук\", чтобы начать!"
+    }
+  },
+  "settings": {
+    "labels": {
+      "overlayToggleHotkey": "Горячая Клавиша Переключения Оверлея",
+      "pushToTalkHotkey": "Горячая Клавиша Push-to-Talk",
+      "bidirectionalToggleHotkey": "Горячая Клавиша Переключения Двунаправленного"
+    },
+    "modifiers": {
+      "ctrl": "Ctrl",
+      "alt": "Alt",
+      "shift": "Shift"
+    }
+  },
+  "common": {
+    "volume": "%",
+    "keyPrefix": "Клавиша:"
+  }
+}

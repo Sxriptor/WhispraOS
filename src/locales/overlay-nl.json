@@ -1,0 +1,102 @@
+{
+  "header": {
+    "title": "Whispra Besturing",
+    "webOverlay": "Web Overlay"
+  },
+  "tabs": {
+    "translation": "Vertaling",
+    "bidirectional": "Bidirectioneel",
+    "screenTranslation": "Schermvertaling",
+    "soundboard": "Geluidspaneel",
+    "settings": "Instellingen"
+  },
+  "translation": {
+    "labels": {
+      "microphone": "Microfoon",
+      "targetLanguage": "Doeltaal",
+      "voice": "Stem",
+      "output": "Uitgang",
+      "pushToTalk": "Push-to-Talk",
+      "holdKeyToRecord": "Houd toets ingedrukt om op te nemen"
+    },
+    "placeholders": {
+      "selectMicrophone": "Selecteer microfoon...",
+      "loadingVoices": "Stemmen laden..."
+    },
+    "buttons": {
+      "startTranslation": "Start Vertaling",
+      "outputVirtualDevice": "Uitgang: Virtueel Apparaat",
+      "outputSystem": "Uitgang: Systeem"
+    }
+  },
+  "bidirectional": {
+    "labels": {
+      "outputDevice": "Uitgangsapparaat",
+      "systemInput": "Systeem Invoer",
+      "incomingVoice": "Binnenkomende Stem",
+      "screenCapture": "Scherm/Window Vastlegging",
+      "bidirectionalToggle": "Bidirectionele Schakelaar",
+      "holdKeyToToggle": "Houd toets ingedrukt om bidirectionele modus te schakelen",
+      "autoDetectLanguage": "Automatisch Taal Detecteren"
+    },
+    "placeholders": {
+      "loadingOutputDevices": "Uitgangsapparaten laden...",
+      "loadingVoices": "Stemmen laden...",
+      "displaySystemAudio": "Weergave/Systeem Audio (Standaard)",
+      "selectScreenWindow": "Selecteer scherm of venster..."
+    },
+    "buttons": {
+      "startBidirectional": "Start Bidirectioneel",
+      "refreshSources": "Vernieuw bronnen"
+    },
+    "help": {
+      "screenCaptureHelp": "Beschikbare schermen en vensters met PID's worden automatisch gedetecteerd."
+    }
+  },
+  "screenTranslation": {
+    "labels": {
+      "screenSelection": "Schermselectie",
+      "translateTo": "Vertalen Naar",
+      "translateLanguage": "Vertaal Taal",
+      "keybind": "Toetsbinding"
+    },
+    "placeholders": {
+      "selectScreen": "Selecteer scherm..."
+    },
+    "buttons": {
+      "changeKeybind": "Verander Toets"
+    }
+  },
+  "soundboard": {
+    "labels": {
+      "soundBoardControls": "Geluidspaneel Besturing",
+      "volumeControls": "Volume Besturing",
+      "soundPads": "Geluidspads",
+      "vbAudioVolume": "VB Audio:",
+      "headphonesVolume": "Hoofdtelefoon:"
+    },
+    "buttons": {
+      "addSound": "Voeg Geluid Toe",
+      "stopAll": "Stop Alles"
+    },
+    "placeholders": {
+      "noSoundsAdded": "Nog geen geluiden toegevoegd. Klik op \"Voeg Geluid Toe\" om te beginnen!"
+    }
+  },
+  "settings": {
+    "labels": {
+      "overlayToggleHotkey": "Overlay Schakeltoets",
+      "pushToTalkHotkey": "Push-to-Talk Toets",
+      "bidirectionalToggleHotkey": "Bidirectionele Schakeltoets"
+    },
+    "modifiers": {
+      "ctrl": "Ctrl",
+      "alt": "Alt",
+      "shift": "Shift"
+    }
+  },
+  "common": {
+    "volume": "%",
+    "keyPrefix": "Toets:"
+  }
+}

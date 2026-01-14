@@ -1,0 +1,33 @@
+{
+  "panel": {
+    "title": "Chế độ Hai chiều"
+  },
+  "controls": {
+    "startBidirectional": "Bắt đầu Hai chiều",
+    "stopBidirectional": "Dừng Hai chiều",
+    "keybind": "Phím tắt",
+    "toggleWith": "Chuyển đổi với",
+    "changeKey": "Thay đổi phím",
+    "outputDevice": "Thiết bị đầu ra",
+    "systemInput": "Đầu vào hệ thống",
+    "incomingVoice": "Giọng nói đến"
+  },
+  "placeholders": {
+    "loadingOutputDevices": "Đang tải thiết bị đầu ra...",
+    "loadingVoices": "Đang tải giọng nói...",
+    "displaySystemAudio": "Hiển thị/Âm thanh hệ thống (Mặc định)"
+  },
+  "status": {
+    "idle": "Nhàn rỗi",
+    "waiting": "Đang chờ...",
+    "ready": "Sẵn sàng...",
+    "starting": "Đang khởi động...",
+    "stopping": "Đang dừng..."
+  },
+  "labels": {
+    "detectedTarget": "Đã phát hiện (Ngôn ngữ đích)",
+    "respoken": "Nói lại",
+    "sourceLanguage": "Ngôn ngữ nguồn - Ngôn ngữ bạn đang nghe",
+    "targetLanguage": "Ngôn ngữ đích - Dịch sang"
+  }
+}

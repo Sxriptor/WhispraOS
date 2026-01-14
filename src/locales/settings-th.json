@@ -1,0 +1,47 @@
+{
+  "modal": {
+    "title": "การกำหนดค่าของ API ที่ปลอดภัย",
+    "close": "ปิด"
+  },
+  "instructions": {
+    "title": "คำแนะนำในการตั้งค่า API Key",
+    "openaiTitle": "OpenAI API Key",
+    "openaiPermissions": "สิทธิ์การอ่าน: โมเดล, ความสามารถ",
+    "openaiUsage": "ใช้สำหรับการแปลงเสียงเป็นข้อความและข้อความเป็นเสียง",
+    "openaiLink": "platform.openai.com/api-keys",
+    "elevenlabsTitle": "ElevenLabs API Key",
+    "elevenlabsRestrict": "จำกัดคีย์: เปิดใช้งาน",
+    "elevenlabsNoAccess": "ทุกอย่างอื่น: ไม่มีการเข้าถึง",
+    "elevenlabsTts": "ข้อความเป็นเสียง: เข้าถึง",
+    "elevenlabsSts": "เสียงเป็นเสียง: เข้าถึง",
+    "elevenlabsAgents": "ตัวแทนของ ElevenLabs: เขียน",
+    "elevenlabsVoices": "เสียง: เขียน",
+    "elevenlabsVoiceGen": "การสร้างเสียง: เข้าถึง",
+    "elevenlabsUser": "ผู้ใช้: อ่าน",
+    "elevenlabsLink": "elevenlabs.io/app/profile"
+  },
+  "fields": {
+    "openaiLabel": "OpenAI API Key:",
+    "openaiPlaceholder": "กรุณาใส่ OpenAI API key ของคุณ",
+    "openaiStored": "คีย์ถูกเก็บอย่างปลอดภัย",
+    "openaiHelp": "กรุณาใส่ OpenAI API key ของคุณ (sk-...)",
+    "elevenlabsLabel": "ElevenLabs API Key:",
+    "elevenlabsPlaceholder": "กรุณาใส่ ElevenLabs API key ของคุณ",
+    "elevenlabsStored": "คีย์ถูกเก็บอย่างปลอดภัย",
+    "elevenlabsHelp": "กรุณาใส่ ElevenLabs API key ของคุณ (32 ตัวอักษร)"
+  },
+  "buttons": {
+    "showKey": "แสดงคีย์",
+    "removeKey": "ลบคีย์",
+    "clearAll": "ลบคีย์ทั้งหมด",
+    "cancel": "ยกเลิก",
+    "save": "บันทึก"
+  },
+  "status": {
+    "keyStored": "✓ คีย์ถูกเก็บอย่างปลอดภัย"
+  },
+  "links": {
+    "openai": "สร้างคีย์ที่: platform.openai.com/api-keys",
+    "elevenlabs": "สร้างคีย์ที่: elevenlabs.io/app/profile"
+  }
+}

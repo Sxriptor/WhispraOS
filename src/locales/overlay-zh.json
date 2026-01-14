@@ -1,0 +1,102 @@
+{
+  "header": {
+    "title": "Whispra 控制",
+    "webOverlay": "网页叠加"
+  },
+  "tabs": {
+    "translation": "翻译",
+    "bidirectional": "双向",
+    "screenTranslation": "屏幕翻译",
+    "soundboard": "声音面板",
+    "settings": "设置"
+  },
+  "translation": {
+    "labels": {
+      "microphone": "麦克风",
+      "targetLanguage": "目标语言",
+      "voice": "语音",
+      "output": "输出",
+      "pushToTalk": "按键通话",
+      "holdKeyToRecord": "按住按键录制"
+    },
+    "placeholders": {
+      "selectMicrophone": "选择麦克风...",
+      "loadingVoices": "加载语音中..."
+    },
+    "buttons": {
+      "startTranslation": "开始翻译",
+      "outputVirtualDevice": "输出：虚拟设备",
+      "outputSystem": "输出：系统"
+    }
+  },
+  "bidirectional": {
+    "labels": {
+      "outputDevice": "输出设备",
+      "systemInput": "系统输入",
+      "incomingVoice": "输入语音",
+      "screenCapture": "屏幕/窗口捕获",
+      "bidirectionalToggle": "双向切换",
+      "holdKeyToToggle": "按住按键切换双向模式",
+      "autoDetectLanguage": "自动检测语言"
+    },
+    "placeholders": {
+      "loadingOutputDevices": "加载输出设备中...",
+      "loadingVoices": "加载语音中...",
+      "displaySystemAudio": "显示/系统音频（默认）",
+      "selectScreenWindow": "选择屏幕或窗口..."
+    },
+    "buttons": {
+      "startBidirectional": "开始双向翻译",
+      "refreshSources": "刷新源"
+    },
+    "help": {
+      "screenCaptureHelp": "带有 PID 的可用屏幕和窗口将被自动检测。"
+    }
+  },
+  "screenTranslation": {
+    "labels": {
+      "screenSelection": "屏幕选择",
+      "translateTo": "翻译到",
+      "translateLanguage": "翻译语言",
+      "keybind": "快捷键"
+    },
+    "placeholders": {
+      "selectScreen": "选择屏幕..."
+    },
+    "buttons": {
+      "changeKeybind": "更改按键"
+    }
+  },
+  "soundboard": {
+    "labels": {
+      "soundBoardControls": "声音面板控制",
+      "volumeControls": "音量控制",
+      "soundPads": "声音垫",
+      "vbAudioVolume": "VB Audio：",
+      "headphonesVolume": "耳机："
+    },
+    "buttons": {
+      "addSound": "添加声音",
+      "stopAll": "停止全部"
+    },
+    "placeholders": {
+      "noSoundsAdded": "尚未添加声音。点击\"添加声音\"开始使用！"
+    }
+  },
+  "settings": {
+    "labels": {
+      "overlayToggleHotkey": "叠加切换热键",
+      "pushToTalkHotkey": "按键通话热键",
+      "bidirectionalToggleHotkey": "双向切换热键"
+    },
+    "modifiers": {
+      "ctrl": "Ctrl",
+      "alt": "Alt",
+      "shift": "Shift"
+    }
+  },
+  "common": {
+    "volume": "%",
+    "keyPrefix": "按键："
+  }
+}

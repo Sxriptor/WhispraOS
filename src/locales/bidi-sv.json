@@ -1,0 +1,33 @@
+{
+  "panel": {
+    "title": "Tvåvägsläge"
+  },
+  "controls": {
+    "startBidirectional": "Starta tvåväg",
+    "stopBidirectional": "Stoppa tvåväg",
+    "keybind": "Tangentbindning",
+    "toggleWith": "Växla med",
+    "changeKey": "Ändra tangent",
+    "outputDevice": "Utgångsenhet",
+    "systemInput": "Systemingång",
+    "incomingVoice": "Inkommande röst"
+  },
+  "placeholders": {
+    "loadingOutputDevices": "Laddar utgångsenheter...",
+    "loadingVoices": "Laddar röster...",
+    "displaySystemAudio": "Visa/Systemljud (Standard)"
+  },
+  "status": {
+    "idle": "Inaktiv",
+    "waiting": "Väntar...",
+    "ready": "Redo...",
+    "starting": "Startar...",
+    "stopping": "Stoppar..."
+  },
+  "labels": {
+    "detectedTarget": "Upptäckt (Målspråk)",
+    "respoken": "Återtalad",
+    "sourceLanguage": "Källspråk - Språket du lyssnar på",
+    "targetLanguage": "Målspråk - Översätt till"
+  }
+}

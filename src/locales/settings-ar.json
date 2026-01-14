@@ -1,0 +1,47 @@
+{
+  "modal": {
+    "title": "تكوين واجهة برمجة التطبيقات الآمنة",
+    "close": "إغلاق"
+  },
+  "instructions": {
+    "title": "تعليمات إعداد مفتاح واجهة برمجة التطبيقات",
+    "openaiTitle": "مفتاح واجهة برمجة التطبيقات OpenAI",
+    "openaiPermissions": "أذونات القراءة: النماذج، القدرات",
+    "openaiUsage": "يستخدم في الترجمة من الكلام إلى نص ومن نص إلى كلام",
+    "openaiLink": "platform.openai.com/api-keys",
+    "elevenlabsTitle": "مفتاح واجهة برمجة التطبيقات ElevenLabs",
+    "elevenlabsRestrict": "تقييد المفتاح: مفعل",
+    "elevenlabsNoAccess": "كل شيء آخر: لا يوجد وصول",
+    "elevenlabsTts": "النص إلى الكلام: وصول",
+    "elevenlabsSts": "الكلام إلى الكلام: وصول",
+    "elevenlabsAgents": "وكلاء ElevenLabs: كتابة",
+    "elevenlabsVoices": "الأصوات: كتابة",
+    "elevenlabsVoiceGen": "توليد الصوت: وصول",
+    "elevenlabsUser": "المستخدم: قراءة",
+    "elevenlabsLink": "elevenlabs.io/app/profile"
+  },
+  "fields": {
+    "openaiLabel": "مفتاح واجهة برمجة التطبيقات OpenAI:",
+    "openaiPlaceholder": "أدخل مفتاح واجهة برمجة التطبيقات OpenAI الخاص بك",
+    "openaiStored": "المفتاح مخزن بأمان",
+    "openaiHelp": "أدخل مفتاح واجهة برمجة التطبيقات OpenAI الخاص بك (sk-...)",
+    "elevenlabsLabel": "مفتاح واجهة برمجة التطبيقات ElevenLabs:",
+    "elevenlabsPlaceholder": "أدخل مفتاح واجهة برمجة التطبيقات ElevenLabs الخاص بك",
+    "elevenlabsStored": "المفتاح مخزن بأمان",
+    "elevenlabsHelp": "أدخل مفتاح واجهة برمجة التطبيقات ElevenLabs الخاص بك (32 حرف)"
+  },
+  "buttons": {
+    "showKey": "عرض المفتاح",
+    "removeKey": "إزالة المفتاح",
+    "clearAll": "مسح جميع المفاتيح",
+    "cancel": "إلغاء",
+    "save": "حفظ"
+  },
+  "status": {
+    "keyStored": "✓ المفتاح مخزن بأمان"
+  },
+  "links": {
+    "openai": "توليد المفتاح في: platform.openai.com/api-keys",
+    "elevenlabs": "توليد المفتاح في: elevenlabs.io/app/profile"
+  }
+}

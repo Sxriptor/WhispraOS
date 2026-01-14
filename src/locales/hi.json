@@ -1,0 +1,62 @@
+{
+  "app": {
+    "name": "Whispra",
+    "loading": "लोड हो रहा है...",
+    "ready": "तैयार",
+    "idle": "खाली",
+    "processing": "प्रसंस्करण",
+    "error": "त्रुटि"
+  },
+  "navigation": {
+    "translate": "अनुवाद करें",
+    "bidirectional": "द्विदिश",
+    "screenTranslation": "स्क्रीन अनुवाद",
+    "soundBoard": "साउंड बोर्ड",
+    "voiceFilter": "वॉइस फ़िल्टर",
+    "settings": "सेटिंग्स",
+    "logs": "लॉग"
+  },
+  "common": {
+    "start": "शुरू करें",
+    "stop": "रोकें",
+    "cancel": "रद्द करें",
+    "save": "सहेजें",
+    "close": "बंद करें",
+    "back": "वापस",
+    "next": "अगला",
+    "continue": "जारी रखें",
+    "retry": "पुनः प्रयास करें",
+    "yes": "हाँ",
+    "no": "नहीं",
+    "ok": "ठीक है"
+  },
+  "header": {
+    "profile": "प्रोफ़ाइल",
+    "signOut": "साइन आउट",
+    "language": "भाषा"
+  },
+  "footer": {
+    "connectionStatus": "कनेक्शन स्थिति",
+    "processingStatus": "प्रसंस्करण स्थिति",
+    "feedback": "बग रिपोर्ट करें / फीचर सुझाव दें",
+    "debugConsole": "डिबग कंसोल दिखाएँ"
+  },
+  "errors": {
+    "networkError": "नेटवर्क कनेक्शन त्रुटि",
+    "permissionDenied": "अनुमति अस्वीकृत",
+    "deviceNotFound": "डिवाइस नहीं मिला",
+    "serviceUnavailable": "सेवा अनुपलब्ध",
+    "unknownError": "एक अज्ञात त्रुटि हुई"
+  },
+  "tooltips": {
+    "sidebarToggle": "साइडबार टॉगल करें",
+    "profile": "प्रोफ़ाइल मेनू",
+    "language": "भाषा चुनें"
+  },
+  "languageChange": {
+    "title": "ऐप की भाषा बदलें?",
+    "message": "क्या आप Whispra के पाठ को इस भाषा में भी बनाना चाहते हैं?",
+    "yes": "हाँ",
+    "no": "नहीं"
+  }
+}

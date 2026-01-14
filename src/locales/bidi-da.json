@@ -1,0 +1,33 @@
+{
+  "panel": {
+    "title": "Bidirektionel tilstand"
+  },
+  "controls": {
+    "startBidirectional": "Start Bidirektionel",
+    "stopBidirectional": "Stop Bidirektionel",
+    "keybind": "Tastaturbinding",
+    "toggleWith": "Skift med",
+    "changeKey": "Skift tast",
+    "outputDevice": "Output-enhed",
+    "systemInput": "Systemindgang",
+    "incomingVoice": "Indkommende stemme"
+  },
+  "placeholders": {
+    "loadingOutputDevices": "Indlæser output-enheder...",
+    "loadingVoices": "Indlæser stemmer...",
+    "displaySystemAudio": "Vis/Systemlyd (Standard)"
+  },
+  "status": {
+    "idle": "Inaktiv",
+    "waiting": "Venter...",
+    "ready": "Klar...",
+    "starting": "Starter...",
+    "stopping": "Stopper..."
+  },
+  "labels": {
+    "detectedTarget": "Registreret (Mål sprog)",
+    "respoken": "Genudtalt",
+    "sourceLanguage": "Kildesprog - Sprog du lytter til",
+    "targetLanguage": "Mål sprog - Oversæt til"
+  }
+}

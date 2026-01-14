@@ -1,0 +1,62 @@
+{
+  "app": {
+    "name": "Whispra",
+    "loading": "Cargando...",
+    "ready": "Listo",
+    "idle": "Inactivo",
+    "processing": "Procesando",
+    "error": "Error"
+  },
+  "navigation": {
+    "translate": "Traducir",
+    "bidirectional": "Bidireccional",
+    "screenTranslation": "Traducción de Pantalla",
+    "soundBoard": "Panel de Sonido",
+    "voiceFilter": "Filtro de Voz",
+    "settings": "Configuración",
+    "logs": "Registros"
+  },
+  "common": {
+    "start": "Iniciar",
+    "stop": "Detener",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "close": "Cerrar",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "continue": "Continuar",
+    "retry": "Reintentar",
+    "yes": "Sí",
+    "no": "No",
+    "ok": "Aceptar"
+  },
+  "header": {
+    "profile": "Perfil",
+    "signOut": "Cerrar Sesión",
+    "language": "Idioma"
+  },
+  "footer": {
+    "connectionStatus": "Estado de Conexión",
+    "processingStatus": "Estado de Procesamiento",
+    "feedback": "Reportar Error / Sugerir Función",
+    "debugConsole": "Mostrar Consola de Depuración"
+  },
+  "errors": {
+    "networkError": "Error de conexión de red",
+    "permissionDenied": "Permiso denegado",
+    "deviceNotFound": "Dispositivo no encontrado",
+    "serviceUnavailable": "Servicio no disponible",
+    "unknownError": "Ocurrió un error desconocido"
+  },
+  "tooltips": {
+    "sidebarToggle": "Alternar barra lateral",
+    "profile": "Menú de perfil",
+    "language": "Seleccionar idioma"
+  },
+  "languageChange": {
+    "title": "¿Cambiar el idioma de la aplicación?",
+    "message": "¿Deseas que el texto de Whispra también esté en este idioma?",
+    "yes": "Sí",
+    "no": "No"
+  }
+}

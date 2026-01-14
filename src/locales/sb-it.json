@@ -1,0 +1,24 @@
+{
+  "panel": {
+    "title": "Tavola dei Suoni",
+    "description": "Riproduci suoni personalizzati e clip audio durante le conversazioni"
+  },
+  "controls": {
+    "outputDevice": "Dispositivo di Uscita",
+    "vbAudioVolume": "Volume VB Audio",
+    "headphonesVolume": "Volume Cuffie",
+    "soundPadGrid": "Griglia del Pad Sonoro",
+    "enableHotkeys": "Abilita Hotkey della Soundboard",
+    "addSoundFiles": "Aggiungi File Audio",
+    "webOverlay": "Sovrapposizione Web",
+    "stopAllSounds": "Ferma Tutti i Suoni"
+  },
+  "placeholders": {
+    "selectOutputDevice": "Seleziona dispositivo di uscita...",
+    "defaultSystemOutput": "Uscita di Sistema Predefinita",
+    "virtualAudioCable": "Cavo Audio Virtuale"
+  },
+  "status": {
+    "volume": "%"
+  }
+}

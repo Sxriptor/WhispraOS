@@ -1,0 +1,88 @@
+{
+  "tab": {
+    "translation": "अनुवाद",
+    "bidirectional": "द्विदिश",
+    "soundboard": "साउंडबोर्ड",
+    "settings": "सेटिंग्स"
+  },
+  "controls": {
+    "microphone": "माइक्रोफोन",
+    "targetLanguage": "लक्षित भाषा",
+    "voice": "स्वर",
+    "output": "आउटपुट",
+    "pushToTalk": "Push-to-Talk",
+    "startTranslation": "अनुवाद शुरू करें",
+    "stopTranslation": "अनुवाद रोकें",
+    "addCustomVoice": "कस्टम स्वर जोड़ें",
+    "accent": "उच्चारण",
+    "noAccent": "कोई उच्चारण नहीं",
+    "accentOn": "उच्चारण: चालू",
+    "accentOff": "उच्चारण: बंद"
+  },
+  "placeholders": {
+    "selectMicrophone": "माइक्रोफोन चुनें...",
+    "loadingVoices": "स्वरों को लोड कर रहा है...",
+    "selectVoice": "स्वर चुनें...",
+    "enterCustomAccent": "कस्टम उच्चारण दर्ज करें...",
+    "selectPreset": "प्रीसेट चुनें..."
+  },
+  "descriptions": {
+    "microphoneHelp": "यह माइक्रोफोन अनुवाद और पासथ्रू के लिए उपयोग किया जाता है",
+    "outputMode": "वर्चुअल डिवाइस पर आउटपुट",
+    "holdKeyToRecord": "रिकॉर्ड करने के लिए कुंजी दबाए रखें",
+    "toggleBidiMode": "द्विदिश मोड टॉगल करने के लिए कुंजी दबाए रखें",
+    "autoDetectLanguage": "भाषा का स्वचालित पता लगाना"
+  },
+  "bidirectional": {
+    "outputDevice": "आउटपुट डिवाइस",
+    "systemInput": "सिस्टम इनपुट",
+    "incomingVoice": "आगामी स्वर",
+    "screenCapture": "स्क्रीन/विंडो कैप्चर",
+    "startBidirectional": "द्विदिश शुरू करें",
+    "stopBidirectional": "द्विदिश रोकें",
+    "loadingDevices": "आउटपुट डिवाइस लोड हो रहे हैं...",
+    "selectOutputDevice": "आउटपुट डिवाइस चुनें...",
+    "displayAudio": "डिस्प्ले/सिस्टम ऑडियो (डिफ़ॉल्ट)",
+    "loadingVoices": "स्वरों को लोड कर रहा है...",
+    "selectIncomingVoice": "आगामी स्वर चुनें...",
+    "selectScreenOrWindow": "स्क्रीन या विंडो चुनें...",
+    "refreshSources": "स्रोतों को ताज़ा करें",
+    "captureHelp": "PIDs के साथ उपलब्ध स्क्रीन और विंडो स्वचालित रूप से पहचान ली जाएंगी"
+  },
+  "soundboard": {
+    "controls": "साउंड बोर्ड नियंत्रण",
+    "addSound": "ध्वनि जोड़ें",
+    "stopAll": "सभी रोकें",
+    "volumeControls": "आवाज नियंत्रण",
+    "vbAudio": "VB Audio:",
+    "headphones": "हेडफ़ोन:",
+    "soundPads": "ध्वनि पैड",
+    "noSounds": "अभी तक कोई ध्वनि नहीं जोड़ी गई। शुरू करने के लिए \"ध्वनि जोड़ें\" पर क्लिक करें!",
+    "hotkeysEnabled": "साउंडबोर्ड हॉटकी सक्षम करें"
+  },
+  "settings": {
+    "overlayHotkey": "ओवरले टॉगल हॉटकी",
+    "pttHotkey": "Push-to-Talk हॉटकी",
+    "bidiHotkey": "द्विदिश टॉगल हॉटकी",
+    "clickThrough": "क्लिक-थ्रू",
+    "alwaysOnTop": "हमेशा शीर्ष पर",
+    "overlayOpacity": "ओवरले अपारदर्शिता",
+    "clickThroughDesc": "न्यूनतम मोड में क्लिक-थ्रू सक्षम करें",
+    "alwaysOnTopDesc": "ओवरले को अन्य विंडो के ऊपर रखें"
+  },
+  "status": {
+    "ready": "रिकॉर्ड करने के लिए तैयार...",
+    "recording": "रिकॉर्डिंग...",
+    "processing": "प्रसंस्करण...",
+    "stopped": "रुका हुआ",
+    "idle": "निष्क्रिय",
+    "active": "सक्रिय",
+    "error": "त्रुटि"
+  },
+  "keys": {
+    "space": "SPACE",
+    "ctrl": "Ctrl",
+    "alt": "Alt",
+    "shift": "Shift"
+  }
+}

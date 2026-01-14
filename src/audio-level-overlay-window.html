@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Level Overlay</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: transparent;
+            overflow: hidden;
+            -webkit-app-region: no-drag;
+        }
+
+        .audio-overlay {
+            position: fixed;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            
+            background: rgba(30, 30, 30, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 8px 16px;
+            
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+        }
+
+        .audio-section {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            opacity: 0;
+            max-width: 0;
+            overflow: hidden;
+            transition: opacity 0.3s ease, max-width 0.3s ease;
+        }
+
+        .audio-section.active {
+            opacity: 1;
+            max-width: 200px;
+        }
+
+        .section-label {
+            font-size: 10px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            min-width: 28px;
+        }
+
+        .ptt-section .section-label {
+            color: rgba(100, 200, 255, 0.9);
+        }
+
+        .bidi-section .section-label {
+            color: rgba(255, 180, 100, 0.9);
+        }
+
+        .audio-bars {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            height: 24px;
+        }
+
+        .audio-bar {
+            width: 2.5px;
+            height: 20%;
+            border-radius: 2px;
+            transition: height 0.1s ease;
+        }
+
+        .ptt-section .audio-bar {
+            background: rgba(100, 200, 255, 0.85);
+        }
+
+        .bidi-section .audio-bar {
+            background: rgba(255, 180, 100, 0.85);
+        }
+
+        .divider {
+            width: 1px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            display: none;
+        }
+
+        .divider.visible {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="audio-overlay">
+        <!-- PTT Section (Left) -->
+        <div class="audio-section ptt-section" id="ptt-section">
+            <span class="section-label">PTT</span>
+            <div class="audio-bars" id="ptt-bars"></div>
+        </div>
+
+        <!-- Divider (shown when both active) -->
+        <div class="divider" id="divider"></div>
+
+        <!-- Bidirectional Section (Right) -->
+        <div class="audio-section bidi-section" id="bidi-section">
+            <span class="section-label">BIDI</span>
+            <div class="audio-bars" id="bidi-bars"></div>
+        </div>
+    </div>
+
+    <script>
+        const BAR_COUNT = 8;
+        
+        // Create bars for PTT
+        const pttBarsContainer = document.getElementById('ptt-bars');
+        const pttBars = [];
+        for (let i = 0; i < BAR_COUNT; i++) {
+            const bar = document.createElement('div');
+            bar.className = 'audio-bar';
+            pttBars.push(bar);
+            pttBarsContainer.appendChild(bar);
+        }
+
+        // Create bars for Bidirectional
+        const bidiBarsContainer = document.getElementById('bidi-bars');
+        const bidiBars = [];
+        for (let i = 0; i < BAR_COUNT; i++) {
+            const bar = document.createElement('div');
+            bar.className = 'audio-bar';
+            bidiBars.push(bar);
+            bidiBarsContainer.appendChild(bar);
+        }
+
+        // Section elements
+        const pttSection = document.getElementById('ptt-section');
+        const bidiSection = document.getElementById('bidi-section');
+        const divider = document.getElementById('divider');
+
+        // Track active states
+        let pttActive = false;
+        let bidiActive = false;
+
+        function updateDivider() {
+            if (pttActive && bidiActive) {
+                divider.classList.add('visible');
+            } else {
+                divider.classList.remove('visible');
+            }
+        }
+
+        // Listen for PTT audio data
+        window.electronAPI.onPTTAudioData((audioData) => {
+            pttBars.forEach((bar, index) => {
+                const value = audioData[index] || 0.15;
+                bar.style.height = `${value * 100}%`;
+            });
+        });
+
+        // Listen for PTT show/hide
+        window.electronAPI.onPTTShow(() => {
+            pttActive = true;
+            pttSection.classList.add('active');
+            updateDivider();
+        });
+
+        window.electronAPI.onPTTHide(() => {
+            pttActive = false;
+            pttSection.classList.remove('active');
+            updateDivider();
+            // Reset bars
+            pttBars.forEach(bar => bar.style.height = '20%');
+        });
+
+        // Listen for Bidirectional audio data
+        window.electronAPI.onBidiAudioData((audioData) => {
+            bidiBars.forEach((bar, index) => {
+                const value = audioData[index] || 0.15;
+                bar.style.height = `${value * 100}%`;
+            });
+        });
+
+        // Listen for Bidirectional show/hide
+        window.electronAPI.onBidiShow(() => {
+            bidiActive = true;
+            bidiSection.classList.add('active');
+            updateDivider();
+        });
+
+        window.electronAPI.onBidiHide(() => {
+            bidiActive = false;
+            bidiSection.classList.remove('active');
+            updateDivider();
+            // Reset bars
+            bidiBars.forEach(bar => bar.style.height = '20%');
+        });
+    </script>
+</body>
+</html>

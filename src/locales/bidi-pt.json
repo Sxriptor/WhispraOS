@@ -1,0 +1,33 @@
+{
+  "panel": {
+    "title": "Modo Bidirecional"
+  },
+  "controls": {
+    "startBidirectional": "Iniciar Bidirecional",
+    "stopBidirectional": "Parar Bidirecional",
+    "keybind": "Atalho",
+    "toggleWith": "Alternar com",
+    "changeKey": "Mudar Tecla",
+    "outputDevice": "Dispositivo de Saída",
+    "systemInput": "Entrada do Sistema",
+    "incomingVoice": "Voz Entrante"
+  },
+  "placeholders": {
+    "loadingOutputDevices": "Carregando dispositivos de saída...",
+    "loadingVoices": "Carregando vozes...",
+    "displaySystemAudio": "Exibir/Áudio do Sistema (Padrão)"
+  },
+  "status": {
+    "idle": "Ocioso",
+    "waiting": "Aguardando...",
+    "ready": "Pronto...",
+    "starting": "Iniciando...",
+    "stopping": "Parando..."
+  },
+  "labels": {
+    "detectedTarget": "Detectado (Idioma Alvo)",
+    "respoken": "Re-falado",
+    "sourceLanguage": "Idioma de Origem - Idioma que Você Está Ouvindo",
+    "targetLanguage": "Idioma Alvo - Traduzir Para"
+  }
+}

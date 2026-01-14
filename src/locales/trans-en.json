@@ -1,0 +1,88 @@
+{
+  "tab": {
+    "translation": "Translation",
+    "bidirectional": "Bidirectional",
+    "soundboard": "Soundboard",
+    "settings": "Settings"
+  },
+  "controls": {
+    "microphone": "Microphone",
+    "targetLanguage": "Target Language",
+    "voice": "Voice",
+    "output": "Output",
+    "pushToTalk": "Push-to-Talk",
+    "startTranslation": "Start Translation",
+    "stopTranslation": "Stop Translation",
+    "addCustomVoice": "Add Custom Voice",
+    "accent": "Accent",
+    "noAccent": "No Accent",
+    "accentOn": "Accent: ON",
+    "accentOff": "Accent: OFF"
+  },
+  "placeholders": {
+    "selectMicrophone": "Select microphone...",
+    "loadingVoices": "Loading voices...",
+    "selectVoice": "Select voice...",
+    "enterCustomAccent": "Enter custom accent...",
+    "selectPreset": "Select preset..."
+  },
+  "descriptions": {
+    "microphoneHelp": "This microphone is used for translation and passthrough",
+    "outputMode": "Output to Virtual Device",
+    "holdKeyToRecord": "Hold key to record",
+    "toggleBidiMode": "Hold key to toggle bidirectional mode",
+    "autoDetectLanguage": "Auto-detect Language"
+  },
+  "bidirectional": {
+    "outputDevice": "Output Device",
+    "systemInput": "System Input",
+    "incomingVoice": "Incoming Voice",
+    "screenCapture": "Screen/Window Capture",
+    "startBidirectional": "Start Bidirectional",
+    "stopBidirectional": "Stop Bidirectional",
+    "loadingDevices": "Loading output devices...",
+    "selectOutputDevice": "Select output device...",
+    "displayAudio": "Display/System Audio (Default)",
+    "loadingVoices": "Loading voices...",
+    "selectIncomingVoice": "Select incoming voice...",
+    "selectScreenOrWindow": "Select screen or window...",
+    "refreshSources": "Refresh sources",
+    "captureHelp": "Available screens and windows with PIDs will be detected automatically"
+  },
+  "soundboard": {
+    "controls": "Sound Board Controls",
+    "addSound": "Add Sound",
+    "stopAll": "Stop All",
+    "volumeControls": "Volume Controls",
+    "vbAudio": "VB Audio:",
+    "headphones": "Headphones:",
+    "soundPads": "Sound Pads",
+    "noSounds": "No sounds added yet. Click \"Add Sound\" to get started!",
+    "hotkeysEnabled": "Enable Soundboard Hotkeys"
+  },
+  "settings": {
+    "overlayHotkey": "Overlay Toggle Hotkey",
+    "pttHotkey": "Push-to-Talk Hotkey",
+    "bidiHotkey": "Bidirectional Toggle Hotkey",
+    "clickThrough": "Click-through",
+    "alwaysOnTop": "Always On Top",
+    "overlayOpacity": "Overlay Opacity",
+    "clickThroughDesc": "Enable click-through in Minimal mode",
+    "alwaysOnTopDesc": "Keep overlay above other windows"
+  },
+  "status": {
+    "ready": "Ready to record...",
+    "recording": "Recording...",
+    "processing": "Processing...",
+    "stopped": "Stopped",
+    "idle": "Idle",
+    "active": "Active",
+    "error": "Error"
+  },
+  "keys": {
+    "space": "SPACE",
+    "ctrl": "Ctrl",
+    "alt": "Alt",
+    "shift": "Shift"
+  }
+}

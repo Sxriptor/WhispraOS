@@ -1,0 +1,102 @@
+{
+  "header": {
+    "title": "Whispra Kontroller",
+    "webOverlay": "Webböverlägg"
+  },
+  "tabs": {
+    "translation": "Översättning",
+    "bidirectional": "Bidirectional",
+    "screenTranslation": "Skärmöversättning",
+    "soundboard": "Ljudbräda",
+    "settings": "Inställningar"
+  },
+  "translation": {
+    "labels": {
+      "microphone": "Mikrofon",
+      "targetLanguage": "Målspråk",
+      "voice": "Röst",
+      "output": "Utgång",
+      "pushToTalk": "Push-to-Talk",
+      "holdKeyToRecord": "Håll ned tangenten för att spela in"
+    },
+    "placeholders": {
+      "selectMicrophone": "Välj mikrofon...",
+      "loadingVoices": "Laddar röster..."
+    },
+    "buttons": {
+      "startTranslation": "Starta översättning",
+      "outputVirtualDevice": "Utgång: Virtuell enhet",
+      "outputSystem": "Utgång: System"
+    }
+  },
+  "bidirectional": {
+    "labels": {
+      "outputDevice": "Utgångsenhet",
+      "systemInput": "Systemingång",
+      "incomingVoice": "Inkommande röst",
+      "screenCapture": "Skärm/Fönsterupptagning",
+      "bidirectionalToggle": "Bidirectional Toggle",
+      "holdKeyToToggle": "Håll ned tangenten för att växla till bidirectional-läge",
+      "autoDetectLanguage": "Automatisk språkdetektering"
+    },
+    "placeholders": {
+      "loadingOutputDevices": "Laddar utgångsenheter...",
+      "loadingVoices": "Laddar röster...",
+      "displaySystemAudio": "Visa/Systemljud (Standard)",
+      "selectScreenWindow": "Välj skärm eller fönster..."
+    },
+    "buttons": {
+      "startBidirectional": "Starta Bidirectional",
+      "refreshSources": "Uppdatera källor"
+    },
+    "help": {
+      "screenCaptureHelp": "Tillgängliga skärmar och fönster med PID:er kommer att detekteras automatiskt."
+    }
+  },
+  "screenTranslation": {
+    "labels": {
+      "screenSelection": "Skärmval",
+      "translateTo": "Översätt till",
+      "translateLanguage": "Översätt språk",
+      "keybind": "Tangentbindning"
+    },
+    "placeholders": {
+      "selectScreen": "Välj skärm..."
+    },
+    "buttons": {
+      "changeKeybind": "Ändra tangent"
+    }
+  },
+  "soundboard": {
+    "labels": {
+      "soundBoardControls": "Ljudbräde Kontroller",
+      "volumeControls": "Volymkontroller",
+      "soundPads": "Ljudkuddar",
+      "vbAudioVolume": "VB Audio:",
+      "headphonesVolume": "Hörlurar:"
+    },
+    "buttons": {
+      "addSound": "Lägg till ljud",
+      "stopAll": "Stoppa allt"
+    },
+    "placeholders": {
+      "noSoundsAdded": "Inga ljud har lagts till ännu. Klicka på \"Lägg till ljud\" för att komma igång!"
+    }
+  },
+  "settings": {
+    "labels": {
+      "overlayToggleHotkey": "Överlägg Växeltangent",
+      "pushToTalkHotkey": "Push-to-Talk Tangent",
+      "bidirectionalToggleHotkey": "Bidirectional Toggle Tangent"
+    },
+    "modifiers": {
+      "ctrl": "Ctrl",
+      "alt": "Alt",
+      "shift": "Shift"
+    }
+  },
+  "common": {
+    "volume": "%",
+    "keyPrefix": "Tangent:"
+  }
+}

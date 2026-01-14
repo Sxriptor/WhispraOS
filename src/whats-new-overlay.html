@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What's New - Whispra</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #1a1a1a;
+            min-height: 100vh;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .overlay-container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            max-height: 100vh;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+            border-bottom: 1px solid #333;
+            padding: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .header-text {
+            flex: 1;
+        }
+
+        .title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.25rem;
+        }
+
+        .version-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(74, 222, 128, 0.15);
+            color: #4ade80;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .release-date {
+            color: #888;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
+
+        .content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1.5rem;
+        }
+
+        .loading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: #888;
+        }
+
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid #333;
+            border-top-color: #4ade80;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 1rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .error {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            color: #ef4444;
+        }
+
+        .release-notes {
+            background: #2d2d2d;
+            border-radius: 12px;
+            padding: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .release-notes h1,
+        .release-notes h2,
+        .release-notes h3 {
+            color: #4ade80;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .release-notes h1:first-child,
+        .release-notes h2:first-child,
+        .release-notes h3:first-child {
+            margin-top: 0;
+        }
+
+        .release-notes h1 { font-size: 1.5rem; }
+        .release-notes h2 { font-size: 1.25rem; }
+        .release-notes h3 { font-size: 1.1rem; }
+
+        .release-notes p {
+            margin-bottom: 1rem;
+            color: #d1d5db;
+        }
+
+        .release-notes ul,
+        .release-notes ol {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+
+        .release-notes li {
+            margin-bottom: 0.5rem;
+            color: #d1d5db;
+        }
+
+        .release-notes code {
+            background: #1a1a1a;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+            color: #f472b6;
+        }
+
+        .release-notes pre {
+            background: #1a1a1a;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin-bottom: 1rem;
+        }
+
+        .release-notes pre code {
+            background: none;
+            padding: 0;
+        }
+
+        .release-notes a {
+            color: #60a5fa;
+            text-decoration: none;
+        }
+
+        .release-notes a:hover {
+            text-decoration: underline;
+        }
+
+        .release-notes blockquote {
+            border-left: 3px solid #4ade80;
+            padding-left: 1rem;
+            margin: 1rem 0;
+            color: #9ca3af;
+            font-style: italic;
+        }
+
+        .release-notes strong {
+            color: #fff;
+        }
+
+        .release-notes hr {
+            border: none;
+            border-top: 1px solid #444;
+            margin: 1.5rem 0;
+        }
+
+        .footer {
+            background: #2d2d2d;
+            border-top: 1px solid #333;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .btn {
+            padding: 0.6rem 1.25rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .btn-primary {
+            background: #4ade80;
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            background: #22c55e;
+        }
+
+        .btn-secondary {
+            background: #374151;
+            color: #fff;
+            border: 1px solid #4b5563;
+        }
+
+        .btn-secondary:hover {
+            background: #4b5563;
+        }
+
+        .btn-link {
+            background: transparent;
+            color: #60a5fa;
+            border: 1px solid #60a5fa;
+        }
+
+        .btn-link:hover {
+            background: rgba(96, 165, 250, 0.1);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        /* Scrollbar styling */
+        .content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .content::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+
+        .content::-webkit-scrollbar-thumb {
+            background: #444;
+            border-radius: 4px;
+        }
+
+        .content::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay-container">
+        <div class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                </div>
+                <div class="header-text">
+                    <h1 class="title">What's New in Whispra</h1>
+                    <div class="version-badge" id="version-badge">
+                        <span>Loading...</span>
+                    </div>
+                    <div class="release-date" id="release-date"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content" id="content">
+            <div class="loading" id="loading">
+                <div class="loading-spinner"></div>
+                <span>Fetching release notes...</span>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-links">
+                <button id="github-btn" class="btn btn-link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                    View on GitHub
+                </button>
+            </div>
+            <button id="close-btn" class="btn btn-primary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                Got It
+            </button>
+        </div>
+    </div>
+
+    <script>
+        let releaseUrl = 'https://github.com/Sxriptor/Whispra-Download/releases';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setupEventListeners();
+        });
+
+        function setupEventListeners() {
+            document.getElementById('close-btn').addEventListener('click', closeOverlay);
+            document.getElementById('github-btn').addEventListener('click', openGitHub);
+
+            // Listen for release info from main process
+            if (window.electronAPI && window.electronAPI.onWhatsNewReleaseInfo) {
+                window.electronAPI.onWhatsNewReleaseInfo((releaseInfo) => {
+                    displayReleaseInfo(releaseInfo);
+                });
+            }
+        }
+
+        function displayReleaseInfo(info) {
+            const loading = document.getElementById('loading');
+            const content = document.getElementById('content');
+            const versionBadge = document.getElementById('version-badge');
+            const releaseDate = document.getElementById('release-date');
+
+            if (!info) {
+                loading.innerHTML = `
+                    <div class="error">
+                        <p>Failed to load release notes</p>
+                        <p style="font-size: 0.85rem; margin-top: 0.5rem;">Please check your internet connection and try again.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            // Update version badge
+            versionBadge.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> Version ${info.version}`;
+
+            // Update release date
+            if (info.publishedAt) {
+                const date = new Date(info.publishedAt);
+                releaseDate.textContent = `Released ${formatRelativeDate(date)}`;
+            }
+
+            // Store release URL
+            releaseUrl = info.htmlUrl || releaseUrl;
+
+            // Parse and display markdown content
+            content.innerHTML = `<div class="release-notes">${parseMarkdown(info.body)}</div>`;
+        }
+
+        function parseMarkdown(markdown) {
+            if (!markdown) return '<p>No release notes available.</p>';
+
+            let html = markdown
+                // Escape HTML
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                // Headers
+                .replace(/^### (.*$)/gim, '<h3>$1</h3>')
+                .replace(/^## (.*$)/gim, '<h2>$1</h2>')
+                .replace(/^# (.*$)/gim, '<h1>$1</h1>')
+                // Bold
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                // Italic
+                .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                // Code blocks
+                .replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>')
+                // Inline code
+                .replace(/`(.*?)`/g, '<code>$1</code>')
+                // Links
+                .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" onclick="openExternalLink(\'$2\'); return false;">$1</a>')
+                // Blockquotes
+                .replace(/^> (.*$)/gim, '<blockquote>$1</blockquote>')
+                // Horizontal rules
+                .replace(/^---$/gim, '<hr>')
+                // Unordered lists
+                .replace(/^\s*[-*] (.*$)/gim, '<li>$1</li>')
+                // Line breaks
+                .replace(/\n\n/g, '</p><p>')
+                .replace(/\n/g, '<br>');
+
+            // Wrap consecutive <li> elements in <ul>
+            html = html.replace(/(<li>.*?<\/li>)+/gs, (match) => `<ul>${match}</ul>`);
+
+            // Wrap in paragraph if not already wrapped
+            if (!html.startsWith('<')) {
+                html = `<p>${html}</p>`;
+            }
+
+            return html;
+        }
+
+        function formatRelativeDate(date) {
+            const now = new Date();
+            const diffMs = now - date;
+            const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+
+            if (diffDays === 0) return 'today';
+            if (diffDays === 1) return 'yesterday';
+            if (diffDays < 7) return `${diffDays} days ago`;
+            if (diffDays < 30) return `${Math.floor(diffDays / 7)} weeks ago`;
+            if (diffDays < 365) return `${Math.floor(diffDays / 30)} months ago`;
+            return date.toLocaleDateString();
+        }
+
+        function openExternalLink(url) {
+            try {
+                if (window.electronAPI && window.electronAPI.openExternal) {
+                    window.electronAPI.openExternal(url);
+                } else {
+                    window.open(url, '_blank');
+                }
+            } catch (error) {
+                console.error('Error opening external link:', error);
+            }
+        }
+
+        function openGitHub() {
+            openExternalLink(releaseUrl);
+        }
+
+        async function closeOverlay() {
+            try {
+                if (window.electronAPI && window.electronAPI.closeWhatsNew) {
+                    await window.electronAPI.closeWhatsNew();
+                } else {
+                    window.close();
+                }
+            } catch (error) {
+                console.error('Error closing overlay:', error);
+                window.close();
+            }
+        }
+    </script>
+</body>
+</html>

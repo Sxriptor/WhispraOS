@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whispra Mini Overlay</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: transparent;
+            overflow: hidden;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .overlay-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .minimal-hud {
+            background: rgba(32, 34, 37, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            cursor: move;
+            -webkit-app-region: drag;
+            min-width: 140px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3),
+                        0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .status-text {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.025em;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Status indicators container */
+        .indicators {
+            display: flex;
+            gap: 6px;
+            margin-left: auto;
+        }
+
+        /* Individual indicator dot */
+        .indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            opacity: 0.3;
+        }
+
+        /* Audio detected indicator (red) */
+        .indicator.audio-active {
+            background: #f04747;
+            opacity: 1;
+            box-shadow: 0 0 8px rgba(240, 71, 71, 0.6);
+            animation: pulse 2s infinite;
+        }
+
+        /* Voice translation indicator (blue) */
+        .indicator.voice-active {
+            background: #5865f2;
+            opacity: 1;
+            box-shadow: 0 0 8px rgba(88, 101, 242, 0.6);
+            animation: pulse 1.5s infinite;
+        }
+
+        /* Screen translation indicator (orange) */
+        .indicator.screen-active {
+            background: #f59e42;
+            opacity: 1;
+            box-shadow: 0 0 8px rgba(245, 158, 66, 0.6);
+        }
+
+        /* Screen translation processing (blinking) */
+        .indicator.screen-processing {
+            background: #f59e42;
+            opacity: 1;
+            box-shadow: 0 0 8px rgba(245, 158, 66, 0.6);
+            animation: blink 1s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.7;
+            }
+        }
+
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.3;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay-container">
+        <div class="minimal-hud">
+            <div class="status-text">Ready</div>
+            <div class="indicators">
+                <div id="audio-indicator" class="indicator" title="Audio Detected"></div>
+                <div id="voice-indicator" class="indicator" title="Voice Translation"></div>
+                <div id="screen-indicator" class="indicator" title="Screen Translation"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="mini-overlay-renderer.js"></script>
+</body>
+</html>

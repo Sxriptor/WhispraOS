@@ -1,0 +1,62 @@
+{
+  "app": {
+    "name": "Whispra",
+    "loading": "Đang tải...",
+    "ready": "Sẵn sàng",
+    "idle": "Nhàn rỗi",
+    "processing": "Đang xử lý",
+    "error": "Lỗi"
+  },
+  "navigation": {
+    "translate": "Dịch",
+    "bidirectional": "Hai chiều",
+    "screenTranslation": "Dịch màn hình",
+    "soundBoard": "Bảng âm thanh",
+    "voiceFilter": "Bộ lọc giọng nói",
+    "settings": "Cài đặt",
+    "logs": "Nhật ký"
+  },
+  "common": {
+    "start": "Bắt đầu",
+    "stop": "Dừng",
+    "cancel": "Hủy",
+    "save": "Lưu",
+    "close": "Đóng",
+    "back": "Quay lại",
+    "next": "Tiếp theo",
+    "continue": "Tiếp tục",
+    "retry": "Thử lại",
+    "yes": "Có",
+    "no": "Không",
+    "ok": "OK"
+  },
+  "header": {
+    "profile": "Hồ sơ",
+    "signOut": "Đăng xuất",
+    "language": "Ngôn ngữ"
+  },
+  "footer": {
+    "connectionStatus": "Trạng thái kết nối",
+    "processingStatus": "Trạng thái xử lý",
+    "feedback": "Báo lỗi / Gợi ý tính năng",
+    "debugConsole": "Hiển thị bảng điều khiển gỡ lỗi"
+  },
+  "errors": {
+    "networkError": "Lỗi kết nối mạng",
+    "permissionDenied": "Quyền bị từ chối",
+    "deviceNotFound": "Không tìm thấy thiết bị",
+    "serviceUnavailable": "Dịch vụ không khả dụng",
+    "unknownError": "Đã xảy ra lỗi không xác định"
+  },
+  "tooltips": {
+    "sidebarToggle": "Chuyển đổi thanh bên",
+    "profile": "Menu hồ sơ",
+    "language": "Chọn ngôn ngữ"
+  },
+  "languageChange": {
+    "title": "Thay đổi ngôn ngữ ứng dụng?",
+    "message": "Bạn có muốn làm cho văn bản của Whispra bằng ngôn ngữ này không?",
+    "yes": "Có",
+    "no": "Không"
+  }
+}

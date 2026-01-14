@@ -1,0 +1,102 @@
+{
+  "header": {
+    "title": "تحكمات Whispra",
+    "webOverlay": "تراكب الويب"
+  },
+  "tabs": {
+    "translation": "ترجمة",
+    "bidirectional": "ثنائي الاتجاه",
+    "screenTranslation": "ترجمة الشاشة",
+    "soundboard": "لوحة الصوت",
+    "settings": "الإعدادات"
+  },
+  "translation": {
+    "labels": {
+      "microphone": "ميكروفون",
+      "targetLanguage": "اللغة المستهدفة",
+      "voice": "صوت",
+      "output": "الإخراج",
+      "pushToTalk": "Push-to-Talk",
+      "holdKeyToRecord": "اضغط على المفتاح للتسجيل"
+    },
+    "placeholders": {
+      "selectMicrophone": "اختر الميكروفون...",
+      "loadingVoices": "جارٍ تحميل الأصوات..."
+    },
+    "buttons": {
+      "startTranslation": "ابدأ الترجمة",
+      "outputVirtualDevice": "الإخراج: جهاز افتراضي",
+      "outputSystem": "الإخراج: نظام"
+    }
+  },
+  "bidirectional": {
+    "labels": {
+      "outputDevice": "جهاز الإخراج",
+      "systemInput": "مدخل النظام",
+      "incomingVoice": "صوت وارد",
+      "screenCapture": "التقاط الشاشة/النافذة",
+      "bidirectionalToggle": "تبديل ثنائي الاتجاه",
+      "holdKeyToToggle": "اضغط على المفتاح لتبديل وضع ثنائي الاتجاه",
+      "autoDetectLanguage": "الكشف التلقائي عن اللغة"
+    },
+    "placeholders": {
+      "loadingOutputDevices": "جارٍ تحميل أجهزة الإخراج...",
+      "loadingVoices": "جارٍ تحميل الأصوات...",
+      "displaySystemAudio": "عرض/صوت النظام (افتراضي)",
+      "selectScreenWindow": "اختر الشاشة أو النافذة..."
+    },
+    "buttons": {
+      "startBidirectional": "ابدأ ثنائي الاتجاه",
+      "refreshSources": "تحديث المصادر"
+    },
+    "help": {
+      "screenCaptureHelp": "سيتم اكتشاف الشاشات والنوافذ المتاحة مع PIDs تلقائيًا."
+    }
+  },
+  "screenTranslation": {
+    "labels": {
+      "screenSelection": "اختيار الشاشة",
+      "translateTo": "ترجمة إلى",
+      "translateLanguage": "ترجمة اللغة",
+      "keybind": "تعيين المفتاح"
+    },
+    "placeholders": {
+      "selectScreen": "اختر الشاشة..."
+    },
+    "buttons": {
+      "changeKeybind": "تغيير المفتاح"
+    }
+  },
+  "soundboard": {
+    "labels": {
+      "soundBoardControls": "تحكمات لوحة الصوت",
+      "volumeControls": "تحكمات الصوت",
+      "soundPads": "أقراص الصوت",
+      "vbAudioVolume": "VB Audio:",
+      "headphonesVolume": "سماعات الرأس:"
+    },
+    "buttons": {
+      "addSound": "أضف صوت",
+      "stopAll": "إيقاف الكل"
+    },
+    "placeholders": {
+      "noSoundsAdded": "لم تتم إضافة أي أصوات بعد. انقر على \"أضف صوت\" للبدء!"
+    }
+  },
+  "settings": {
+    "labels": {
+      "overlayToggleHotkey": "اختصار تبديل التراكب",
+      "pushToTalkHotkey": "اختصار Push-to-Talk",
+      "bidirectionalToggleHotkey": "اختصار تبديل ثنائي الاتجاه"
+    },
+    "modifiers": {
+      "ctrl": "Ctrl",
+      "alt": "Alt",
+      "shift": "Shift"
+    }
+  },
+  "common": {
+    "volume": "%",
+    "keyPrefix": "المفتاح:"
+  }
+}

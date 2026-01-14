@@ -1,0 +1,24 @@
+{
+  "panel": {
+    "title": "Painel de Som",
+    "description": "Reproduza sons personalizados e clipes de áudio durante as conversas"
+  },
+  "controls": {
+    "outputDevice": "Dispositivo de Saída",
+    "vbAudioVolume": "Volume do VB Audio",
+    "headphonesVolume": "Volume dos Fones de Ouvido",
+    "soundPadGrid": "Grade do Painel de Som",
+    "enableHotkeys": "Ativar Teclas de Atalho do Soundboard",
+    "addSoundFiles": "Adicionar Arquivos de Som",
+    "webOverlay": "Sobreposição da Web",
+    "stopAllSounds": "Parar Todos os Sons"
+  },
+  "placeholders": {
+    "selectOutputDevice": "Selecione o dispositivo de saída...",
+    "defaultSystemOutput": "Saída do Sistema Padrão",
+    "virtualAudioCable": "Cabo de Áudio Virtual"
+  },
+  "status": {
+    "volume": "%"
+  }
+}

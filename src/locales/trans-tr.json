@@ -1,0 +1,88 @@
+{
+  "tab": {
+    "translation": "Çeviri",
+    "bidirectional": "İki Yönlü",
+    "soundboard": "Ses Panosu",
+    "settings": "Ayarlar"
+  },
+  "controls": {
+    "microphone": "Mikrofon",
+    "targetLanguage": "Hedef Dil",
+    "voice": "Ses",
+    "output": "Çıkış",
+    "pushToTalk": "Push-to-Talk",
+    "startTranslation": "Çeviriyi Başlat",
+    "stopTranslation": "Çeviriyi Durdur",
+    "addCustomVoice": "Özel Ses Ekle",
+    "accent": "Aksan",
+    "noAccent": "Aksan Yok",
+    "accentOn": "Aksan: AÇIK",
+    "accentOff": "Aksan: KAPALI"
+  },
+  "placeholders": {
+    "selectMicrophone": "Mikrofonu seçin...",
+    "loadingVoices": "Sesler yükleniyor...",
+    "selectVoice": "Sesi seçin...",
+    "enterCustomAccent": "Özel aksanı girin...",
+    "selectPreset": "Ön ayarı seçin..."
+  },
+  "descriptions": {
+    "microphoneHelp": "Bu mikrofon çeviri ve geçiş için kullanılır",
+    "outputMode": "Sanal Cihaza Çıkış",
+    "holdKeyToRecord": "Kaydetmek için tuşa basılı tutun",
+    "toggleBidiMode": "İki yönlü modu değiştirmek için tuşa basılı tutun",
+    "autoDetectLanguage": "Dili otomatik algıla"
+  },
+  "bidirectional": {
+    "outputDevice": "Çıkış Cihazı",
+    "systemInput": "Sistem Girişi",
+    "incomingVoice": "Gelen Ses",
+    "screenCapture": "Ekran/Pencere Yakalama",
+    "startBidirectional": "İki Yönlü Başlat",
+    "stopBidirectional": "İki Yönlü Durdur",
+    "loadingDevices": "Çıkış cihazları yükleniyor...",
+    "selectOutputDevice": "Çıkış cihazını seçin...",
+    "displayAudio": "Görüntü/Sistem Sesleri (Varsayılan)",
+    "loadingVoices": "Sesler yükleniyor...",
+    "selectIncomingVoice": "Gelen sesi seçin...",
+    "selectScreenOrWindow": "Ekranı veya pencereyi seçin...",
+    "refreshSources": "Kaynakları yenile",
+    "captureHelp": "PID'leri olan mevcut ekranlar ve pencereler otomatik olarak algılanacaktır"
+  },
+  "soundboard": {
+    "controls": "Ses Panosu Kontrolleri",
+    "addSound": "Ses Ekle",
+    "stopAll": "Hepsini Durdur",
+    "volumeControls": "Ses Seviyesi Kontrolleri",
+    "vbAudio": "VB Audio:",
+    "headphones": "Kulaklıklar:",
+    "soundPads": "Ses Pedleri",
+    "noSounds": "Henüz ses eklenmedi. Başlamak için \"Ses Ekle\"ye tıklayın!",
+    "hotkeysEnabled": "Ses Panosu Kısayollarını Etkinleştir"
+  },
+  "settings": {
+    "overlayHotkey": "Overlay Geçiş Kısayolu",
+    "pttHotkey": "Push-to-Talk Kısayolu",
+    "bidiHotkey": "İki Yönlü Geçiş Kısayolu",
+    "clickThrough": "Tıklama Geçişi",
+    "alwaysOnTop": "Her Zaman Üstte",
+    "overlayOpacity": "Overlay Opaklığı",
+    "clickThroughDesc": "Minimal modda tıklama geçişini etkinleştir",
+    "alwaysOnTopDesc": "Overlay'i diğer pencerelerin üzerinde tut"
+  },
+  "status": {
+    "ready": "Kayda hazır...",
+    "recording": "Kayıt yapılıyor...",
+    "processing": "İşleniyor...",
+    "stopped": "Durduruldu",
+    "idle": "Boşta",
+    "active": "Aktif",
+    "error": "Hata"
+  },
+  "keys": {
+    "space": "BOŞLUK",
+    "ctrl": "Ctrl",
+    "alt": "Alt",
+    "shift": "Shift"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "panel": {
+    "title": "Mode Bidirectionnel"
+  },
+  "controls": {
+    "startBidirectional": "Démarrer Bidirectionnel",
+    "stopBidirectional": "Arrêter Bidirectionnel",
+    "keybind": "Raccourci",
+    "toggleWith": "Basculer avec",
+    "changeKey": "Changer la touche",
+    "outputDevice": "Dispositif de sortie",
+    "systemInput": "Entrée système",
+    "incomingVoice": "Voix entrante"
+  },
+  "placeholders": {
+    "loadingOutputDevices": "Chargement des dispositifs de sortie...",
+    "loadingVoices": "Chargement des voix...",
+    "displaySystemAudio": "Affichage/Audio système (Par défaut)"
+  },
+  "status": {
+    "idle": "Inactif",
+    "waiting": "En attente...",
+    "ready": "Prêt...",
+    "starting": "Démarrage...",
+    "stopping": "Arrêt..."
+  },
+  "labels": {
+    "detectedTarget": "Détecté (Langue cible)",
+    "respoken": "Re-énoncé",
+    "sourceLanguage": "Langue source - Langue que vous écoutez",
+    "targetLanguage": "Langue cible - Traduire vers"
+  }
+}

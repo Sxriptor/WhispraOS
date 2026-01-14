@@ -1,0 +1,102 @@
+{
+  "header": {
+    "title": "Controles de Whispra",
+    "webOverlay": "Superposición Web"
+  },
+  "tabs": {
+    "translation": "Traducción",
+    "bidirectional": "Bidireccional",
+    "screenTranslation": "Traducción de Pantalla",
+    "soundboard": "Panel de Sonido",
+    "settings": "Configuración"
+  },
+  "translation": {
+    "labels": {
+      "microphone": "Micrófono",
+      "targetLanguage": "Idioma Objetivo",
+      "voice": "Voz",
+      "output": "Salida",
+      "pushToTalk": "Push-to-Talk",
+      "holdKeyToRecord": "Mantén la tecla para grabar"
+    },
+    "placeholders": {
+      "selectMicrophone": "Seleccionar micrófono...",
+      "loadingVoices": "Cargando voces..."
+    },
+    "buttons": {
+      "startTranslation": "Iniciar Traducción",
+      "outputVirtualDevice": "Salida: Dispositivo Virtual",
+      "outputSystem": "Salida: Sistema"
+    }
+  },
+  "bidirectional": {
+    "labels": {
+      "outputDevice": "Dispositivo de Salida",
+      "systemInput": "Entrada del Sistema",
+      "incomingVoice": "Voz Entrante",
+      "screenCapture": "Captura de Pantalla/Ventana",
+      "bidirectionalToggle": "Alternar Bidireccional",
+      "holdKeyToToggle": "Mantén la tecla para alternar modo bidireccional",
+      "autoDetectLanguage": "Detección Automática de Idioma"
+    },
+    "placeholders": {
+      "loadingOutputDevices": "Cargando dispositivos de salida...",
+      "loadingVoices": "Cargando voces...",
+      "displaySystemAudio": "Pantalla/Audio del Sistema (Predeterminado)",
+      "selectScreenWindow": "Seleccionar pantalla o ventana..."
+    },
+    "buttons": {
+      "startBidirectional": "Iniciar Bidireccional",
+      "refreshSources": "Actualizar fuentes"
+    },
+    "help": {
+      "screenCaptureHelp": "Las pantallas y ventanas disponibles con PID se detectarán automáticamente."
+    }
+  },
+  "screenTranslation": {
+    "labels": {
+      "screenSelection": "Selección de Pantalla",
+      "translateTo": "Traducir a",
+      "translateLanguage": "Idioma a Traducir",
+      "keybind": "Tecla de Acceso"
+    },
+    "placeholders": {
+      "selectScreen": "Seleccionar pantalla..."
+    },
+    "buttons": {
+      "changeKeybind": "Cambiar Tecla"
+    }
+  },
+  "soundboard": {
+    "labels": {
+      "soundBoardControls": "Controles del Panel de Sonido",
+      "volumeControls": "Controles de Volumen",
+      "soundPads": "Pads de Sonido",
+      "vbAudioVolume": "VB Audio:",
+      "headphonesVolume": "Auriculares:"
+    },
+    "buttons": {
+      "addSound": "Agregar Sonido",
+      "stopAll": "Detener Todo"
+    },
+    "placeholders": {
+      "noSoundsAdded": "No se han agregado sonidos aún. Haz clic en \"Agregar Sonido\" para comenzar."
+    }
+  },
+  "settings": {
+    "labels": {
+      "overlayToggleHotkey": "Tecla de Alternancia de Superposición",
+      "pushToTalkHotkey": "Tecla Push-to-Talk",
+      "bidirectionalToggleHotkey": "Tecla de Alternancia Bidireccional"
+    },
+    "modifiers": {
+      "ctrl": "Ctrl",
+      "alt": "Alt",
+      "shift": "Shift"
+    }
+  },
+  "common": {
+    "volume": "%",
+    "keyPrefix": "Tecla:"
+  }
+}

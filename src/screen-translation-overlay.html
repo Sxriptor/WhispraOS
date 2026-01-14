@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen Translation Overlay</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            background: transparent;
+            pointer-events: none;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            z-index: 2147483647; /* Maximum z-index value */
+        }
+
+        #overlay-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            transform: translateZ(0); /* Force GPU layer */
+            will-change: transform;
+            z-index: 2147483647; /* Maximum z-index value */
+        }
+
+        .translation-text {
+            position: absolute;
+            pointer-events: none;
+            transform: translateZ(0); /* Force GPU layer */
+            will-change: transform, opacity;
+            transition: opacity 200ms ease-out;
+            z-index: 2147483647; /* Maximum z-index value */
+        }
+
+        .translation-pill {
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(2px);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.2;
+            max-width: 400px;
+            word-wrap: break-word;
+            text-shadow:
+                0 0 1px rgba(0, 0, 0, 0.8),
+                0 1px 2px rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow:
+                0 2px 8px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            /* GPU optimization */
+            transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
+            perspective: 1000px;
+        }
+
+        .translation-text.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* Debug mode styling */
+        .debug-mode .translation-pill {
+            background: rgba(255, 0, 0, 0.8);
+            border: 2px solid yellow;
+        }
+
+        .translation-text.fade-out {
+            transition: opacity 200ms ease-out;
+            opacity: 0;
+        }
+
+        /* Light theme alternative */
+        .translation-pill.light {
+            background: rgba(255, 255, 255, 0.95);
+            color: #333;
+            text-shadow:
+                0 0 1px rgba(255, 255, 255, 0.8),
+                0 1px 2px rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow:
+                0 2px 8px rgba(0, 0, 0, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+        }
+
+        /* Debug mode styles */
+        .debug-mode .translation-text {
+            outline: 2px solid rgba(255, 0, 0, 0.5);
+        }
+
+        .debug-mode .translation-pill::before {
+            content: attr(data-id);
+            position: absolute;
+            top: -20px;
+            left: 0;
+            font-size: 10px;
+            color: #ff0000;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div id="overlay-container"></div>
+
+    <script>
+        class ScreenTranslationOverlay {
+            constructor() {
+                this.container = document.getElementById('overlay-container');
+                this.textNodes = new Map(); // id -> DOM element
+                this.textData = new Map(); // id -> text data
+                this.decayTimers = new Map(); // id -> timer
+                this.fadeOutTimers = new Map(); // id -> timer
+                this.debugMode = true; // Enable debug mode by default
+
+                // Configuration
+                this.MOVEMENT_THRESHOLD = 2; // pixels
+                this.DECAY_TIMEOUT = 600; // ms
+                this.FADE_OUT_DURATION = 200; // ms
+
+                // Initialize
+                this.setupEventListeners();
+                this.toggleDebugMode(); // Apply debug styling
+                console.log('📺 Screen translation overlay initialized with debug mode ON');
+            }
+
+            setupEventListeners() {
+                // Listen for theme changes
+                window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+                    this.updateTheme(e.matches ? 'dark' : 'light');
+                });
+            }
+
+            /**
+             * Generate stable ID for a text box
+             */
+            generateTextId(bbox, sourceText) {
+                const bboxStr = `${Math.round(bbox.x)},${Math.round(bbox.y)},${Math.round(bbox.width)},${Math.round(bbox.height)}`;
+                const textHash = this.simpleHash(sourceText);
+                return `text_${bboxStr}_${textHash}`;
+            }
+
+            /**
+             * Simple hash function for text
+             */
+            simpleHash(str) {
+                let hash = 0;
+                for (let i = 0; i < str.length; i++) {
+                    const char = str.charCodeAt(i);
+                    hash = ((hash << 5) - hash) + char;
+                    hash = hash & hash; // Convert to 32-bit integer
+                }
+                return Math.abs(hash).toString(36);
+            }
+
+            /**
+             * Convert screen coordinates to CSS coordinates
+             */
+            convertCoordinates(bbox, captureDPR, displayDPR, displayBounds) {
+                const scale = captureDPR / displayDPR;
+
+                // OCR coordinates are already relative to the captured display
+                // The overlay window covers the entire display, so no offset needed
+                return {
+                    x: bbox.x / scale,
+                    y: bbox.y / scale,
+                    width: bbox.width / scale,
+                    height: bbox.height / scale
+                };
+            }
+
+            /**
+             * Check if coordinates have moved significantly
+             */
+            hasMovedSignificantly(oldCoords, newCoords) {
+                if (!oldCoords) return true;
+
+                const dx = Math.abs(oldCoords.x - newCoords.x);
+                const dy = Math.abs(oldCoords.y - newCoords.y);
+
+                return dx > this.MOVEMENT_THRESHOLD || dy > this.MOVEMENT_THRESHOLD;
+            }
+
+            /**
+             * Update overlay with new OCR results
+             */
+            updateOCRResults(data) {
+                console.log('📺 updateOCRResults called with data:', data);
+                const { textBoxes, captureDPR, displayDPR, displayBounds } = data;
+                const currentIds = new Set();
+
+                console.log(`📺 Processing ${textBoxes.length} text boxes`);
+
+                // Process each text box
+                textBoxes.forEach((textBox, index) => {
+                    const { text, translatedText } = textBox;
+                    console.log(`📺 Processing text box ${index}:`, { text, translatedText });
+                    
+                    // Use translatedText if available, otherwise use original text
+                    const displayText = (translatedText && translatedText.trim() !== '') ? translatedText : text;
+                    
+                    if (!displayText || displayText.trim() === '') {
+                        console.log(`📺 Skipping text box ${index} - no text to display`);
+                        return;
+                    }
+
+                    const id = this.generateTextId(textBox, text);
+                    currentIds.add(id);
+
+                    // Convert coordinates
+                    const cssCoords = this.convertCoordinates(
+                        textBox,
+                        captureDPR,
+                        displayDPR,
+                        displayBounds
+                    );
+                    console.log(`📺 Converted coordinates for text box ${index}:`, cssCoords);
+
+                    // Check if we need to update this text
+                    const existingData = this.textData.get(id);
+                    const shouldUpdate = !existingData ||
+                        existingData.translatedText !== displayText ||
+                        this.hasMovedSignificantly(existingData.cssCoords, cssCoords);
+
+                    if (shouldUpdate) {
+                        console.log(`📺 Updating text node for text box ${index}`);
+                        this.updateTextNode(id, {
+                            text,
+                            translatedText: displayText,
+                            cssCoords,
+                            confidence: textBox.confidence
+                        });
+                    } else {
+                        console.log(`📺 Skipping update for text box ${index} - no changes needed`);
+                    }
+
+                    // Reset decay timer
+                    this.resetDecayTimer(id);
+                });
+
+                // Mark unseen text for decay
+                for (const [id, data] of this.textData) {
+                    if (!currentIds.has(id)) {
+                        this.startDecayTimer(id);
+                    }
+                }
+            }
+
+            /**
+             * Update or create a text node
+             */
+            updateTextNode(id, data) {
+                console.log(`📺 updateTextNode called for id: ${id}`, data);
+                let element = this.textNodes.get(id);
+
+                if (!element) {
+                    // Create new element
+                    console.log(`📺 Creating new text element for id: ${id}`);
+                    element = document.createElement('div');
+                    element.className = 'translation-text';
+                    element.innerHTML = `<div class="translation-pill" data-id="${id}"></div>`;
+                    this.container.appendChild(element);
+                    this.textNodes.set(id, element);
+                    console.log(`📺 Text element created and added to container`);
+                } else {
+                    console.log(`📺 Updating existing text element for id: ${id}`);
+                }
+
+                // Update content and position
+                const pill = element.querySelector('.translation-pill');
+                pill.textContent = data.translatedText;
+
+                // Debug: Log the actual text being displayed
+                console.log(`📺 Setting overlay text:`, {
+                    text: data.translatedText,
+                    charCodes: Array.from(data.translatedText).map(c => c.charCodeAt(0)).join(','),
+                    length: data.translatedText.length
+                });
+
+                // Position the element
+                element.style.left = `${data.cssCoords.x}px`;
+                element.style.top = `${data.cssCoords.y - 4}px`; // Position above the text
+
+                // Ensure element is visible
+                element.classList.remove('hidden', 'fade-out');
+
+                console.log(`📺 Text element positioned at:`, {
+                    left: `${data.cssCoords.x}px`,
+                    top: `${data.cssCoords.y + data.cssCoords.height + 4}px`,
+                    text: data.translatedText
+                });
+
+                // Store data
+                this.textData.set(id, data);
+
+                if (this.debugMode) {
+                    console.log(`📺 Updated text node ${id}:`, data);
+                }
+            }
+
+            /**
+             * Reset decay timer for a text element
+             */
+            resetDecayTimer(id) {
+                // Clear existing timers
+                if (this.decayTimers.has(id)) {
+                    clearTimeout(this.decayTimers.get(id));
+                    this.decayTimers.delete(id);
+                }
+                if (this.fadeOutTimers.has(id)) {
+                    clearTimeout(this.fadeOutTimers.get(id));
+                    this.fadeOutTimers.delete(id);
+                }
+
+                // Remove fade-out class if present
+                const element = this.textNodes.get(id);
+                if (element) {
+                    element.classList.remove('fade-out');
+                }
+            }
+
+            /**
+             * Start decay timer for a text element
+             */
+            startDecayTimer(id) {
+                if (this.decayTimers.has(id)) return; // Already decaying
+
+                const timer = setTimeout(() => {
+                    this.fadeOutText(id);
+                }, this.DECAY_TIMEOUT);
+
+                this.decayTimers.set(id, timer);
+            }
+
+            /**
+             * Fade out and remove a text element
+             */
+            fadeOutText(id) {
+                const element = this.textNodes.get(id);
+                if (!element) return;
+
+                // Start fade out
+                element.classList.add('fade-out');
+
+                // Remove after fade duration
+                const fadeTimer = setTimeout(() => {
+                    this.removeTextNode(id);
+                }, this.FADE_OUT_DURATION);
+
+                this.fadeOutTimers.set(id, fadeTimer);
+                this.decayTimers.delete(id);
+            }
+
+            /**
+             * Remove a text node completely
+             */
+            removeTextNode(id) {
+                const element = this.textNodes.get(id);
+                if (element && element.parentNode) {
+                    element.parentNode.removeChild(element);
+                }
+
+                // Clean up all references
+                this.textNodes.delete(id);
+                this.textData.delete(id);
+
+                if (this.decayTimers.has(id)) {
+                    clearTimeout(this.decayTimers.get(id));
+                    this.decayTimers.delete(id);
+                }
+
+                if (this.fadeOutTimers.has(id)) {
+                    clearTimeout(this.fadeOutTimers.get(id));
+                    this.fadeOutTimers.delete(id);
+                }
+
+                if (this.debugMode) {
+                    console.log(`📺 Removed text node ${id}`);
+                }
+            }
+
+            /**
+             * Clear all text from overlay
+             */
+            clearAllText() {
+                // Clear all timers
+                for (const timer of this.decayTimers.values()) {
+                    clearTimeout(timer);
+                }
+                for (const timer of this.fadeOutTimers.values()) {
+                    clearTimeout(timer);
+                }
+
+                // Remove all elements
+                this.container.innerHTML = '';
+
+                // Clear all maps
+                this.textNodes.clear();
+                this.textData.clear();
+                this.decayTimers.clear();
+                this.fadeOutTimers.clear();
+
+                console.log('📺 Cleared all overlay text');
+            }
+
+            /**
+             * Update theme
+             */
+            updateTheme(theme) {
+                const pills = this.container.querySelectorAll('.translation-pill');
+                pills.forEach(pill => {
+                    pill.classList.toggle('light', theme === 'light');
+                });
+            }
+
+            /**
+             * Toggle debug mode
+             */
+            toggleDebugMode() {
+                this.debugMode = !this.debugMode;
+                this.container.parentElement.classList.toggle('debug-mode', this.debugMode);
+                console.log(`📺 Debug mode: ${this.debugMode ? 'ON' : 'OFF'}`);
+            }
+        }
+
+        // Initialize overlay
+        const overlay = new ScreenTranslationOverlay();
+
+        // Test element disabled - only show real OCR results
+        // const testElement = document.createElement('div');
+        // testElement.style.position = 'fixed';
+        // testElement.style.top = '50px';
+        // testElement.style.left = '50px';
+        // testElement.style.background = 'red';
+        // testElement.style.color = 'white';
+        // testElement.style.padding = '10px';
+        // testElement.style.borderRadius = '5px';
+        // testElement.style.zIndex = '9999';
+        // testElement.textContent = 'OVERLAY TEST - If you see this, the overlay is working!';
+        // document.body.appendChild(testElement);
+
+        // // Remove test element after 3 seconds
+        // setTimeout(() => {
+        //     if (testElement.parentNode) {
+        //         testElement.parentNode.removeChild(testElement);
+        //     }
+        // }, 3000);
+
+        // Expose functions to main process
+        window.updateOCRResults = (data) => overlay.updateOCRResults(data);
+        window.clearAllText = () => overlay.clearAllText();
+        window.toggleDebugMode = () => overlay.toggleDebugMode();
+        
+        // Test function for debugging
+        window.testOverlay = () => {
+            console.log('📺 Testing overlay with sample data...');
+            const testData = {
+                textBoxes: [
+                    {
+                        x: 100,
+                        y: 100,
+                        width: 200,
+                        height: 30,
+                        text: "Hello World",
+                        translatedText: "Test Translation",
+                        confidence: 0.95
+                    },
+                    {
+                        x: 300,
+                        y: 200,
+                        width: 150,
+                        height: 25,
+                        text: "Another Text",
+                        translatedText: "Another Translation",
+                        confidence: 0.90
+                    }
+                ],
+                captureDPR: 1,
+                displayDPR: 1,
+                displayBounds: { x: 0, y: 0, width: 1920, height: 1080 }
+            };
+            overlay.updateOCRResults(testData);
+        };
+
+        // Auto-test disabled - wait for real OCR data
+        // setTimeout(() => {
+        //     console.log('📺 Auto-testing overlay in 2 seconds...');
+        //     window.testOverlay();
+        // }, 2000);
+
+        // Set up IPC listeners if available
+        if (window.electronAPI) {
+            window.electronAPI.onUpdateTextBoxes((data) => {
+                console.log('📺 Received text boxes via IPC:', data);
+                overlay.updateOCRResults(data);
+            });
+
+            window.electronAPI.onClearAllText(() => {
+                overlay.clearAllText();
+            });
+        }
+
+        // Handle theme changes
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        overlay.updateTheme(prefersDark ? 'dark' : 'light');
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+{
+  "tab": {
+    "translation": "翻译",
+    "bidirectional": "双向",
+    "soundboard": "声音面板",
+    "settings": "设置"
+  },
+  "controls": {
+    "microphone": "麦克风",
+    "targetLanguage": "目标语言",
+    "voice": "语音",
+    "output": "输出",
+    "pushToTalk": "按键通话",
+    "startTranslation": "开始翻译",
+    "stopTranslation": "停止翻译",
+    "addCustomVoice": "添加自定义语音",
+    "accent": "口音",
+    "noAccent": "无口音",
+    "accentOn": "口音：开启",
+    "accentOff": "口音：关闭"
+  },
+  "placeholders": {
+    "selectMicrophone": "选择麦克风...",
+    "loadingVoices": "加载语音中...",
+    "selectVoice": "选择语音...",
+    "enterCustomAccent": "输入自定义口音...",
+    "selectPreset": "选择预设..."
+  },
+  "descriptions": {
+    "microphoneHelp": "此麦克风用于翻译和直通",
+    "outputMode": "输出到虚拟设备",
+    "holdKeyToRecord": "按住按键录音",
+    "toggleBidiMode": "按住按键切换双向模式",
+    "autoDetectLanguage": "自动检测语言"
+  },
+  "bidirectional": {
+    "outputDevice": "输出设备",
+    "systemInput": "系统输入",
+    "incomingVoice": "传入语音",
+    "screenCapture": "屏幕/窗口捕获",
+    "startBidirectional": "开始双向",
+    "stopBidirectional": "停止双向",
+    "loadingDevices": "加载输出设备...",
+    "selectOutputDevice": "选择输出设备...",
+    "displayAudio": "显示/系统音频（默认）",
+    "loadingVoices": "加载语音...",
+    "selectIncomingVoice": "选择传入语音...",
+    "selectScreenOrWindow": "选择屏幕或窗口...",
+    "refreshSources": "刷新源",
+    "captureHelp": "带有PID的可用屏幕和窗口将被自动检测"
+  },
+  "soundboard": {
+    "controls": "声音面板控制",
+    "addSound": "添加声音",
+    "stopAll": "全部停止",
+    "volumeControls": "音量控制",
+    "vbAudio": "VB Audio：",
+    "headphones": "耳机：",
+    "soundPads": "声音垫",
+    "noSounds": "尚未添加声音。点击\"添加声音\"开始！",
+    "hotkeysEnabled": "启用声音面板快捷键"
+  },
+  "settings": {
+    "overlayHotkey": "覆盖切换快捷键",
+    "pttHotkey": "按键通话快捷键",
+    "bidiHotkey": "双向切换快捷键",
+    "clickThrough": "点击穿透",
+    "alwaysOnTop": "始终置顶",
+    "overlayOpacity": "覆盖不透明度",
+    "clickThroughDesc": "在最小模式下启用点击穿透",
+    "alwaysOnTopDesc": "保持覆盖在其他窗口之上"
+  },
+  "status": {
+    "ready": "准备录音...",
+    "recording": "录音中...",
+    "processing": "处理中...",
+    "stopped": "已停止",
+    "idle": "空闲",
+    "active": "活跃",
+    "error": "错误"
+  },
+  "keys": {
+    "space": "空格",
+    "ctrl": "Ctrl",
+    "alt": "Alt",
+    "shift": "Shift"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "app": {
+    "name": "Whispra",
+    "loading": "Laden...",
+    "ready": "Bereit",
+    "idle": "Inaktiv",
+    "processing": "Verarbeitung",
+    "error": "Fehler"
+  },
+  "navigation": {
+    "translate": "Übersetzen",
+    "bidirectional": "Bidirektional",
+    "screenTranslation": "Bildschirmübersetzung",
+    "soundBoard": "Soundboard",
+    "voiceFilter": "Stimmenfilter",
+    "settings": "Einstellungen",
+    "logs": "Protokolle"
+  },
+  "common": {
+    "start": "Start",
+    "stop": "Stopp",
+    "cancel": "Abbrechen",
+    "save": "Speichern",
+    "close": "Schließen",
+    "back": "Zurück",
+    "next": "Weiter",
+    "continue": "Fortfahren",
+    "retry": "Erneut versuchen",
+    "yes": "Ja",
+    "no": "Nein",
+    "ok": "OK"
+  },
+  "header": {
+    "profile": "Profil",
+    "signOut": "Abmelden",
+    "language": "Sprache"
+  },
+  "footer": {
+    "connectionStatus": "Verbindungsstatus",
+    "processingStatus": "Verarbeitungsstatus",
+    "feedback": "Fehler melden / Funktion vorschlagen",
+    "debugConsole": "Debug-Konsole anzeigen"
+  },
+  "errors": {
+    "networkError": "Netzwerkverbindungsfehler",
+    "permissionDenied": "Zugriff verweigert",
+    "deviceNotFound": "Gerät nicht gefunden",
+    "serviceUnavailable": "Dienst nicht verfügbar",
+    "unknownError": "Ein unbekannter Fehler ist aufgetreten"
+  },
+  "tooltips": {
+    "sidebarToggle": "Seitenleiste umschalten",
+    "profile": "Profilmenü",
+    "language": "Sprache auswählen"
+  },
+  "languageChange": {
+    "title": "Sprache der App ändern?",
+    "message": "Möchten Sie den Text von Whispra auch in dieser Sprache anzeigen?",
+    "yes": "Ja",
+    "no": "Nein"
+  }
+}

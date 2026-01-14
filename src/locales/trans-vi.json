@@ -1,0 +1,88 @@
+{
+  "tab": {
+    "translation": "Dịch",
+    "bidirectional": "Hai chiều",
+    "soundboard": "Bảng âm thanh",
+    "settings": "Cài đặt"
+  },
+  "controls": {
+    "microphone": "Microphone",
+    "targetLanguage": "Ngôn ngữ đích",
+    "voice": "Giọng nói",
+    "output": "Đầu ra",
+    "pushToTalk": "Push-to-Talk",
+    "startTranslation": "Bắt đầu dịch",
+    "stopTranslation": "Dừng dịch",
+    "addCustomVoice": "Thêm giọng nói tùy chỉnh",
+    "accent": "Giọng",
+    "noAccent": "Không có giọng",
+    "accentOn": "Giọng: BẬT",
+    "accentOff": "Giọng: TẮT"
+  },
+  "placeholders": {
+    "selectMicrophone": "Chọn microphone...",
+    "loadingVoices": "Đang tải giọng nói...",
+    "selectVoice": "Chọn giọng nói...",
+    "enterCustomAccent": "Nhập giọng tùy chỉnh...",
+    "selectPreset": "Chọn cài đặt trước..."
+  },
+  "descriptions": {
+    "microphoneHelp": "Microphone này được sử dụng để dịch và truyền âm thanh",
+    "outputMode": "Đầu ra đến Thiết bị Ảo",
+    "holdKeyToRecord": "Giữ phím để ghi âm",
+    "toggleBidiMode": "Giữ phím để chuyển đổi chế độ hai chiều",
+    "autoDetectLanguage": "Tự động phát hiện ngôn ngữ"
+  },
+  "bidirectional": {
+    "outputDevice": "Thiết bị đầu ra",
+    "systemInput": "Đầu vào hệ thống",
+    "incomingVoice": "Giọng nói đến",
+    "screenCapture": "Chụp màn hình/Cửa sổ",
+    "startBidirectional": "Bắt đầu hai chiều",
+    "stopBidirectional": "Dừng hai chiều",
+    "loadingDevices": "Đang tải thiết bị đầu ra...",
+    "selectOutputDevice": "Chọn thiết bị đầu ra...",
+    "displayAudio": "Âm thanh hiển thị/Hệ thống (Mặc định)",
+    "loadingVoices": "Đang tải giọng nói...",
+    "selectIncomingVoice": "Chọn giọng nói đến...",
+    "selectScreenOrWindow": "Chọn màn hình hoặc cửa sổ...",
+    "refreshSources": "Làm mới nguồn",
+    "captureHelp": "Các màn hình và cửa sổ có PIDs sẽ được phát hiện tự động"
+  },
+  "soundboard": {
+    "controls": "Điều khiển Bảng âm thanh",
+    "addSound": "Thêm âm thanh",
+    "stopAll": "Dừng tất cả",
+    "volumeControls": "Điều khiển âm lượng",
+    "vbAudio": "VB Audio:",
+    "headphones": "Tai nghe:",
+    "soundPads": "Bảng âm thanh",
+    "noSounds": "Chưa có âm thanh nào được thêm. Nhấn \"Thêm âm thanh\" để bắt đầu!",
+    "hotkeysEnabled": "Bật phím tắt Bảng âm thanh"
+  },
+  "settings": {
+    "overlayHotkey": "Phím tắt chuyển đổi lớp phủ",
+    "pttHotkey": "Phím tắt Push-to-Talk",
+    "bidiHotkey": "Phím tắt chuyển đổi hai chiều",
+    "clickThrough": "Nhấp qua",
+    "alwaysOnTop": "Luôn ở trên cùng",
+    "overlayOpacity": "Độ mờ lớp phủ",
+    "clickThroughDesc": "Bật nhấp qua trong chế độ Tối thiểu",
+    "alwaysOnTopDesc": "Giữ lớp phủ trên các cửa sổ khác"
+  },
+  "status": {
+    "ready": "Sẵn sàng ghi âm...",
+    "recording": "Đang ghi âm...",
+    "processing": "Đang xử lý...",
+    "stopped": "Đã dừng",
+    "idle": "Nhàn rỗi",
+    "active": "Hoạt động",
+    "error": "Lỗi"
+  },
+  "keys": {
+    "space": "SPACE",
+    "ctrl": "Ctrl",
+    "alt": "Alt",
+    "shift": "Shift"
+  }
+}

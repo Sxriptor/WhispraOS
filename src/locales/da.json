@@ -1,0 +1,62 @@
+{
+  "app": {
+    "name": "Whispra",
+    "loading": "Indlæser...",
+    "ready": "Klar",
+    "idle": "Inaktiv",
+    "processing": "Behandler",
+    "error": "Fejl"
+  },
+  "navigation": {
+    "translate": "Oversæt",
+    "bidirectional": "To-vejs",
+    "screenTranslation": "Skærmoversættelse",
+    "soundBoard": "Lydtavle",
+    "voiceFilter": "Stemmeskabelon",
+    "settings": "Indstillinger",
+    "logs": "Logfiler"
+  },
+  "common": {
+    "start": "Start",
+    "stop": "Stop",
+    "cancel": "Annuller",
+    "save": "Gem",
+    "close": "Luk",
+    "back": "Tilbage",
+    "next": "Næste",
+    "continue": "Fortsæt",
+    "retry": "Prøv igen",
+    "yes": "Ja",
+    "no": "Nej",
+    "ok": "OK"
+  },
+  "header": {
+    "profile": "Profil",
+    "signOut": "Log ud",
+    "language": "Sprog"
+  },
+  "footer": {
+    "connectionStatus": "Forbindelsesstatus",
+    "processingStatus": "Behandlingsstatus",
+    "feedback": "Rapporter fejl / Foreslå funktion",
+    "debugConsole": "Vis fejlfindingskonsol"
+  },
+  "errors": {
+    "networkError": "Netværksforbindelsesfejl",
+    "permissionDenied": "Adgang nægtet",
+    "deviceNotFound": "Enhed ikke fundet",
+    "serviceUnavailable": "Tjeneste utilgængelig",
+    "unknownError": "Der opstod en ukendt fejl"
+  },
+  "tooltips": {
+    "sidebarToggle": "Skift sidepanel",
+    "profile": "Profilmenu",
+    "language": "Vælg sprog"
+  },
+  "languageChange": {
+    "title": "Skift app-sprog?",
+    "message": "Vil du også gøre Whispra's tekst på dette sprog?",
+    "yes": "Ja",
+    "no": "Nej"
+  }
+}

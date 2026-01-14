@@ -1,0 +1,24 @@
+{
+  "panel": {
+    "title": "Bảng Âm Thanh",
+    "description": "Phát âm thanh và đoạn âm thanh tùy chỉnh trong các cuộc trò chuyện"
+  },
+  "controls": {
+    "outputDevice": "Thiết Bị Đầu Ra",
+    "vbAudioVolume": "Âm Lượng VB Audio",
+    "headphonesVolume": "Âm Lượng Tai Nghe",
+    "soundPadGrid": "Lưới Bảng Âm Thanh",
+    "enableHotkeys": "Bật Phím Tắt Bảng Âm Thanh",
+    "addSoundFiles": "Thêm Tệp Âm Thanh",
+    "webOverlay": "Lớp Phủ Web",
+    "stopAllSounds": "Dừng Tất Cả Âm Thanh"
+  },
+  "placeholders": {
+    "selectOutputDevice": "Chọn thiết bị đầu ra...",
+    "defaultSystemOutput": "Đầu Ra Hệ Thống Mặc Định",
+    "virtualAudioCable": "Cáp Âm Thanh Ảo"
+  },
+  "status": {
+    "volume": "%"
+  }
+}

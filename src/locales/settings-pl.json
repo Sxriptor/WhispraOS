@@ -1,0 +1,47 @@
+{
+  "modal": {
+    "title": "Bezpieczna konfiguracja API",
+    "close": "Zamknij"
+  },
+  "instructions": {
+    "title": "Instrukcje konfiguracji klucza API",
+    "openaiTitle": "Klucz API OpenAI",
+    "openaiPermissions": "Uprawnienia do odczytu: Modele, Możliwości",
+    "openaiUsage": "Używany do tłumaczenia mowy na tekst i tekstu na mowę",
+    "openaiLink": "platform.openai.com/api-keys",
+    "elevenlabsTitle": "Klucz API ElevenLabs",
+    "elevenlabsRestrict": "Ogranicz klucz: Włączone",
+    "elevenlabsNoAccess": "Wszystko inne: Brak dostępu",
+    "elevenlabsTts": "Tekst na mowę: Dostęp",
+    "elevenlabsSts": "Mowa na mowę: Dostęp",
+    "elevenlabsAgents": "Agenci ElevenLabs: Zapisz",
+    "elevenlabsVoices": "Głosy: Zapisz",
+    "elevenlabsVoiceGen": "Generowanie głosu: Dostęp",
+    "elevenlabsUser": "Użytkownik: Odczyt",
+    "elevenlabsLink": "elevenlabs.io/app/profile"
+  },
+  "fields": {
+    "openaiLabel": "Klucz API OpenAI:",
+    "openaiPlaceholder": "Wprowadź swój klucz API OpenAI",
+    "openaiStored": "Klucz przechowywany bezpiecznie",
+    "openaiHelp": "Wprowadź swój klucz API OpenAI (sk-...)",
+    "elevenlabsLabel": "Klucz API ElevenLabs:",
+    "elevenlabsPlaceholder": "Wprowadź swój klucz API ElevenLabs",
+    "elevenlabsStored": "Klucz przechowywany bezpiecznie",
+    "elevenlabsHelp": "Wprowadź swój klucz API ElevenLabs (32 znaki)"
+  },
+  "buttons": {
+    "showKey": "Pokaż klucz",
+    "removeKey": "Usuń klucz",
+    "clearAll": "Wyczyść wszystkie klucze",
+    "cancel": "Anuluj",
+    "save": "Zapisz"
+  },
+  "status": {
+    "keyStored": "✓ Klucz przechowywany bezpiecznie"
+  },
+  "links": {
+    "openai": "Generuj klucz na: platform.openai.com/api-keys",
+    "elevenlabs": "Generuj klucz na: elevenlabs.io/app/profile"
+  }
+}

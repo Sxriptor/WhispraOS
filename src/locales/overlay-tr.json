@@ -1,0 +1,102 @@
+{
+  "header": {
+    "title": "Whispra Kontrolleri",
+    "webOverlay": "Web Overlay"
+  },
+  "tabs": {
+    "translation": "Çeviri",
+    "bidirectional": "İki Yönlü",
+    "screenTranslation": "Ekran Çevirisi",
+    "soundboard": "Ses Panosu",
+    "settings": "Ayarlar"
+  },
+  "translation": {
+    "labels": {
+      "microphone": "Mikrofon",
+      "targetLanguage": "Hedef Dil",
+      "voice": "Ses",
+      "output": "Çıktı",
+      "pushToTalk": "Push-to-Talk",
+      "holdKeyToRecord": "Kaydetmek için tuşa basılı tut"
+    },
+    "placeholders": {
+      "selectMicrophone": "Mikrofonu seçin...",
+      "loadingVoices": "Sesler yükleniyor..."
+    },
+    "buttons": {
+      "startTranslation": "Çeviriyi Başlat",
+      "outputVirtualDevice": "Çıktı: Sanal Cihaz",
+      "outputSystem": "Çıktı: Sistem"
+    }
+  },
+  "bidirectional": {
+    "labels": {
+      "outputDevice": "Çıktı Cihazı",
+      "systemInput": "Sistem Girişi",
+      "incomingVoice": "Gelen Ses",
+      "screenCapture": "Ekran/Pencere Yakalama",
+      "bidirectionalToggle": "İki Yönlü Anahtarı",
+      "holdKeyToToggle": "İki yönlü modu değiştirmek için tuşa basılı tut",
+      "autoDetectLanguage": "Dili otomatik algıla"
+    },
+    "placeholders": {
+      "loadingOutputDevices": "Çıktı cihazları yükleniyor...",
+      "loadingVoices": "Sesler yükleniyor...",
+      "displaySystemAudio": "Görüntü/Sistem Sesleri (Varsayılan)",
+      "selectScreenWindow": "Ekranı veya pencereyi seçin..."
+    },
+    "buttons": {
+      "startBidirectional": "İki Yönlü Başlat",
+      "refreshSources": "Kaynakları Yenile"
+    },
+    "help": {
+      "screenCaptureHelp": "PID'leri olan mevcut ekranlar ve pencereler otomatik olarak algılanacaktır."
+    }
+  },
+  "screenTranslation": {
+    "labels": {
+      "screenSelection": "Ekran Seçimi",
+      "translateTo": "Şuna Çevir",
+      "translateLanguage": "Çeviri Dili",
+      "keybind": "Kısayol"
+    },
+    "placeholders": {
+      "selectScreen": "Ekranı seçin..."
+    },
+    "buttons": {
+      "changeKeybind": "Kısayolu Değiştir"
+    }
+  },
+  "soundboard": {
+    "labels": {
+      "soundBoardControls": "Ses Panosu Kontrolleri",
+      "volumeControls": "Ses Kontrolleri",
+      "soundPads": "Ses Pedleri",
+      "vbAudioVolume": "VB Audio:",
+      "headphonesVolume": "Kulaklıklar:"
+    },
+    "buttons": {
+      "addSound": "Ses Ekle",
+      "stopAll": "Hepsini Durdur"
+    },
+    "placeholders": {
+      "noSoundsAdded": "Henüz ses eklenmedi. Başlamak için \"Ses Ekle\"ye tıklayın!"
+    }
+  },
+  "settings": {
+    "labels": {
+      "overlayToggleHotkey": "Overlay Anahtarı Kısayolu",
+      "pushToTalkHotkey": "Push-to-Talk Kısayolu",
+      "bidirectionalToggleHotkey": "İki Yönlü Anahtarı Kısayolu"
+    },
+    "modifiers": {
+      "ctrl": "Ctrl",
+      "alt": "Alt",
+      "shift": "Shift"
+    }
+  },
+  "common": {
+    "volume": "%",
+    "keyPrefix": "Tuşa:"
+  }
+}

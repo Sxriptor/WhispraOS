@@ -1,0 +1,33 @@
+{
+  "panel": {
+    "title": "Toveismodus"
+  },
+  "controls": {
+    "startBidirectional": "Start Toveis",
+    "stopBidirectional": "Stopp Toveis",
+    "keybind": "Tastaturbinding",
+    "toggleWith": "Veksle med",
+    "changeKey": "Endre tast",
+    "outputDevice": "Utgangsenhet",
+    "systemInput": "Systeminngang",
+    "incomingVoice": "Innkommende stemme"
+  },
+  "placeholders": {
+    "loadingOutputDevices": "Laster utgangsenheter...",
+    "loadingVoices": "Laster stemmer...",
+    "displaySystemAudio": "Vis/Systemlyd (Standard)"
+  },
+  "status": {
+    "idle": "Inaktiv",
+    "waiting": "Venter...",
+    "ready": "Klar...",
+    "starting": "Starter...",
+    "stopping": "Stopper..."
+  },
+  "labels": {
+    "detectedTarget": "Oppdaget (Mål språk)",
+    "respoken": "Gjentatt",
+    "sourceLanguage": "Kildespråk - Språket du lytter til",
+    "targetLanguage": "Mål språk - Oversett til"
+  }
+}

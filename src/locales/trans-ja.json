@@ -1,0 +1,88 @@
+{
+  "tab": {
+    "translation": "翻訳",
+    "bidirectional": "双方向",
+    "soundboard": "サウンドボード",
+    "settings": "設定"
+  },
+  "controls": {
+    "microphone": "マイク",
+    "targetLanguage": "ターゲット言語",
+    "voice": "音声",
+    "output": "出力",
+    "pushToTalk": "プッシュ・トゥ・トーク",
+    "startTranslation": "翻訳を開始",
+    "stopTranslation": "翻訳を停止",
+    "addCustomVoice": "カスタム音声を追加",
+    "accent": "アクセント",
+    "noAccent": "アクセントなし",
+    "accentOn": "アクセント：オン",
+    "accentOff": "アクセント：オフ"
+  },
+  "placeholders": {
+    "selectMicrophone": "マイクを選択...",
+    "loadingVoices": "音声を読み込み中...",
+    "selectVoice": "音声を選択...",
+    "enterCustomAccent": "カスタムアクセントを入力...",
+    "selectPreset": "プリセットを選択..."
+  },
+  "descriptions": {
+    "microphoneHelp": "このマイクは翻訳とパススルーに使用されます",
+    "outputMode": "仮想デバイスに出力",
+    "holdKeyToRecord": "キーを押して録音",
+    "toggleBidiMode": "キーを押して双方向モードを切り替え",
+    "autoDetectLanguage": "言語を自動検出"
+  },
+  "bidirectional": {
+    "outputDevice": "出力デバイス",
+    "systemInput": "システム入力",
+    "incomingVoice": "着信音声",
+    "screenCapture": "画面/ウィンドウキャプチャ",
+    "startBidirectional": "双方向を開始",
+    "stopBidirectional": "双方向を停止",
+    "loadingDevices": "出力デバイスを読み込み中...",
+    "selectOutputDevice": "出力デバイスを選択...",
+    "displayAudio": "ディスプレイ/システムオーディオ（デフォルト）",
+    "loadingVoices": "音声を読み込み中...",
+    "selectIncomingVoice": "着信音声を選択...",
+    "selectScreenOrWindow": "画面またはウィンドウを選択...",
+    "refreshSources": "ソースを更新",
+    "captureHelp": "PIDを持つ利用可能な画面とウィンドウが自動的に検出されます"
+  },
+  "soundboard": {
+    "controls": "サウンドボードコントロール",
+    "addSound": "サウンドを追加",
+    "stopAll": "すべて停止",
+    "volumeControls": "音量コントロール",
+    "vbAudio": "VB Audio：",
+    "headphones": "ヘッドフォン：",
+    "soundPads": "サウンドパッド",
+    "noSounds": "サウンドがまだ追加されていません。「サウンドを追加」をクリックして開始してください。",
+    "hotkeysEnabled": "サウンドボードホットキーを有効化"
+  },
+  "settings": {
+    "overlayHotkey": "オーバーレイ切り替えホットキー",
+    "pttHotkey": "プッシュ・トゥ・トークホットキー",
+    "bidiHotkey": "双方向切り替えホットキー",
+    "clickThrough": "クリックスルー",
+    "alwaysOnTop": "常に前面",
+    "overlayOpacity": "オーバーレイ不透明度",
+    "clickThroughDesc": "最小モードでクリックスルーを有効化",
+    "alwaysOnTopDesc": "他のウィンドウの上にオーバーレイを保持"
+  },
+  "status": {
+    "ready": "録音準備完了...",
+    "recording": "録音中...",
+    "processing": "処理中...",
+    "stopped": "停止",
+    "idle": "待機",
+    "active": "アクティブ",
+    "error": "エラー"
+  },
+  "keys": {
+    "space": "スペース",
+    "ctrl": "Ctrl",
+    "alt": "Alt",
+    "shift": "Shift"
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "tab": {
+    "translation": "ترجمة",
+    "bidirectional": "ثنائي الاتجاه",
+    "soundboard": "لوحة الصوت",
+    "settings": "الإعدادات"
+  },
+  "controls": {
+    "microphone": "ميكروفون",
+    "targetLanguage": "اللغة المستهدفة",
+    "voice": "صوت",
+    "output": "مخرج",
+    "pushToTalk": "اضغط للتحدث",
+    "startTranslation": "بدء الترجمة",
+    "stopTranslation": "إيقاف الترجمة",
+    "addCustomVoice": "إضافة صوت مخصص",
+    "accent": "لهجة",
+    "noAccent": "بدون لهجة",
+    "accentOn": "لهجة: مفعل",
+    "accentOff": "لهجة: معطل"
+  },
+  "placeholders": {
+    "selectMicrophone": "اختر الميكروفون...",
+    "loadingVoices": "جارٍ تحميل الأصوات...",
+    "selectVoice": "اختر الصوت...",
+    "enterCustomAccent": "أدخل لهجة مخصصة...",
+    "selectPreset": "اختر الإعداد المسبق..."
+  },
+  "descriptions": {
+    "microphoneHelp": "يستخدم هذا الميكروفون للترجمة والتمرير",
+    "outputMode": "الإخراج إلى جهاز افتراضي",
+    "holdKeyToRecord": "اضغط على المفتاح للتسجيل",
+    "toggleBidiMode": "اضغط على المفتاح للتبديل إلى الوضع الثنائي الاتجاه",
+    "autoDetectLanguage": "الكشف التلقائي عن اللغة"
+  },
+  "bidirectional": {
+    "outputDevice": "جهاز الإخراج",
+    "systemInput": "مدخل النظام",
+    "incomingVoice": "صوت وارد",
+    "screenCapture": "التقاط الشاشة/النافذة",
+    "startBidirectional": "بدء ثنائي الاتجاه",
+    "stopBidirectional": "إيقاف ثنائي الاتجاه",
+    "loadingDevices": "جارٍ تحميل أجهزة الإخراج...",
+    "selectOutputDevice": "اختر جهاز الإخراج...",
+    "displayAudio": "عرض/صوت النظام (افتراضي)",
+    "loadingVoices": "جارٍ تحميل الأصوات...",
+    "selectIncomingVoice": "اختر الصوت الوارد...",
+    "selectScreenOrWindow": "اختر الشاشة أو النافذة...",
+    "refreshSources": "تحديث المصادر",
+    "captureHelp": "سيتم الكشف تلقائيًا عن الشاشات والنوافذ المتاحة مع معرفات العمليات"
+  },
+  "soundboard": {
+    "controls": "تحكمات لوحة الصوت",
+    "addSound": "إضافة صوت",
+    "stopAll": "إيقاف الكل",
+    "volumeControls": "تحكمات الصوت",
+    "vbAudio": "VB Audio:",
+    "headphones": "سماعات الرأس:",
+    "soundPads": "أقراص الصوت",
+    "noSounds": "لم تتم إضافة أي أصوات بعد. انقر \"إضافة صوت\" للبدء!",
+    "hotkeysEnabled": "تفعيل اختصارات لوحة الصوت"
+  },
+  "settings": {
+    "overlayHotkey": "اختصار تبديل الطبقة",
+    "pttHotkey": "اختصار اضغط للتحدث",
+    "bidiHotkey": "اختصار تبديل الثنائي الاتجاه",
+    "clickThrough": "النقر من خلال",
+    "alwaysOnTop": "دائمًا في الأعلى",
+    "overlayOpacity": "شفافية الطبقة",
+    "clickThroughDesc": "تفعيل النقر من خلال في الوضع البسيط",
+    "alwaysOnTopDesc": "ابقِ الطبقة فوق النوافذ الأخرى"
+  },
+  "status": {
+    "ready": "جاهز للتسجيل...",
+    "recording": "يتم التسجيل...",
+    "processing": "يتم المعالجة...",
+    "stopped": "موقف",
+    "idle": "خامل",
+    "active": "نشط",
+    "error": "خطأ"
+  },
+  "keys": {
+    "space": "SPACE",
+    "ctrl": "Ctrl",
+    "alt": "Alt",
+    "shift": "Shift"
+  }
+}

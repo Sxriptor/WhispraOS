@@ -1,0 +1,33 @@
+{
+  "panel": {
+    "title": "Tryb Dwukierunkowy"
+  },
+  "controls": {
+    "startBidirectional": "Rozpocznij Dwukierunkowy",
+    "stopBidirectional": "Zatrzymaj Dwukierunkowy",
+    "keybind": "Przypisanie Klawisza",
+    "toggleWith": "Przełącz z",
+    "changeKey": "Zmień Klawisz",
+    "outputDevice": "Urządzenie Wyjściowe",
+    "systemInput": "Wejście Systemowe",
+    "incomingVoice": "Nadchodzący Głos"
+  },
+  "placeholders": {
+    "loadingOutputDevices": "Ładowanie urządzeń wyjściowych...",
+    "loadingVoices": "Ładowanie głosów...",
+    "displaySystemAudio": "Wyświetl/Audio Systemowe (Domyślnie)"
+  },
+  "status": {
+    "idle": "Bezczynny",
+    "waiting": "Czekam...",
+    "ready": "Gotowy...",
+    "starting": "Rozpoczynanie...",
+    "stopping": "Zatrzymywanie..."
+  },
+  "labels": {
+    "detectedTarget": "Wykryty (Język Docelowy)",
+    "respoken": "Powtórzony",
+    "sourceLanguage": "Język Źródłowy - Język, Którego Słuchasz",
+    "targetLanguage": "Język Docelowy - Przetłumacz Na"
+  }
+}

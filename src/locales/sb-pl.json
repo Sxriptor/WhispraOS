@@ -1,0 +1,24 @@
+{
+  "panel": {
+    "title": "Panel Dźwiękowy",
+    "description": "Odtwarzaj niestandardowe dźwięki i klipy audio podczas rozmów"
+  },
+  "controls": {
+    "outputDevice": "Urządzenie Wyjściowe",
+    "vbAudioVolume": "Głośność VB Audio",
+    "headphonesVolume": "Głośność Słuchawek",
+    "soundPadGrid": "Siatka Padów Dźwiękowych",
+    "enableHotkeys": "Włącz Skróty Klawiszowe Panelu Dźwiękowego",
+    "addSoundFiles": "Dodaj Pliki Dźwiękowe",
+    "webOverlay": "Nakładka Web",
+    "stopAllSounds": "Zatrzymaj Wszystkie Dźwięki"
+  },
+  "placeholders": {
+    "selectOutputDevice": "Wybierz urządzenie wyjściowe...",
+    "defaultSystemOutput": "Domyślne Wyjście Systemowe",
+    "virtualAudioCable": "Wirtualny Kabel Audio"
+  },
+  "status": {
+    "volume": "%"
+  }
+}

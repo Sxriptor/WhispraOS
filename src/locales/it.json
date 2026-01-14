@@ -1,0 +1,62 @@
+{
+  "app": {
+    "name": "Whispra",
+    "loading": "Caricamento...",
+    "ready": "Pronto",
+    "idle": "Inattivo",
+    "processing": "Elaborazione",
+    "error": "Errore"
+  },
+  "navigation": {
+    "translate": "Traduci",
+    "bidirectional": "Bidirezionale",
+    "screenTranslation": "Traduzione dello schermo",
+    "soundBoard": "Tavolozza sonora",
+    "voiceFilter": "Filtro vocale",
+    "settings": "Impostazioni",
+    "logs": "Registri"
+  },
+  "common": {
+    "start": "Inizia",
+    "stop": "Ferma",
+    "cancel": "Annulla",
+    "save": "Salva",
+    "close": "Chiudi",
+    "back": "Indietro",
+    "next": "Avanti",
+    "continue": "Continua",
+    "retry": "Riprova",
+    "yes": "Sì",
+    "no": "No",
+    "ok": "OK"
+  },
+  "header": {
+    "profile": "Profilo",
+    "signOut": "Disconnetti",
+    "language": "Lingua"
+  },
+  "footer": {
+    "connectionStatus": "Stato della connessione",
+    "processingStatus": "Stato dell'elaborazione",
+    "feedback": "Segnala un bug / Suggerisci una funzione",
+    "debugConsole": "Mostra console di debug"
+  },
+  "errors": {
+    "networkError": "Errore di connessione di rete",
+    "permissionDenied": "Permesso negato",
+    "deviceNotFound": "Dispositivo non trovato",
+    "serviceUnavailable": "Servizio non disponibile",
+    "unknownError": "Si è verificato un errore sconosciuto"
+  },
+  "tooltips": {
+    "sidebarToggle": "Attiva/disattiva barra laterale",
+    "profile": "Menu profilo",
+    "language": "Seleziona lingua"
+  },
+  "languageChange": {
+    "title": "Cambia lingua dell'app?",
+    "message": "Vuoi che il testo di Whispra sia in questa lingua anche?",
+    "yes": "Sì",
+    "no": "No"
+  }
+}

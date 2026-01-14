@@ -1,0 +1,33 @@
+{
+  "panel": {
+    "title": "द्विदिशात्मक मोड"
+  },
+  "controls": {
+    "startBidirectional": "द्विदिशात्मक प्रारंभ करें",
+    "stopBidirectional": "द्विदिशात्मक रोकें",
+    "keybind": "कीबाइंड",
+    "toggleWith": "के साथ टॉगल करें",
+    "changeKey": "की बदलें",
+    "outputDevice": "आउटपुट डिवाइस",
+    "systemInput": "सिस्टम इनपुट",
+    "incomingVoice": "आने वाली आवाज"
+  },
+  "placeholders": {
+    "loadingOutputDevices": "आउटपुट डिवाइस लोड हो रहे हैं...",
+    "loadingVoices": "आवाजें लोड हो रही हैं...",
+    "displaySystemAudio": "डिस्प्ले/सिस्टम ऑडियो (डिफ़ॉल्ट)"
+  },
+  "status": {
+    "idle": "खाली",
+    "waiting": "इंतज़ार कर रहा है...",
+    "ready": "तैयार...",
+    "starting": "शुरू हो रहा है...",
+    "stopping": "रोक रहा है..."
+  },
+  "labels": {
+    "detectedTarget": "पहचाना गया (लक्षित भाषा)",
+    "respoken": "फिर से बोला गया",
+    "sourceLanguage": "स्रोत भाषा - भाषा जिसे आप सुन रहे हैं",
+    "targetLanguage": "लक्षित भाषा - अनुवाद करें"
+  }
+}

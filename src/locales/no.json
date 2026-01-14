@@ -1,0 +1,62 @@
+{
+  "app": {
+    "name": "Whispra",
+    "loading": "Laster...",
+    "ready": "Klar",
+    "idle": "Inaktiv",
+    "processing": "Behandler",
+    "error": "Feil"
+  },
+  "navigation": {
+    "translate": "Oversett",
+    "bidirectional": "Toveis",
+    "screenTranslation": "Skjermoversettelse",
+    "soundBoard": "Lydpanel",
+    "voiceFilter": "Stemmefilter",
+    "settings": "Innstillinger",
+    "logs": "Logger"
+  },
+  "common": {
+    "start": "Start",
+    "stop": "Stopp",
+    "cancel": "Avbryt",
+    "save": "Lagre",
+    "close": "Lukk",
+    "back": "Tilbake",
+    "next": "Neste",
+    "continue": "Fortsett",
+    "retry": "Prøv igjen",
+    "yes": "Ja",
+    "no": "Nei",
+    "ok": "OK"
+  },
+  "header": {
+    "profile": "Profil",
+    "signOut": "Logg ut",
+    "language": "Språk"
+  },
+  "footer": {
+    "connectionStatus": "Tilkoblingsstatus",
+    "processingStatus": "Behandlingsstatus",
+    "feedback": "Rapporter feil / Foreslå funksjon",
+    "debugConsole": "Vis feilsøkingskonsoll"
+  },
+  "errors": {
+    "networkError": "Feil i nettverkstilkobling",
+    "permissionDenied": "Tillatelse nektet",
+    "deviceNotFound": "Enhet ikke funnet",
+    "serviceUnavailable": "Tjeneste utilgjengelig",
+    "unknownError": "En ukjent feil oppstod"
+  },
+  "tooltips": {
+    "sidebarToggle": "Bytt sidepanel",
+    "profile": "Profilmeny",
+    "language": "Velg språk"
+  },
+  "languageChange": {
+    "title": "Endre app-språk?",
+    "message": "Vil du også gjøre Whispra's tekst på dette språket?",
+    "yes": "Ja",
+    "no": "Nei"
+  }
+}

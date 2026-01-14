@@ -1,0 +1,33 @@
+{
+  "panel": {
+    "title": "양방향 모드"
+  },
+  "controls": {
+    "startBidirectional": "양방향 시작",
+    "stopBidirectional": "양방향 중지",
+    "keybind": "키 바인드",
+    "toggleWith": "토글하기",
+    "changeKey": "키 변경",
+    "outputDevice": "출력 장치",
+    "systemInput": "시스템 입력",
+    "incomingVoice": "들어오는 음성"
+  },
+  "placeholders": {
+    "loadingOutputDevices": "출력 장치 로딩 중...",
+    "loadingVoices": "음성 로딩 중...",
+    "displaySystemAudio": "디스플레이/시스템 오디오 (기본값)"
+  },
+  "status": {
+    "idle": "대기 중",
+    "waiting": "대기 중...",
+    "ready": "준비 완료...",
+    "starting": "시작 중...",
+    "stopping": "중지 중..."
+  },
+  "labels": {
+    "detectedTarget": "감지된 (대상 언어)",
+    "respoken": "재발화",
+    "sourceLanguage": "소스 언어 - 듣고 있는 언어",
+    "targetLanguage": "대상 언어 - 번역할 언어"
+  }
+}

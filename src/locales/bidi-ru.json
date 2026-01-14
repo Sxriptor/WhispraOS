@@ -1,0 +1,31 @@
+{
+  "panel": {
+    "title": "Двунаправленный Режим"
+  },
+  "controls": {
+    "startBidirectional": "Начать Двунаправленный",
+    "stopBidirectional": "Остановить Двунаправленный",
+    "keybind": "Горячая Клавиша",
+    "toggleWith": "Переключить с",
+    "changeKey": "Изменить Клавишу",
+    "outputDevice": "Устройство Вывода",
+    "systemInput": "Системный Вход",
+    "incomingVoice": "Входящий Голос"
+  },
+  "placeholders": {
+    "loadingOutputDevices": "Загрузка устройств вывода...",
+    "loadingVoices": "Загрузка голосов...",
+    "displaySystemAudio": "Экран/Системный Аудио (По умолчанию)"
+  },
+  "status": {
+    "idle": "Ожидание",
+    "waiting": "Ожидание...",
+    "ready": "Готов...",
+    "starting": "Запуск...",
+    "stopping": "Остановка..."
+  },
+  "labels": {
+    "detectedTarget": "Обнаружено (Целевой Язык)",
+    "respoken": "Переговорено"
+  }
+}

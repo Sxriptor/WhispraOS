@@ -1,0 +1,33 @@
+{
+  "panel": {
+    "title": "โหมดสองทิศทาง"
+  },
+  "controls": {
+    "startBidirectional": "เริ่มโหมดสองทิศทาง",
+    "stopBidirectional": "หยุดโหมดสองทิศทาง",
+    "keybind": "การผูกปุ่ม",
+    "toggleWith": "สลับกับ",
+    "changeKey": "เปลี่ยนปุ่ม",
+    "outputDevice": "อุปกรณ์ส่งออก",
+    "systemInput": "การป้อนข้อมูลระบบ",
+    "incomingVoice": "เสียงที่เข้ามา"
+  },
+  "placeholders": {
+    "loadingOutputDevices": "กำลังโหลดอุปกรณ์ส่งออก...",
+    "loadingVoices": "กำลังโหลดเสียง...",
+    "displaySystemAudio": "แสดง/ระบบเสียง (ค่าเริ่มต้น)"
+  },
+  "status": {
+    "idle": "ไม่ทำงาน",
+    "waiting": "กำลังรอ...",
+    "ready": "พร้อมแล้ว...",
+    "starting": "กำลังเริ่ม...",
+    "stopping": "กำลังหยุด..."
+  },
+  "labels": {
+    "detectedTarget": "ตรวจพบ (ภาษาที่ต้องการ)",
+    "respoken": "พูดซ้ำ",
+    "sourceLanguage": "ภาษาแหล่ง - ภาษาที่คุณกำลังฟัง",
+    "targetLanguage": "ภาษาเป้าหมาย - แปลเป็น"
+  }
+}

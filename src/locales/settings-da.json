@@ -1,0 +1,47 @@
+{
+  "modal": {
+    "title": "Sikker API-konfiguration",
+    "close": "Luk"
+  },
+  "instructions": {
+    "title": "API-nøgle opsætningsinstruktioner",
+    "openaiTitle": "OpenAI API-nøgle",
+    "openaiPermissions": "Læseadgang: Modeller, Funktioner",
+    "openaiUsage": "Bruges til tale-til-tekst og tekst-til-tale oversættelse",
+    "openaiLink": "platform.openai.com/api-keys",
+    "elevenlabsTitle": "ElevenLabs API-nøgle",
+    "elevenlabsRestrict": "Begræns nøgle: Aktiveret",
+    "elevenlabsNoAccess": "Alt andet: Ingen adgang",
+    "elevenlabsTts": "Tekst til tale: Adgang",
+    "elevenlabsSts": "Tale til tale: Adgang",
+    "elevenlabsAgents": "ElevenLabs agenter: Skrive",
+    "elevenlabsVoices": "Stemmer: Skrive",
+    "elevenlabsVoiceGen": "Stemmegenerering: Adgang",
+    "elevenlabsUser": "Bruger: Læse",
+    "elevenlabsLink": "elevenlabs.io/app/profile"
+  },
+  "fields": {
+    "openaiLabel": "OpenAI API-nøgle:",
+    "openaiPlaceholder": "Indtast din OpenAI API-nøgle",
+    "openaiStored": "Nøgle gemt sikkert",
+    "openaiHelp": "Indtast din OpenAI API-nøgle (sk-...)",
+    "elevenlabsLabel": "ElevenLabs API-nøgle:",
+    "elevenlabsPlaceholder": "Indtast din ElevenLabs API-nøgle",
+    "elevenlabsStored": "Nøgle gemt sikkert",
+    "elevenlabsHelp": "Indtast din ElevenLabs API-nøgle (32 tegn)"
+  },
+  "buttons": {
+    "showKey": "Vis nøgle",
+    "removeKey": "Fjern nøgle",
+    "clearAll": "Ryd alle nøgler",
+    "cancel": "Annuller",
+    "save": "Gem"
+  },
+  "status": {
+    "keyStored": "✓ Nøgle gemt sikkert"
+  },
+  "links": {
+    "openai": "Generer nøgle på: platform.openai.com/api-keys",
+    "elevenlabs": "Generer nøgle på: elevenlabs.io/app/profile"
+  }
+}

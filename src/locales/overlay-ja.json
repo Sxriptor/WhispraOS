@@ -1,0 +1,102 @@
+{
+  "header": {
+    "title": "Whispra コントロール",
+    "webOverlay": "ウェブオーバーレイ"
+  },
+  "tabs": {
+    "translation": "翻訳",
+    "bidirectional": "双方向",
+    "screenTranslation": "画面翻訳",
+    "soundboard": "サウンドボード",
+    "settings": "設定"
+  },
+  "translation": {
+    "labels": {
+      "microphone": "マイク",
+      "targetLanguage": "ターゲット言語",
+      "voice": "音声",
+      "output": "出力",
+      "pushToTalk": "プッシュ・トゥ・トーク",
+      "holdKeyToRecord": "キーを押しながら録音"
+    },
+    "placeholders": {
+      "selectMicrophone": "マイクを選択...",
+      "loadingVoices": "音声を読み込み中..."
+    },
+    "buttons": {
+      "startTranslation": "翻訳を開始",
+      "outputVirtualDevice": "出力：仮想デバイス",
+      "outputSystem": "出力：システム"
+    }
+  },
+  "bidirectional": {
+    "labels": {
+      "outputDevice": "出力デバイス",
+      "systemInput": "システム入力",
+      "incomingVoice": "入力音声",
+      "screenCapture": "画面/ウィンドウキャプチャ",
+      "bidirectionalToggle": "双方向トグル",
+      "holdKeyToToggle": "キーを押しながら双方向モードを切り替え",
+      "autoDetectLanguage": "言語の自動検出"
+    },
+    "placeholders": {
+      "loadingOutputDevices": "出力デバイスを読み込み中...",
+      "loadingVoices": "音声を読み込み中...",
+      "displaySystemAudio": "ディスプレイ/システムオーディオ（デフォルト）",
+      "selectScreenWindow": "画面またはウィンドウを選択..."
+    },
+    "buttons": {
+      "startBidirectional": "双方向を開始",
+      "refreshSources": "ソースを更新"
+    },
+    "help": {
+      "screenCaptureHelp": "PID付きの利用可能な画面とウィンドウが自動的に検出されます。"
+    }
+  },
+  "screenTranslation": {
+    "labels": {
+      "screenSelection": "画面の選択",
+      "translateTo": "翻訳先",
+      "translateLanguage": "翻訳する言語",
+      "keybind": "キーバインド"
+    },
+    "placeholders": {
+      "selectScreen": "画面を選択..."
+    },
+    "buttons": {
+      "changeKeybind": "キーを変更"
+    }
+  },
+  "soundboard": {
+    "labels": {
+      "soundBoardControls": "サウンドボードコントロール",
+      "volumeControls": "音量コントロール",
+      "soundPads": "サウンドパッド",
+      "vbAudioVolume": "VB Audio：",
+      "headphonesVolume": "ヘッドフォン："
+    },
+    "buttons": {
+      "addSound": "サウンドを追加",
+      "stopAll": "すべて停止"
+    },
+    "placeholders": {
+      "noSoundsAdded": "まだサウンドが追加されていません。「サウンドを追加」をクリックして開始してください！"
+    }
+  },
+  "settings": {
+    "labels": {
+      "overlayToggleHotkey": "オーバーレイトグルホットキー",
+      "pushToTalkHotkey": "プッシュ・トゥ・トークホットキー",
+      "bidirectionalToggleHotkey": "双方向トグルホットキー"
+    },
+    "modifiers": {
+      "ctrl": "Ctrl",
+      "alt": "Alt",
+      "shift": "Shift"
+    }
+  },
+  "common": {
+    "volume": "%",
+    "keyPrefix": "キー："
+  }
+}

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen Translation Box Select</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            cursor: crosshair;
+            background: transparent;
+            user-select: none;
+        }
+
+        #canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .instruction {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px 40px;
+            border-radius: 8px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 16px;
+            pointer-events: none;
+            backdrop-filter: blur(10px);
+            transition: opacity 0.3s;
+        }
+
+        .instruction.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <div class="instruction" id="instruction">
+        Click and drag to select area • Right-click to cancel
+    </div>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const instruction = document.getElementById('instruction');
+
+        // Set canvas size to window size
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let isDrawing = false;
+        let startX = 0;
+        let startY = 0;
+        let currentX = 0;
+        let currentY = 0;
+
+        // Hide instruction when user starts interacting
+        function hideInstruction() {
+            instruction.classList.add('hidden');
+        }
+
+        // Draw selection box
+        function drawBox() {
+            // Clear canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            if (!isDrawing) return;
+
+            const x = Math.min(startX, currentX);
+            const y = Math.min(startY, currentY);
+            const width = Math.abs(currentX - startX);
+            const height = Math.abs(currentY - startY);
+
+            // Semi-transparent overlay outside selection
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.3)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Clear selected area
+            ctx.clearRect(x, y, width, height);
+
+            // Draw border around selection
+            ctx.strokeStyle = '#00ff00';
+            ctx.lineWidth = 2;
+            ctx.setLineDash([5, 5]);
+            ctx.strokeRect(x, y, width, height);
+
+            // Draw size indicator
+            if (width > 50 && height > 50) {
+                const text = `${Math.round(width)} × ${Math.round(height)}`;
+                ctx.font = '14px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+                ctx.fillStyle = '#00ff00';
+                ctx.fillText(text, x + 5, y - 5);
+            }
+        }
+
+        // Mouse down - start drawing
+        canvas.addEventListener('mousedown', (e) => {
+            hideInstruction();
+            isDrawing = true;
+            startX = e.clientX;
+            startY = e.clientY;
+            currentX = e.clientX;
+            currentY = e.clientY;
+            drawBox();
+        });
+
+        // Mouse move - update box
+        canvas.addEventListener('mousemove', (e) => {
+            if (!isDrawing) return;
+            currentX = e.clientX;
+            currentY = e.clientY;
+            drawBox();
+        });
+
+        // Mouse up - finish selection
+        canvas.addEventListener('mouseup', (e) => {
+            if (!isDrawing) return;
+
+            currentX = e.clientX;
+            currentY = e.clientY;
+
+            const x = Math.min(startX, currentX);
+            const y = Math.min(startY, currentY);
+            const width = Math.abs(currentX - startX);
+            const height = Math.abs(currentY - startY);
+
+            // Minimum size check (at least 20x20 pixels)
+            if (width < 20 || height < 20) {
+                console.log('Selection too small, canceling');
+                isDrawing = false;
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                instruction.classList.remove('hidden');
+                return;
+            }
+
+            // Send selection to main process
+            const selection = {
+                x: Math.round(x),
+                y: Math.round(y),
+                width: Math.round(width),
+                height: Math.round(height)
+            };
+
+            console.log('Box selected:', selection);
+            window.electronAPI.send('screen-translation-box-selected', selection);
+
+            // Close this overlay
+            window.electronAPI.send('screen-translation-box-close');
+        });
+
+        // ESC key to cancel (may not work if window is not focused)
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                console.log('Selection canceled');
+                window.electronAPI.send('screen-translation-box-close');
+            }
+        });
+
+        // Right-click to cancel (works even when window is not focused)
+        document.addEventListener('mousedown', (e) => {
+            if (e.button === 2) { // Right click
+                e.preventDefault();
+                console.log('Selection canceled via right-click');
+                window.electronAPI.send('screen-translation-box-close');
+            }
+        });
+
+        // Prevent context menu
+        document.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+        });
+
+        console.log('Box selection overlay loaded');
+    </script>
+</body>
+</html>

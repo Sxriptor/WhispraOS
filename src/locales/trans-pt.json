@@ -1,0 +1,88 @@
+{
+  "tab": {
+    "translation": "Tradução",
+    "bidirectional": "Bidirecional",
+    "soundboard": "Soundboard",
+    "settings": "Configurações"
+  },
+  "controls": {
+    "microphone": "Microfone",
+    "targetLanguage": "Idioma de Destino",
+    "voice": "Voz",
+    "output": "Saída",
+    "pushToTalk": "Push-to-Talk",
+    "startTranslation": "Iniciar Tradução",
+    "stopTranslation": "Parar Tradução",
+    "addCustomVoice": "Adicionar Voz Personalizada",
+    "accent": "Sotaque",
+    "noAccent": "Sem Sotaque",
+    "accentOn": "Sotaque: ATIVADO",
+    "accentOff": "Sotaque: DESATIVADO"
+  },
+  "placeholders": {
+    "selectMicrophone": "Selecionar microfone...",
+    "loadingVoices": "Carregando vozes...",
+    "selectVoice": "Selecionar voz...",
+    "enterCustomAccent": "Digite o sotaque personalizado...",
+    "selectPreset": "Selecionar predefinição..."
+  },
+  "descriptions": {
+    "microphoneHelp": "Este microfone é usado para tradução e passthrough",
+    "outputMode": "Saída para Dispositivo Virtual",
+    "holdKeyToRecord": "Pressione a tecla para gravar",
+    "toggleBidiMode": "Pressione a tecla para alternar o modo bidirecional",
+    "autoDetectLanguage": "Detecção Automática de Idioma"
+  },
+  "bidirectional": {
+    "outputDevice": "Dispositivo de Saída",
+    "systemInput": "Entrada do Sistema",
+    "incomingVoice": "Voz Entrante",
+    "screenCapture": "Captura de Tela/Janela",
+    "startBidirectional": "Iniciar Bidirecional",
+    "stopBidirectional": "Parar Bidirecional",
+    "loadingDevices": "Carregando dispositivos de saída...",
+    "selectOutputDevice": "Selecionar dispositivo de saída...",
+    "displayAudio": "Áudio de Exibição/Sistema (Padrão)",
+    "loadingVoices": "Carregando vozes...",
+    "selectIncomingVoice": "Selecionar voz entrante...",
+    "selectScreenOrWindow": "Selecionar tela ou janela...",
+    "refreshSources": "Atualizar fontes",
+    "captureHelp": "Telhas e janelas disponíveis com PIDs serão detectadas automaticamente"
+  },
+  "soundboard": {
+    "controls": "Controles do Painel de Som",
+    "addSound": "Adicionar Som",
+    "stopAll": "Parar Todos",
+    "volumeControls": "Controles de Volume",
+    "vbAudio": "VB Audio:",
+    "headphones": "Fones de Ouvido:",
+    "soundPads": "Pads de Som",
+    "noSounds": "Nenhum som adicionado ainda. Clique em \"Adicionar Som\" para começar!",
+    "hotkeysEnabled": "Ativar Teclas de Atalho do Painel de Som"
+  },
+  "settings": {
+    "overlayHotkey": "Tecla de Atalho para Alternar Sobreposição",
+    "pttHotkey": "Tecla de Atalho para Push-to-Talk",
+    "bidiHotkey": "Tecla de Atalho para Alternar Bidirecional",
+    "clickThrough": "Clique através",
+    "alwaysOnTop": "Sempre em Cima",
+    "overlayOpacity": "Opacidade da Sobreposição",
+    "clickThroughDesc": "Ativar clique através no modo Mínimo",
+    "alwaysOnTopDesc": "Manter sobreposição acima de outras janelas"
+  },
+  "status": {
+    "ready": "Pronto para gravar...",
+    "recording": "Gravando...",
+    "processing": "Processando...",
+    "stopped": "Parado",
+    "idle": "Ocioso",
+    "active": "Ativo",
+    "error": "Erro"
+  },
+  "keys": {
+    "space": "ESPACO",
+    "ctrl": "Ctrl",
+    "alt": "Alt",
+    "shift": "Shift"
+  }
+}

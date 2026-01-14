@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captions Overlay</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: transparent;
+            overflow: hidden;
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-app-region: drag;
+        }
+
+        .captions-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+        }
+
+        .captions-text {
+            max-width: 80vw;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1.4;
+            text-align: center;
+            word-wrap: break-word;
+            pointer-events: auto;
+            -webkit-app-region: drag;
+            transition: opacity 0.3s ease;
+        }
+
+        .captions-text.hidden {
+            opacity: 0;
+        }
+
+        /* Default styling */
+        .captions-text.white-text {
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .captions-text.black-text {
+            color: black;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+        }
+
+        .captions-text.no-background {
+            background: transparent;
+        }
+
+        .captions-text.white-background {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .captions-text.black-background {
+            background: rgba(0, 0, 0, 0.9);
+        }
+
+        /* Font sizes */
+        .captions-text.font-small { font-size: 14px; }
+        .captions-text.font-medium { font-size: 18px; }
+        .captions-text.font-large { font-size: 24px; }
+        .captions-text.font-xlarge { font-size: 32px; }
+    </style>
+</head>
+<body>
+    <div class="captions-container">
+        <div id="captions-text" class="captions-text white-text no-background font-medium hidden">
+            Captions will appear here...
+        </div>
+    </div>
+
+    <script>
+        let currentText = '';
+        let hideTimeout = null;
+
+        // Apply settings from configuration
+        function applySettings(settings) {
+            const captionsElement = document.getElementById('captions-text');
+            if (!captionsElement) return;
+
+            // Remove all existing classes
+            captionsElement.className = 'captions-text';
+
+            // Apply text color
+            captionsElement.classList.add(settings.textColor === 'black' ? 'black-text' : 'white-text');
+
+            // Apply background
+            if (settings.background === 'white') {
+                captionsElement.classList.add('white-background');
+            } else if (settings.background === 'black') {
+                captionsElement.classList.add('black-background');
+            } else {
+                captionsElement.classList.add('no-background');
+            }
+
+            // Apply font size
+            captionsElement.classList.add(`font-${settings.fontSize}`);
+        }
+
+        // Update captions text
+        function updateCaptions(text) {
+            const captionsElement = document.getElementById('captions-text');
+            if (!captionsElement) return;
+
+            if (text && text.trim()) {
+                currentText = text.trim();
+                
+                // Create HTML with "Whispra: " prefix in light blue
+                captionsElement.innerHTML = `<span style="color: #87CEEB;">Whispra: </span>${currentText}`;
+                captionsElement.classList.remove('hidden');
+
+                // Clear existing timeout
+                if (hideTimeout) {
+                    clearTimeout(hideTimeout);
+                }
+
+                // Hide after 5 seconds of no updates
+                hideTimeout = setTimeout(() => {
+                    captionsElement.classList.add('hidden');
+                }, 5000);
+                
+                console.log('📺 [Overlay] Updated captions with text:', currentText);
+            }
+        }
+
+        // Clear captions
+        function clearCaptions() {
+            const captionsElement = document.getElementById('captions-text');
+            if (!captionsElement) return;
+
+            captionsElement.classList.add('hidden');
+            if (hideTimeout) {
+                clearTimeout(hideTimeout);
+                hideTimeout = null;
+            }
+        }
+
+        // Expose functions to main process
+        window.captionsAPI = {
+            updateCaptions,
+            clearCaptions,
+            applySettings
+        };
+
+        console.log('📺 Captions overlay initialized');
+    </script>
+</body>
+</html>

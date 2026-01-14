@@ -1,0 +1,24 @@
+{
+  "panel": {
+    "title": "Sound Board",
+    "description": "Play custom sounds and audio clips during conversations"
+  },
+  "controls": {
+    "outputDevice": "Output Device",
+    "vbAudioVolume": "VB Audio Volume",
+    "headphonesVolume": "Headphones Volume",
+    "soundPadGrid": "Sound Pad Grid",
+    "enableHotkeys": "Enable Soundboard Hotkeys",
+    "addSoundFiles": "Add Sound Files",
+    "webOverlay": "Web Overlay",
+    "stopAllSounds": "Stop All Sounds"
+  },
+  "placeholders": {
+    "selectOutputDevice": "Select output device...",
+    "defaultSystemOutput": "Default System Output",
+    "virtualAudioCable": "Virtual Audio Cable"
+  },
+  "status": {
+    "volume": "%"
+  }
+}

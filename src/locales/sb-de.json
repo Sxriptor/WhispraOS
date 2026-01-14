@@ -1,0 +1,24 @@
+{
+  "panel": {
+    "title": "Soundboard",
+    "description": "Spielen Sie benutzerdefinierte Sounds und Audioclips während Gesprächen"
+  },
+  "controls": {
+    "outputDevice": "Ausgabegerät",
+    "vbAudioVolume": "VB Audio Lautstärke",
+    "headphonesVolume": "Kopfhörerlautstärke",
+    "soundPadGrid": "Sound Pad Raster",
+    "enableHotkeys": "Soundboard-Hotkeys aktivieren",
+    "addSoundFiles": "Sounddateien hinzufügen",
+    "webOverlay": "Web-Overlay",
+    "stopAllSounds": "Alle Sounds stoppen"
+  },
+  "placeholders": {
+    "selectOutputDevice": "Ausgabegerät auswählen...",
+    "defaultSystemOutput": "Standard-Systemausgabe",
+    "virtualAudioCable": "Virtuelles Audiokabel"
+  },
+  "status": {
+    "volume": "%"
+  }
+}

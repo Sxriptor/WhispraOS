@@ -1,0 +1,62 @@
+{
+  "app": {
+    "name": "Whispra",
+    "loading": "Laddar...",
+    "ready": "Klar",
+    "idle": "Inaktiv",
+    "processing": "Bearbetar",
+    "error": "Fel"
+  },
+  "navigation": {
+    "translate": "Översätt",
+    "bidirectional": "Tvåvägs",
+    "screenTranslation": "Skärmöversättning",
+    "soundBoard": "Ljudbräda",
+    "voiceFilter": "Röstfilter",
+    "settings": "Inställningar",
+    "logs": "Loggar"
+  },
+  "common": {
+    "start": "Starta",
+    "stop": "Stoppa",
+    "cancel": "Avbryt",
+    "save": "Spara",
+    "close": "Stäng",
+    "back": "Tillbaka",
+    "next": "Nästa",
+    "continue": "Fortsätt",
+    "retry": "Försök igen",
+    "yes": "Ja",
+    "no": "Nej",
+    "ok": "OK"
+  },
+  "header": {
+    "profile": "Profil",
+    "signOut": "Logga ut",
+    "language": "Språk"
+  },
+  "footer": {
+    "connectionStatus": "Anslutningsstatus",
+    "processingStatus": "Bearbetningsstatus",
+    "feedback": "Rapportera fel / Föreslå funktion",
+    "debugConsole": "Visa felsökningskonsol"
+  },
+  "errors": {
+    "networkError": "Nätverksanslutningsfel",
+    "permissionDenied": "Åtkomst nekad",
+    "deviceNotFound": "Enhet hittades inte",
+    "serviceUnavailable": "Tjänst otillgänglig",
+    "unknownError": "Ett okänt fel inträffade"
+  },
+  "tooltips": {
+    "sidebarToggle": "Växla sidopanel",
+    "profile": "Profilmeny",
+    "language": "Välj språk"
+  },
+  "languageChange": {
+    "title": "Ändra appens språk?",
+    "message": "Vill du att Whispra's text ska vara på detta språk också?",
+    "yes": "Ja",
+    "no": "Nej"
+  }
+}

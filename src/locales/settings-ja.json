@@ -1,0 +1,47 @@
+{
+  "modal": {
+    "title": "安全な API 設定",
+    "close": "閉じる"
+  },
+  "instructions": {
+    "title": "API キー設定手順",
+    "openaiTitle": "OpenAI API キー",
+    "openaiPermissions": "読み取り権限：モデル、機能",
+    "openaiUsage": "音声テキスト変換とテキスト音声変換の翻訳に使用",
+    "openaiLink": "platform.openai.com/api-keys",
+    "elevenlabsTitle": "ElevenLabs API キー",
+    "elevenlabsRestrict": "キーを制限：有効",
+    "elevenlabsNoAccess": "その他すべて：アクセスなし",
+    "elevenlabsTts": "テキスト音声変換：アクセス",
+    "elevenlabsSts": "音声音声変換：アクセス",
+    "elevenlabsAgents": "ElevenLabs エージェント：書き込み",
+    "elevenlabsVoices": "音声：書き込み",
+    "elevenlabsVoiceGen": "音声生成：アクセス",
+    "elevenlabsUser": "ユーザー：読み取り",
+    "elevenlabsLink": "elevenlabs.io/app/profile"
+  },
+  "fields": {
+    "openaiLabel": "OpenAI API キー：",
+    "openaiPlaceholder": "OpenAI API キーを入力してください",
+    "openaiStored": "キーが安全に保存されました",
+    "openaiHelp": "OpenAI API キーを入力してください (sk-...)",
+    "elevenlabsLabel": "ElevenLabs API キー：",
+    "elevenlabsPlaceholder": "ElevenLabs API キーを入力してください",
+    "elevenlabsStored": "キーが安全に保存されました",
+    "elevenlabsHelp": "ElevenLabs API キーを入力してください (32 文字)"
+  },
+  "buttons": {
+    "showKey": "キーを表示",
+    "removeKey": "キーを削除",
+    "clearAll": "すべてのキーをクリア",
+    "cancel": "キャンセル",
+    "save": "保存"
+  },
+  "status": {
+    "keyStored": "✓ キーが安全に保存されました"
+  },
+  "links": {
+    "openai": "キーを生成：platform.openai.com/api-keys",
+    "elevenlabs": "キーを生成：elevenlabs.io/app/profile"
+  }
+}
