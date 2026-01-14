@@ -173,8 +173,8 @@ Whispra is a comprehensive desktop application built with Electron that enables 
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/Sxriptor/Whispra-Download.git
-cd WhispraModelTwo
+git clone https://github.com/Sxriptor/WhispraOS.git
+cd WhispraOS
 ```
 
 2. **Install dependencies**
